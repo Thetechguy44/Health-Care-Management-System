@@ -1,9 +1,0 @@
-<!DOCTYPE html>
-<html>
-<head>
-     <title>paragrah</title>
-</head>
-<body>        
-<p> this is a body</p>
-</body>
-</html>
