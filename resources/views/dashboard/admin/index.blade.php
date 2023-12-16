@@ -1,13 +1,13 @@
-@extends('admin.layout.layout')
+@extends('dashboard.admin.layout.layout')
 @section('content')
-    @include('admin.layout.topnav')
+    @include('dashboard.admin.layout.topnav')
     <!-- header end -->
 
     <!-- profile right sidebar start -->
-    @include('admin.layout.profilenav')
+    @include('dashboard.admin.layout.profilenav')
 
     <!-- main sidebar start -->
-    @include('admin.layout.sidenav')
+    @include('dashboard.admin.layout.sidenav')
     <!-- main sidebar end -->
         <div class="dashboard-breadcrumb mb-25">
             <h2>Admin Dashboard</h2>
