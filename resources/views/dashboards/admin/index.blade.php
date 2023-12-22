@@ -1,6 +1,8 @@
 @extends('dashboards.admin.layouts.app')
 @section('title', isset($title) ? $title: 'Dashboard')
 @section('content')
+@include('dashboards.admin.layouts.top')
+@include('dashboards.admin.layouts.side')
         <div class="page-wrapper">
             <div class="content">
                 <div class="row">

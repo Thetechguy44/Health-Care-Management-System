@@ -18,14 +18,14 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role', ['admin', 'healthcare_provider', 'patient']);
+            $table->enum('user_type', ['admin', 'healthcare_provider', 'patient'])->default('patient');
             $table->string('phone')->unique();
             $table->date('dob')->nullable();
             $table->string('gender')->nullable();
             $table->string('blood_group')->nullable();
             $table->string('qualifiation')->nullable();
-            $table->string('nin_no')->unique();
-            $table->string('license_no')->unique();
+            $table->string('nin_no')->unique()->nullable();
+            $table->string('license_no')->unique()->nullable();
             $table->string('place_of_work')->nullable();
             $table->string('reference')->nullable();
             $table->string('price')->nullable();
