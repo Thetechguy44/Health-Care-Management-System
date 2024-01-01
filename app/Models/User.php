@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Auth;
+
 
 class User extends Authenticatable
 {
@@ -22,8 +24,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'about',
         'avatar',
-        'role',
+        'user_type',
         'phone',
         'dob',
         'gender',
@@ -75,6 +78,14 @@ class User extends Authenticatable
             return $enumValues[$value];
         }
         return 'unknown';
+    }
+
+    public function getPictureAttribute(){
+        if( auth()->user()->avatar != null ){
+            return asset('storage/avatars/'.auth()->user()->avatar);
+        }else{
+            return asset('default/users/img/default-avatar.png');
+        }
     }
 
     public function admin()

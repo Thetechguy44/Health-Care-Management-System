@@ -1,3 +1,4 @@
+<div>
 <div class="header">
     <div class="header-left">
         <a href="index-2.html" class="logo">
@@ -16,7 +17,7 @@
                 <div class="drop-scroll">
                     <ul class="notification-list">
                         <li class="notification-message">
-                            <a href="activities.html">
+                            <a href="">
                                 <div class="media">
                                     <span class="avatar">
                                         <img alt="Image" src="assets/img/user.jpg" class="img-fluid">
@@ -31,7 +32,7 @@
                     </ul>
                 </div>
                 <div class="topnav-dropdown-footer">
-                    <a href="activities.html">View all Notifications</a>
+                    <a href="">View all Notifications</a>
                 </div>
             </div>
         </li>
@@ -41,10 +42,10 @@
         <li class="nav-item dropdown has-arrow">
             <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
                 <span class="user-img">
-                    <img class="rounded-circle" src="assets/img/user.jpg" width="24" alt="Admin">
+                    <img class="rounded-circle" src="{{$admin->picture}}" width="24" alt="Admin">
                     <span class="status online"></span>
                 </span>
-                <span>Admin</span>
+                <span>{{$admin->name}}</span>
             </a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="{{route('admin.profile.index')}}">My Profile</a>
@@ -59,7 +60,7 @@
     <div class="dropdown mobile-user-menu float-right">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
         <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="{{route('admin.profile.index')}}">My Profile</a>
+            <a class="dropdown-item" href="{{route('admin.profile.index')}}">{{$admin->name}}</a>
             <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -67,4 +68,5 @@
             </form>
         </div>
     </div>
+</div>
 </div>

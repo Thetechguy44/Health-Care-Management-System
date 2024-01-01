@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('avatar')->nullable();
             $table->string('email')->unique();
+            $table->string('about')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('user_type', ['admin', 'healthcare_provider', 'patient'])->default('patient');
@@ -23,7 +24,9 @@ return new class extends Migration
             $table->date('dob')->nullable();
             $table->string('gender')->nullable();
             $table->string('blood_group')->nullable();
-            $table->string('qualifiation')->nullable();
+            $table->string('school')->nullable();
+            $table->string('course')->nullable();
+            $table->string('qualification')->nullable();
             $table->string('nin_no')->unique()->nullable();
             $table->string('license_no')->unique()->nullable();
             $table->string('place_of_work')->nullable();

@@ -11,7 +11,9 @@
 
 <!-- Custom Css -->
 <link rel="stylesheet" href="{{asset('assets/css/main.css')}}"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+@livewireStyles
 </head>
 
 <body class="theme-cyan authentication">
@@ -24,5 +26,17 @@
 <script src="{{asset('assets/bundles/vendorscripts.bundle.js')}}"></script> <!-- Lib Scripts Plugin Js -->
 
 <script src="{{asset('assets/bundles/mainscripts.bundle.js')}}"></script><!-- Custom Js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    window.addEventListener('showToastr', function(event){
+        toastr.remove();
+        if(  event.detail.type === 'info' ){ toastr.info(event.detail.message); }
+        else if( event.detail.type === 'success' ){ toastr.success(event.detail.message); }
+        else if( event.detail.type === 'error' ){ toastr.error(event.detail.message); }
+        else if( event.detail.type === 'warning' ){ toastr.warning(event.detail.message); }
+        else{ return false; }
+    });
+</script>
+@livewireScripts
 </body>
 </html>
