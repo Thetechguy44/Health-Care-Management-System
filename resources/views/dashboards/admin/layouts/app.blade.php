@@ -20,7 +20,7 @@
 <body >
 
 <!-- <livewire:admin-header-nav> -->
-@livewire('admin-header-nav')
+@livewire('admin.admin-header-nav')
 
 @include('dashboards.admin.layouts.side')
   

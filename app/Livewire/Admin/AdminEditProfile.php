@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\User;
@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminEditProfile extends Component
 {
-    public $id, $avatar, $name, $email, $dob, $selectedGender, $genderOptions, $address, $city, $lga, $state, $phone, $school, $course, $qualification, $facebook_url, $instagram_url, $twitter_url, $linkedin_url;
+    public $id, $avatar, $name, $email, $about, $dob, $selectedGender, $genderOptions, $address, $city, $lga, $state, $phone, $school, $course, $qualification, $facebook_url, $instagram_url, $twitter_url, $linkedin_url;
     
     public $current_password, $new_password, $new_password_confirmation;
     
@@ -38,6 +38,7 @@ class AdminEditProfile extends Component
         $this->state = $this->profile->state;
         $this->phone = $this->profile->phone;
         $this->school = $this->profile->school;
+        $this->course = $this->profile->course_of_study;
         $this->qualification = $this->profile->qualification;
         $this->facebook_url = $this->profile->facebook_url;
         $this->instagram_url = $this->profile->instagram_url;
@@ -79,6 +80,7 @@ class AdminEditProfile extends Component
         $this->validate([
             'name'=>'required|max:30',
             'email'=>'required|email|unique:users,email,'.$this->id,
+            'about'=>'nullable',
             'dob'=>'nullable',
             'selectedGender'=>'required',
             'address'=>'nullable',
@@ -91,6 +93,7 @@ class AdminEditProfile extends Component
         User::find(Auth::user()->id)->update([
             'name'=>$this->name,
             'email'=>$this->email,
+            'about'=>$this->about,
             'dob'=>$this->dob,
             'gender'=>$this->selectedGender,
             'address'=>$this->address,
@@ -105,15 +108,17 @@ class AdminEditProfile extends Component
 
     public function updateAdminEducation()
     {
-        $this->validate([
-            'school'=>'required',
-            'course'=>'required',
-            'qualification'=>'required',
+        $validatedData = $this->validate([
+            'school' => 'required',
+            'course' => 'required',
+            'qualification' => 'required',
         ]);
+
+        // dd($validatedData);
 
        User::find($this->id)->update([
             'school'=>$this->school,
-            'course'=>$this->course,
+            'course_of_study'=>$this->course,
             'qualification'=>$this->qualification,
         ]);
 
@@ -174,6 +179,6 @@ class AdminEditProfile extends Component
 
     public function render()
     {
-        return view('livewire.admin-edit-profile');
+        return view('livewire.admin.admin-edit-profile');
     }
 }

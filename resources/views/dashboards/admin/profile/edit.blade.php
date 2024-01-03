@@ -2,6 +2,6 @@
 @section('title', isset($title) ? $title: 'Edit Profile')
 @section('content')
 <div class="page-wrapper" style="min-height: 648px;">
-@livewire('admin-edit-profile')
+@livewire('admin.admin-edit-profile')
 </div>
 @endsection

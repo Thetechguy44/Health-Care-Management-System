@@ -17,10 +17,12 @@
                     <div class="col-md-4">
                         <div class="profile-img-wrap">
                             <div class="profile-img">
-                                <div wire:loading wire:target="avatar">Loading</div>
-                                @if($avatar)
-                                <img class="avatar" src="" alt="" id="adminPicture">
-                                @endif
+                            @if( auth()->user()->avatar != null )
+                                <img class="avatar" src="{{asset('storage/avatars/'.auth()->user()->avatar)}}" alt="" id="adminPicture">
+                            @else
+                                <img class="avatar" src="{{asset('default/users/img/default-avatar.png')}}" alt="" id="adminPicture">
+                                
+                            @endif
                             </div>
                         </div>
                     </div>
@@ -38,7 +40,7 @@
                             </div>
                         </div>
                         <div class="text-center m-t-20">
-                            <button class="btn btn-primary submit-btn" type="submit"><div wire:loading wire:target="updateAvatar()"></div>Update</button>
+                            <button class="btn btn-primary submit-btn" type="submit">Update</button>
                         </div>
                     </div>
                 </div>
@@ -101,6 +103,18 @@
                             <label class="focus-label">Address</label>
                             <input type="text" class="form-control floating" wire:model="address">
                             @error('address')
+                                <span class="alert text-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Blog Description</label>
+                            <textarea cols="30" rows="6" class="form-control" wire:model="about"></textarea>
+                            @error('about')
                                 <span class="alert text-danger" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -179,7 +193,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group form-focus focused">
-                            <label class="focus-label">Subject</label>
+                            <label class="focus-label">Course of study</label>
                             <input type="text" class="form-control floating" wire:model="course">
                             @error('course')
                                 <span class="alert text-danger" role="alert">

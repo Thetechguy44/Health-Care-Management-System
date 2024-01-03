@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('gender')->nullable();
             $table->string('blood_group')->nullable();
             $table->string('school')->nullable();
-            $table->string('course')->nullable();
+            $table->string('course_of_study')->nullable();
             $table->string('qualification')->nullable();
             $table->string('nin_no')->unique()->nullable();
             $table->string('license_no')->unique()->nullable();

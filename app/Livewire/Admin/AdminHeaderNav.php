@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\User;
@@ -15,7 +15,7 @@ class AdminHeaderNav extends Component
         'updateAdminHeaderNav'=> '$refresh'
     ];
 
-    public function mount(){
+    public function mount(){ 
         $this->admin = Auth::user();
     }
     public function render()
