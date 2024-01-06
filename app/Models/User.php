@@ -9,6 +9,9 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Auth;
+use App\Models\Admin;
+use App\Models\HealthProvider;
+use App\Models\Patient;
 
 
 class User extends Authenticatable
@@ -91,5 +94,15 @@ class User extends Authenticatable
     public function admin()
     {
         return $this->hasmany(Admin::class, 'id');
+    }
+
+    public function healthcare_provider()
+    {
+        return $this->hasmany(HealthProvider::class, 'id');
+    }
+
+    public function patient()
+    {
+        return $this->hasmany(Patients::class, 'id');
     }
 }

@@ -1,4 +1,3 @@
-{{ config('app.name', 'Laravel') }}
 <section> 
     <!-- Left Sidebar -->
     <aside id="leftsidebar" class="sidebar"> 

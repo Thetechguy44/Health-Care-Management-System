@@ -87,43 +87,43 @@ class ProfileController extends Controller
         //
     }
 
-    public function updateAvatar()
-    {
-        $request->validate([
-            'image' => 'required|image|max:2048',
-        ]);
+    // public function updateAvatar()
+    // {
+    //     $request->validate([
+    //         'image' => 'required|image|max:2048',
+    //     ]);
     
-        $image = $request->file('image');
-        $filename = time() . '.' . $image->getClientOriginalExtension();
-        $croppedImage = Image::make($image)->resize(300, 300, function ($constraint) {
-            $constraint->aspectRatio();
-        })->save(public_path('uploads/' . $filename));
+    //     $image = $request->file('image');
+    //     $filename = time() . '.' . $image->getClientOriginalExtension();
+    //     $croppedImage = Image::make($image)->resize(300, 300, function ($constraint) {
+    //         $constraint->aspectRatio();
+    //     })->save(public_path('uploads/' . $filename));
     
-        return response()->json(['status' => 'success', 'filename' => $filename]);
-    }
+    //     return response()->json(['status' => 'success', 'filename' => $filename]);
+    // }
 
-    public function updateAdminPassword()
-    {
-        $this->validate([
-            'current_password'=>[
-                'required', function($attribute, $value, $fail){
-                    if(!Hash::check($value, Auth::user()->password)){
-                        return $fail(_('The current password is incorrect'));
-                    }
-                }
-            ],
-            'new_password'=>'required|min:8|max:16|confirmed'
-        ]);
+    // public function updateAdminPassword()
+    // {
+    //     $this->validate([
+    //         'current_password'=>[
+    //             'required', function($attribute, $value, $fail){
+    //                 if(!Hash::check($value, Auth::user()->password)){
+    //                     return $fail(_('The current password is incorrect'));
+    //                 }
+    //             }
+    //         ],
+    //         'new_password'=>'required|min:8|max:16|confirmed'
+    //     ]);
         
-        $query = User::find($this->id)->update([
-            'password'=>Hash::make($this->new_password)
-        ]);
+    //     $query = User::find($this->id)->update([
+    //         'password'=>Hash::make($this->new_password)
+    //     ]);
 
-        if($query){
-            $this->current_password = $this->new_password = $this->new_password_confirmation = null;
-            return back()->with('success','Password successfully change');
-        }else{
-            return back()->with('error','something went wrong');
-        }
-    }
+    //     if($query){
+    //         $this->current_password = $this->new_password = $this->new_password_confirmation = null;
+    //         return back()->with('success','Password successfully change');
+    //     }else{
+    //         return back()->with('error','something went wrong');
+    //     }
+    // }
 }

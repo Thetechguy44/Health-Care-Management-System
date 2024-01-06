@@ -55,11 +55,11 @@ class LoginController extends Controller
             } 
             else if(auth()->user()->user_type == "healthcare_provider")
             {
-                return redirect()->route('healthcare.home');
+                return redirect()->route('healthcare_provider.home');
             }
             else if(auth()->user()->user_type == "patient")
             {
-                return redirect()->route('patient.home');
+                return redirect()->route('home');
             }
         }
         else{

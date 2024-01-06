@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<title>:: Swift - Hospital Admin ::</title>
+<title>@yield('title')</title>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
@@ -51,6 +51,7 @@
                 </ul>
             </li>
         </ul>
+
         <div>
             @yield('content')
         </div>
@@ -80,5 +81,28 @@
     });
 </script>
 @livewireScripts
+    @if(session('success'))
+        <script>
+            toastr.success('{{ session('success') }}');
+        </script>
+    @endif
+
+    @if(session('error'))
+        <script>
+            toastr.error('{{ session('error') }}');
+        </script>
+    @endif
+
+    @if(session('warning'))
+        <script>
+            toastr.warning('{{ session('warning') }}');
+        </script>
+    @endif
+
+    @if(session('info'))
+        <script>
+            toastr.info('{{ session('info') }}');
+        </script>
+    @endif
 </body>
 </html>
