@@ -1,13 +1,13 @@
-@extends('dashboards.layouts.app')
+@extends('dashboards.healthcare-provider.layouts.app')
 @section('title', isset($title) ? $title: 'Dashboard')
 @section('content')
-@include('dashboards.layouts.nav')
-@include('dashboards.layouts.side')
+@include('dashboards.healthcare-provider.layouts.nav')
+@include('dashboards.healthcare-provider.layouts.side')
 <section class="content home">
     <div class="container-fluid">
         <div class="block-header">
             <h2>Dashboard</h2>
-            <small class="text-muted">Welcome to Swift application</small>
+            <small class="text-muted">Welcome to e-HMS application</small>
         </div>
         
         <div class="row clearfix">
@@ -196,41 +196,6 @@
                                     <td>@Rose</td>
                                     <td><span class="label label-danger">Fever</span> </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Julie </td>
-                                    <td>Gaylord</td>
-                                    <td>@Julie </td>
-                                    <td><span class="label label-info">Cancer</span> </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Jacqueline </td>
-                                    <td>Woods</td>
-                                    <td>@Woods</td>
-                                    <td><span class="label label-warning">Lakva</span> </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Jonathan </td>
-                                    <td>Lewis</td>
-                                    <td>@Jonathan </td>
-                                    <td><span class="label label-success">Dental</span> </td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Margaret </td>
-                                    <td>Griffin</td>
-                                    <td>@Margaret </td>
-                                    <td><span class="label label-info">Cancer</span> </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>Joseph </td>
-                                    <td>Hunter</td>
-                                    <td>@Hunter</td>
-                                    <td><span class="label label-success">Dental</span> </td>
-                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -291,30 +256,6 @@
                                 <tbody>
                                     <tr>
                                         <td>Dean Otto</td>
-                                        <td>
-                                            <span class="sparkbar"><canvas width="34" height="16" style="display: inline-block; width: 34px; height: 16px; vertical-align: top;"></canvas></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>K. Thornton</td>
-                                        <td>
-                                        <span class="sparkbar"><canvas width="34" height="16" style="display: inline-block; width: 34px; height: 16px; vertical-align: top;"></canvas></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kane D.</td>
-                                        <td>
-                                            <span class="sparkbar"><canvas width="34" height="16" style="display: inline-block; width: 34px; height: 16px; vertical-align: top;"></canvas></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jack Bird</td>
-                                        <td>
-                                            <span class="sparkbar"><canvas width="34" height="16" style="display: inline-block; width: 34px; height: 16px; vertical-align: top;"></canvas></span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Hughe L.</td>
                                         <td>
                                             <span class="sparkbar"><canvas width="34" height="16" style="display: inline-block; width: 34px; height: 16px; vertical-align: top;"></canvas></span>
                                         </td>
