@@ -56,7 +56,7 @@ class AdminEditProfile extends Component
 
         if($this->avatar){
             // Delete the old avatar image if it exists
-            $destination = 'default/users/img/' . $user->avatar;
+            $destination = 'storage/avatars/' . $user->avatar;
             if (File::exists($destination)) {
                 File::delete($destination);
             }

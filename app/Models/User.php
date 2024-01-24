@@ -93,16 +93,16 @@ class User extends Authenticatable
 
     public function admin()
     {
-        return $this->hasmany(Admin::class, 'id');
+        return $this->hasmany(Admin::class);
     }
 
-    public function healthcare_provider()
+    public function healthProvider()
     {
-        return $this->hasmany(HealthProvider::class, 'id');
+        return $this->hasOne(HealthProvider::class);
     }
 
     public function patient()
     {
-        return $this->hasmany(Patients::class, 'id');
+        return $this->hasmany(Patients::class);
     }
 }

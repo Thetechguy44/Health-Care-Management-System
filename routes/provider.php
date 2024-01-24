@@ -22,5 +22,6 @@ Route::prefix('healthcare_provider')->name('healthcare_provider.')->group(functi
 
     Route::middleware(['auth','user-type:healthcare_provider'])->group(function(){
         Route::get('/dashboard', [App\Http\Controllers\Healthcare\HomeController::class, 'index'])->name('home');
+        Route::resource('/profile', App\Http\Controllers\Healthcare\ProfileController::class);
     });
 });

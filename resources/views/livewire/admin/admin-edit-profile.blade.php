@@ -96,6 +96,11 @@
                                 <option value="{{ $option }}">{{ ucfirst($option) }}</option>
                             @endforeach
                             </select>
+                            @error('selectedGender')
+                                <span class="alert text-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -112,7 +117,7 @@
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Blog Description</label>
+                            <label>About</label>
                             <textarea cols="30" rows="6" class="form-control" wire:model="about"></textarea>
                             @error('about')
                                 <span class="alert text-danger" role="alert">

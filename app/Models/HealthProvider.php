@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Speciality;
 
 class HealthProvider extends Model
 {
@@ -25,6 +26,11 @@ class HealthProvider extends Model
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class);
+    }
+
+    public function speciality(): BelongsTo
+    {
+        return $this->belongsTo(Speciality::class, 'speciality_id');
     }
 }
