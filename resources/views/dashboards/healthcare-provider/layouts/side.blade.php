@@ -3,9 +3,15 @@
     <aside id="leftsidebar" class="sidebar"> 
         <!-- User Info -->
         <div class="user-info">
-            <div class="admin-image"> <img src="assets/images/random-avatar7.jpg" alt=""> </div>
+            <div class="admin-image">
+                @if( auth()->user()->avatar != null )
+                    <img src="{{asset('storage/avatars/'.auth()->user()->avatar)}}" alt="">
+                @else
+                    <img src="{{asset('default/users/img/default-avatar.png')}}" alt="">
+                @endif 
+            </div>
             <div class="admin-action-info"> <span>Welcome</span>
-                <h3>Dr. John</h3>
+                <h3>Dr. {{auth()->user()->name}}</h3>
                 <ul>
                     <li><a href="" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
                     <li><a href="{{route('healthcare_provider.profile.index')}}" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>
