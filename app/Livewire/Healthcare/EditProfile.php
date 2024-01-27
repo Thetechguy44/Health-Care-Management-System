@@ -38,6 +38,7 @@ class EditProfile extends Component
         $this->id = $profile->id;
         $this->name = $profile->name;
         $this->email = $profile->email;
+        $this->about = $profile->about;
         $this->avatar = $profile->avatar;
         $this->dob = $profile->dob;
         $this->genderOptions = ['male', 'female', 'other'];

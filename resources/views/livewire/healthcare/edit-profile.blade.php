@@ -143,7 +143,7 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <textarea rows="4" class="form-control no-resize" placeholder="Write a short bio about yourself" wire:model="about"></textarea>
+                                                <textarea rows="4" class="form-control no-resize" placeholder="Write a short bio about yourself" wire:model="about">{{$about}}</textarea>
                                             </div>
                                             @error('about')
                                                 <span class="alert text-danger" role="alert">
