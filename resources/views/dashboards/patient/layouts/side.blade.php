@@ -11,11 +11,10 @@
                 @endif 
             </div>
             <div class="admin-action-info"> <span>Welcome</span>
-                <h3>Dr. John</h3>
+                <h3>{{auth()->user()->name}}</h3>
                 <ul>
-                    <li><a href="mail-inbox.html" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
-                    <li><a href="profile.html" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>
-                    <li><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="zmdi zmdi-settings"></i></a></li>
+                    <li><a href="" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
+                    <li><a href="{{ route('profile.index') }}" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>
                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="sign out" ><i class="zmdi zmdi-sign-in"></i></a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
@@ -25,7 +24,7 @@
         </div>
         <!-- #User Info --> 
         <!-- Menu -->
-        <div class="menu">
+        <div class="menu py-5">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="active open"><a href="index-2.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>                                               

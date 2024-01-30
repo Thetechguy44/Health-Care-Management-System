@@ -22,4 +22,5 @@ Auth::routes();
 
 Route::middleware(['auth','user-type:patient'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('/profile', App\Http\Controllers\ProfileController::class);
 });

@@ -115,6 +115,7 @@
                                         <div class="form-group">
                                             <div class="form-line">
                                                 <select class="form-control" wire:model="selectedGender">
+                                                <option selected>-- select --</option>
                                                 @foreach ($genderOptions as $option)
                                                     <option value="{{ $option }}">{{ ucfirst($option) }}</option>
                                                 @endforeach

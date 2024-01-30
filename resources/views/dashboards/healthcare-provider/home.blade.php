@@ -334,4 +334,5 @@
         </div>
 	</div>
 </section>
+<div class="color-bg"></div>
 @endsection
