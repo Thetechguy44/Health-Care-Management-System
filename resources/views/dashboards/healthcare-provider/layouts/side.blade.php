@@ -11,7 +11,7 @@
                 @endif 
             </div>
             <div class="admin-action-info"> <span>Welcome</span>
-                <h3>Dr. {{auth()->user()->name}}</h3>
+                <h3>Dr. {{auth()->user()->firstname}}</h3>
                 <ul>
                     <li><a href="" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
                     <li><a href="{{route('healthcare_provider.profile.index')}}" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>

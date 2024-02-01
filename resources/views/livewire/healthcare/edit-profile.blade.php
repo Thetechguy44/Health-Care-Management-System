@@ -78,9 +78,33 @@
                                     <div class="col-lg-6 col-md-12">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="form-control" placeholder="Name" wire:model="name">
+                                                <input type="text" class="form-control" placeholder="First Name" wire:model="firstname">
                                             </div>
-                                            @error('name')
+                                            @error('firstname')
+                                                    <span class="alert text-danger" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" placeholder="Last Name" wire:model="lastname">
+                                            </div>
+                                            @error('lastname')
+                                                    <span class="alert text-danger" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" class="form-control" placeholder="Other Name" wire:model="othername">
+                                            </div>
+                                            @error('othername')
                                                     <span class="alert text-danger" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -512,7 +536,7 @@
                     </div>
 
                     <div class="card">
-                        <h2 class="card-inside-title">Work Experience</h2>
+                        <h2 class="card-inside-title">Work Information</h2>
                         <div class="body">
                             <form wire:submit.prevent='updateWorkExperience()'>
                                 @if (session()->has('workexperience'))
@@ -524,35 +548,10 @@
                                     <div class="col-lg-6 col-md-12">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="form-control" placeholder="Employment status" wire:model="employment_status">
-                                            </div>
-                                            @error('employment_status')
-                                                <span class="alert text-danger" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-12">
-                                        <div class="form-group">
-                                            <div class="form-line">
                                                 <input type="text" class="form-control" placeholder="Place of work" wire:model="place_of_work">
                                             </div>
                                             <small class="form-text text-muted">Add your work place if you are employed.</small>
                                             @error('place_of_work')
-                                                <span class="alert text-danger" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-12">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" class="form-control" placeholder="Job Position" wire:model="job_position">
-                                            </div>
-                                            <small class="form-text text-muted">Add your current position at your work place.</small>
-                                            @error('job_position')
                                                 <span class="alert text-danger" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

@@ -11,7 +11,7 @@
                     <div class="profile-header">
                         <div class="profile_info">
                             <div class="profile-image"> <img src="{{$profile->picture}}" alt="" width="200px" height="200px"> </div>
-                            <h4 class="mb-0"><strong>Dr. </strong>{{$profile->name}} </h4>
+                            <h4 class="mb-0"><strong>Dr. </strong>{{$profile->firstname}} {{$profile->lastname}} {{$profile->othername}}</h4>
                             @auth
                               @if(auth()->user()->healthProvider)
                                 <span class="text-muted col-white">{{ auth()->user()->healthProvider->role }}</span>
@@ -51,7 +51,7 @@
                     <div class="body">
                         <p class="text-default">{{$profile->about}}</p>
                         <blockquote>
-                         <small>By <cite title="Source Title">{{$profile->name}}</cite></small> 
+                         <small>By <cite title="Source Title">{{$profile->firstname}} {{$profile->lastname}} {{$profile->othername}}</cite></small> 
                         </blockquote>
                     </div>
                 </div>
@@ -64,5 +64,4 @@
         </div>
     </div>
 </section>
-<div class="color-bg"></div>
 @endsection

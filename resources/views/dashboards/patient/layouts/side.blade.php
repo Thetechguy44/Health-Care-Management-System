@@ -11,7 +11,7 @@
                 @endif 
             </div>
             <div class="admin-action-info"> <span>Welcome</span>
-                <h3>{{auth()->user()->name}}</h3>
+                <h3>{{auth()->user()->firstname}}</h3>
                 <ul>
                     <li><a href="" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
                     <li><a href="{{ route('profile.index') }}" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>
@@ -27,11 +27,11 @@
         <div class="menu py-5">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active open"><a href="index-2.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>                                               
+                <li class="active open"><a href="{{route('home')}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>                                               
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
                     <ul class="ml-menu">
                         <li><a href="doctor-schedule.html">Appointments</a></li>
-                        <li><a href="book-appointment.html">Book Appointment</a></li>
+                        <li><a href="{{route('appointment.index')}}">Book Appointment</a></li>
                     </ul>
                 </li>
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>

@@ -21,7 +21,6 @@
                                 <img class="avatar" src="{{asset('storage/avatars/'.auth()->user()->avatar)}}" alt="" id="adminPicture">
                             @else
                                 <img class="avatar" src="{{asset('default/users/img/default-avatar.png')}}" alt="" id="adminPicture">
-                                
                             @endif
                             </div>
                         </div>
@@ -57,9 +56,31 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group form-focus focused">
-                            <label class="focus-label">Full Name</label>
-                            <input type="text" class="form-control floating" wire:model="name">
-                            @error('name')
+                            <label class="focus-label">First Name</label>
+                            <input type="text" class="form-control floating" wire:model="firstname">
+                            @error('firstname')
+                                <span class="alert text-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-focus focused">
+                            <label class="focus-label">Last Name</label>
+                            <input type="text" class="form-control floating" wire:model="lastname">
+                            @error('lastname')
+                                <span class="alert text-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-focus focused">
+                            <label class="focus-label">Other Name</label>
+                            <input type="text" class="form-control floating" wire:model="othername">
+                            @error('othername')
                                 <span class="alert text-danger" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -118,7 +139,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>About</label>
-                            <textarea cols="30" rows="6" class="form-control" wire:model="about"></textarea>
+                            <textarea cols="30" rows="6" class="form-control" wire:model="about">{{$about}}</textarea>
                             @error('about')
                                 <span class="alert text-danger" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -164,54 +185,6 @@
                             <label class="focus-label">Phone Number</label>
                             <input type="text" class="form-control floating" wire:model="phone">
                             @error('phone')
-                                <span class="alert text-danger" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center m-t-20">
-                    <button class="btn btn-primary submit-btn" type="submit">Save</button>
-                </div>
-            </div>
-        </form>
-        <form wire:submit.prevent='updateAdminEducation()'>
-            <div class="card-box">
-                <h3 class="card-title">Education Informations</h3>
-                @if (session()->has('eduinfo'))
-                <div class="alert alert-success">
-                    {{session('eduinfo')}}
-                </div>
-                @endif
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group form-focus focused">
-                            <label class="focus-label">Institution</label>
-                            <input type="text" class="form-control floating" wire:model="school">
-                            @error('school')
-                                <span class="alert text-danger" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group form-focus focused">
-                            <label class="focus-label">Course of study</label>
-                            <input type="text" class="form-control floating" wire:model="course">
-                            @error('course')
-                                <span class="alert text-danger" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group form-focus focused">
-                            <label class="focus-label">Qualification</label>
-                            <input type="text" class="form-control floating" wire:model="qualification">
-                            @error('qualification')
                                 <span class="alert text-danger" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

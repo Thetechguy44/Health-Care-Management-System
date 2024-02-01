@@ -19,10 +19,14 @@
                         <h2>About Patient</h2>
                     </div>
                     <div class="body">
-                        <strong>Name</strong>
-                        <p>{{$profile->name}}</p>
+                        <strong>First Name</strong>
+                        <p>{{$profile->firstname}}</p>
+                        <strong>Last Name</strong>
+                        <p>{{$profile->lastname}}</p>
+                        <strong>Other Name</strong>
+                        <p>{{$profile->othername}}</p>
                         <strong>Occupation</strong>
-                        <p>{{$profile->place_of_work}}</p>
+                        <p>{{$profile->occupation}}</p>
                         <strong>Email ID</strong>
                         <p>{{$profile->email}}</p>
                         <strong>Phone</strong>

@@ -30,7 +30,7 @@
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="profile-info-left">
-                                                <h3 class="user-name m-t-0 mb-0">{{$profile->name}}</h3>
+                                                <h3 class="user-name m-t-0 mb-0">{{$profile->firstname}} {{$profile->lastname}} {{$profile->othername}}</h3>
                                                 <small class="text-muted">{{$profile->user_type}}</small>
                                                 <!-- <div class="staff-id">Employee ID : DR-0001</div> -->
                                                 <!-- <div class="staff-msg"><a href="" class="btn btn-primary">Send Message</a></div> -->
@@ -40,11 +40,11 @@
                                             <ul class="personal-info">
                                                 <li>
                                                     <span class="title">Phone:</span>
-                                                    <span class="text"><a href="#">{{$profile->phone}}</a></span>
+                                                    <span class="text">{{$profile->phone}}</span>
                                                 </li>
                                                 <li>
                                                     <span class="title">Email:</span>
-                                                    <span class="text"><a href="#">{{$profile->email}}</a></span>
+                                                    <span class="text">{{$profile->email}}</span>
                                                 </li>
                                                 <li>
                                                     <span class="title">Birthday:</span>

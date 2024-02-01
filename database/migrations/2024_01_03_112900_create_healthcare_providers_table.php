@@ -15,9 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('speciality_id')->nullable();
-            $table->string('status')->nullable();
             $table->enum('role', ['Doctor', 'Nurse', 'Community Health']);
-            $table->string('community_category')->nullable();
             $table->string('nurse_category')->nullable();
             $table->text('available_days')->nullable();
             $table->text('available_times')->nullable();

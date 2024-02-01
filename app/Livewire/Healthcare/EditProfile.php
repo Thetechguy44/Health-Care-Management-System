@@ -19,8 +19,8 @@ class EditProfile extends Component
     protected $queryString = ['tab'];
     public $selectedSpeciality;
     
-    public $id, $avatar, $name, $email, $about, $dob, $selectedGender, $genderOptions, $nurseOptions, $specialities, $address, $city, $lga, $state, $phone, $school, $course, $qualification, $facebook_url, $instagram_url, $twitter_url, $linkedin_url;
-    public $employment_status, $place_of_work, $job_position, $reference;
+    public $id, $avatar, $firstname, $lastname, $othername, $email, $about, $dob, $selectedGender, $genderOptions, $nurseOptions, $specialities, $address, $city, $lga, $state, $phone, $school, $course, $qualification, $facebook_url, $instagram_url, $twitter_url, $linkedin_url;
+    public $place_of_work, $reference;
     public $license_no, $license_img, $nin_no;
     public $nurse_category, $speciality, $available_days, $available_times;
     public $current_password, $new_password, $new_password_confirmation;
@@ -36,7 +36,9 @@ class EditProfile extends Component
 
         $profile = Auth::user();
         $this->id = $profile->id;
-        $this->name = $profile->name;
+        $this->firstname = $profile->firstname;
+        $this->lastname = $profile->lastname;
+        $this->othername = $profile->othername;
         $this->email = $profile->email;
         $this->about = $profile->about;
         $this->avatar = $profile->avatar;
@@ -48,12 +50,10 @@ class EditProfile extends Component
         $this->lga = $profile->lga;
         $this->state = $profile->state;
         $this->phone = $profile->phone;
-        $this->school = $profile->school;
-        $this->course = $profile->course_of_study;
+        $this->school = $profile->school_attended;
+        $this->course = $profile->subject;
         $this->qualification = $profile->qualification;
-        $this->employment_status = $profile->employment_status;
         $this->place_of_work = $profile->place_of_work;
-        $this->job_position = $profile->job_position;
         $this->reference = $profile->reference;
         $this->license_no = $profile->license_no;
         $this->license_img = $profile->license_img;
@@ -114,7 +114,9 @@ class EditProfile extends Component
     public function updateHealthproviderBasicInfo()
     {
         $this->validate([
-            'name'=>'required|max:30',
+            'firstname'=>'required|max:30',
+            'lastname'=>'required|max:30',
+            'othername'=>'required|max:30',
             'email'=>'required|email|unique:users,email,'.$this->id,
             'about'=>'nullable',
             'dob'=>'nullable',
@@ -127,7 +129,9 @@ class EditProfile extends Component
         ]);
 
         User::find(Auth::user()->id)->update([
-            'name'=>$this->name,
+            'firstname'=>$this->firstname,
+            'lastname'=>$this->lastname,
+            'othername'=>$this->othername,
             'email'=>$this->email,
             'about'=>$this->about,
             'dob'=>$this->dob,
@@ -153,8 +157,8 @@ class EditProfile extends Component
         // dd($validatedData);
 
        User::find($this->id)->update([
-            'school'=>$this->school,
-            'course_of_study'=>$this->course,
+            'school_attended'=>$this->school,
+            'subject'=>$this->course,
             'qualification'=>$this->qualification,
         ]);
 
@@ -183,18 +187,14 @@ class EditProfile extends Component
     public function updateWorkExperience()
     {
         $validatedData = $this->validate([
-            'employment_status'=>'required',
             'place_of_work'=>'required',
-            'job_position'=>'required',
             'reference'=>'required',
         ]);
 
         //dd($validatedData);
 
         User::find($this->id)->update([
-            'employment_status'=>$this->employment_status,
             'place_of_work'=>$this->place_of_work,
-            'job_position'=>$this->job_position,
             'reference'=>$this->reference,
         ]);
 

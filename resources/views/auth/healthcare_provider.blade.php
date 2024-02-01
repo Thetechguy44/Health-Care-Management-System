@@ -12,9 +12,27 @@
                             <a href=""><img src="{{asset('admin/assets/img/logo-dark.png')}}" alt=""></a>
                         </div>
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" name="name" class="form-control">
-                            @error('name')
+                            <label>First Name</label>
+                            <input type="text" name="firstname" class="form-control">
+                            @error('firstname')
+                                <span class="alert text-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="lastname" class="form-control">
+                            @error('lastname')
+                                <span class="alert text-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Other Name</label>
+                            <input type="text" name="othername" class="form-control">
+                            @error('othername')
                                 <span class="alert text-danger" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

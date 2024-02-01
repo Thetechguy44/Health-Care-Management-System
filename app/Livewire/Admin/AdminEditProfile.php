@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminEditProfile extends Component
 {
-    public $id, $avatar, $name, $email, $about, $dob, $selectedGender, $genderOptions, $address, $city, $lga, $state, $phone, $school, $course, $qualification, $facebook_url, $instagram_url, $twitter_url, $linkedin_url;
+    public $id, $avatar, $firstname, $lastname, $othername, $email, $about, $dob, $selectedGender, $genderOptions, $address, $city, $lga, $state, $phone, $school, $course, $qualification, $facebook_url, $instagram_url, $twitter_url, $linkedin_url;
     
     public $current_password, $new_password, $new_password_confirmation;
     
@@ -26,7 +26,9 @@ class AdminEditProfile extends Component
     {
         $this->profile = Auth::user();
         $this->id = $this->profile->id;
-        $this->name = $this->profile->name;
+        $this->firstname = $this->profile->firstname;
+        $this->lastname = $this->profile->lastname;
+        $this->othername = $this->profile->othername;
         $this->email = $this->profile->email;
         $this->avatar = $this->profile->avatar;
         $this->dob = $this->profile->dob;
@@ -78,7 +80,9 @@ class AdminEditProfile extends Component
     public function updateAdminBasicInfo()
     {
         $this->validate([
-            'name'=>'required|max:30',
+            'firstname'=>'required|max:30',
+            'lastname'=>'required|max:30',
+            'othername'=>'required|max:30',
             'email'=>'required|email|unique:users,email,'.$this->id,
             'about'=>'nullable',
             'dob'=>'nullable',
@@ -91,7 +95,9 @@ class AdminEditProfile extends Component
         ]);
 
         User::find(Auth::user()->id)->update([
-            'name'=>$this->name,
+            'firstname'=>$this->firstname,
+            'lastname'=>$this->lastname,
+            'othername'=>$this->othername,
             'email'=>$this->email,
             'about'=>$this->about,
             'dob'=>$this->dob,
@@ -104,25 +110,6 @@ class AdminEditProfile extends Component
         ]);
         
         session()->flash('basicinfo','Your basic info has been updated successfully.');
-    }
-
-    public function updateAdminEducation()
-    {
-        $validatedData = $this->validate([
-            'school' => 'required',
-            'course' => 'required',
-            'qualification' => 'required',
-        ]);
-
-        // dd($validatedData);
-
-       User::find($this->id)->update([
-            'school'=>$this->school,
-            'course_of_study'=>$this->course,
-            'qualification'=>$this->qualification,
-        ]);
-
-        session()->flash('eduinfo','Your education info has been updated successfully.');
     }
 
     public function updateSocialInfo()

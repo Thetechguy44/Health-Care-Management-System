@@ -77,9 +77,33 @@
                                             <div class="col-lg-6 col-md-12">
                                                 <div class="form-group">
                                                     <div class="form-line">
-                                                        <input type="text" class="form-control" placeholder="Name" wire:model="name">
+                                                        <input type="text" class="form-control" placeholder="First Name" wire:model="firstname">
                                                     </div>
-                                                    @error('name')
+                                                    @error('firstname')
+                                                            <span class="alert text-danger" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="text" class="form-control" placeholder="Last Name" wire:model="lastname">
+                                                    </div>
+                                                    @error('lastname')
+                                                            <span class="alert text-danger" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <input type="text" class="form-control" placeholder="Other Name" wire:model="othername">
+                                                    </div>
+                                                    @error('othername')
                                                             <span class="alert text-danger" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
@@ -114,7 +138,7 @@
                                                 <div class="form-group">
                                                     <div class="form-line">
                                                         <select class="form-control" wire:model="selectedGender">
-                                                            <option selected>-- select --</option>
+                                                            <option selected>-- Gender --</option>
                                                             @foreach ($genderOptions as $option)
                                                                 <option value="{{ $option }}">{{ ucfirst($option) }}</option>
                                                             @endforeach

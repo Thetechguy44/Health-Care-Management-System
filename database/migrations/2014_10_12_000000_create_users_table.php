@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('othername')->nullable();
             $table->string('avatar')->nullable();
             $table->string('email')->unique();
             $table->string('about')->nullable();
@@ -24,11 +26,12 @@ return new class extends Migration
             $table->date('dob')->nullable();
             $table->string('gender')->nullable();
             $table->string('blood_group')->nullable();
-            $table->string('school')->nullable();
-            $table->string('course_of_study')->nullable();
+            $table->string('school_attended')->nullable();
+            $table->string('subject')->nullable();
             $table->string('qualification')->nullable();
             $table->string('nin_no')->unique()->nullable();
             $table->string('license_no')->unique()->nullable();
+            $table->string('occupation')->nullable();
             $table->string('place_of_work')->nullable();
             $table->string('reference')->nullable();
             $table->string('price')->nullable();
@@ -39,6 +42,8 @@ return new class extends Migration
             $table->string('license_img')->nullable();
             $table->string('qualification_img')->nullable();
             $table->string('state')->nullable();
+            $table->string('status')->nullable();
+            $table->string('thememode')->nullable();
             $table->string('facebook_url')->nullable();
             $table->string('instagram_url')->nullable();
             $table->string('twitter_url')->nullable();

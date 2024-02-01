@@ -17,7 +17,7 @@ class PatientEditProfile extends Component
     public $tab = null;
     public $tabname = 'my_info';
     protected $queryString = ['tab'];
-    public $id, $avatar, $name, $email, $about, $dob, $selectedGender, $genderOptions, $address, $city, $blood_group, $occupation, $lga, $state, $phone;
+    public $id, $avatar, $firstname, $lastname, $othername, $email, $about, $dob, $selectedGender, $genderOptions, $address, $city, $blood_group, $occupation, $lga, $state, $phone;
     public $current_password, $new_password, $new_password_confirmation;
 
     public function selectTab($tab)
@@ -31,7 +31,9 @@ class PatientEditProfile extends Component
 
         $profile = Auth::user();
         $this->id = $profile->id;
-        $this->name = $profile->name;
+        $this->firstname = $profile->firstname;
+        $this->lastname = $profile->lastname;
+        $this->othername = $profile->othername;
         $this->email = $profile->email;
         $this->about = $profile->about;
         $this->avatar = $profile->avatar;
@@ -41,7 +43,7 @@ class PatientEditProfile extends Component
         $this->address = $profile->address;
         $this->city = $profile->city;
         $this->blood_group = $profile->blood_group;
-        $this->occupation = $profile->place_of_work;
+        $this->occupation = $profile->occupation;
         $this->lga = $profile->lga;
         $this->state = $profile->state;
         $this->phone = $profile->phone;
@@ -83,7 +85,9 @@ class PatientEditProfile extends Component
     public function updateHealthproviderBasicInfo()
     {
         $this->validate([
-            'name'=>'required|max:30',
+            'firstname'=>'required|max:30',
+            'lastname'=>'required|max:30',
+            'othername'=>'required|max:30',
             'email'=>'required|email|unique:users,email,'.$this->id,
             'about'=>'nullable',
             'dob'=>'nullable',
@@ -98,7 +102,9 @@ class PatientEditProfile extends Component
         ]);
 
         User::find(Auth::user()->id)->update([
-            'name'=>$this->name,
+            'firstname'=>$this->firstname,
+            'lastname'=>$this->lastname,
+            'othername'=>$this->othername,
             'email'=>$this->email,
             'about'=>$this->about,
             'dob'=>$this->dob,
@@ -107,7 +113,7 @@ class PatientEditProfile extends Component
             'lga'=>$this->lga,
             'city'=>$this->city,
             'blood_group'=>$this->blood_group,
-            'place_of_work'=>$this->occupation,
+            'occupation'=>$this->occupation,
             'state'=>$this->state,
             'phone'=>$this->phone,
         ]);

@@ -43,7 +43,9 @@ class RegisterHealthcareController extends Controller
     protected function create(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'othername' => 'nullable|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'phone' => 'required|int',
@@ -52,7 +54,9 @@ class RegisterHealthcareController extends Controller
         ]);
 
         $user = User::create([
-            'name' => $request['name'],
+            'firstname' => $request['firstname'],
+            'lastname' => $request['lastname'],
+            'othername' => $request['othername'],
             'email' => $request['email'],
             'user_type' => 'healthcare_provider',
             'password' => Hash::make($request['password']),
