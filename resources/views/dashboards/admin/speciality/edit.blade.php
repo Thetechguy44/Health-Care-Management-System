@@ -17,7 +17,7 @@
             <div class="card-box">
                 <div class="form-group form-focus focused">
                     <label class="focus-label">Speciality</label>
-                    <input type="text" class="form-control floating" name="speciality" value="{{$speciality->specialities}}">
+                    <input type="text" class="form-control floating" name="speciality" value="{{$speciality->name}}">
                     @error('speciality')
                         <span class="alert text-danger" role="alert">
                             <strong>{{ $message }}</strong>

@@ -23,7 +23,7 @@ class AdminUserSeeder extends Seeder
             'password' => Hash::make('password'),
             'user_type' => 'admin',
             'phone' => '1234567890',
-            'gender' => 'Male',
+            'gender' => 'male',
         ]);
 
         // Create an admin record associated with the user

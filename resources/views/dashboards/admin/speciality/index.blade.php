@@ -29,7 +29,7 @@
                         @foreach ($specialities as $speciality)
                             <tr>
                                 <td>{{$i++}}</td>
-                                <td>{{$speciality->specialities}}</td>
+                                <td>{{$speciality->name}}</td>
                                 <td>
                                     <div class="dropdown dropdown-action">
                                         <form action="{{route('admin.specialities.destroy',$speciality->id)}}" method="Post">

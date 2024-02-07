@@ -30,8 +30,8 @@
                 <li class="active open"><a href="{{route('home')}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>                                               
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
                     <ul class="ml-menu">
-                        <li><a href="doctor-schedule.html">Appointments</a></li>
-                        <li><a href="{{route('appointment.index')}}">Book Appointment</a></li>
+                        <li><a href="{{route('appointment.index')}}">Appointments</a></li>
+                        <li><a href="{{route('appointment.create')}}">Book Appointment</a></li>
                     </ul>
                 </li>
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>

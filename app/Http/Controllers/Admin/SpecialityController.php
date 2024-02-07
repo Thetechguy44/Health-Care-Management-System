@@ -35,7 +35,7 @@ class SpecialityController extends Controller
         ]);
 
         $speciality = new Speciality();
-        $speciality->specialities = $request->speciality;
+        $speciality->name = $request->speciality;
         $speciality->save();
 
         return redirect()->route('admin.specialities.index')->with('success', 'Speciality Added Successfully.');
@@ -69,7 +69,7 @@ class SpecialityController extends Controller
         ]);
 
         Speciality::findorFail($id)->update([
-            'specialities'=>$request->speciality,
+            'name'=>$request->speciality,
         ]);
 
         return redirect()->route('admin.specialities.index')->with('success', 'Speciality Updated Successfully.');

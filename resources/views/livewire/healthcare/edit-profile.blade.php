@@ -257,7 +257,7 @@
                                                     <select class="form-control" wire:model="speciality">
                                                         <option value="" @if (!$speciality) selected @endif>-- Select Speciality --</option>
                                                         @foreach ($specialities as $s)
-                                                            <option value="{{ $s->id }}" @if ($speciality == $s->id) selected @endif>{{ $s->specialities }}</option>
+                                                            <option value="{{ $s->id }}" @if ($speciality == $s->id) selected @endif>{{ $s->name }}</option>
                                                         @endforeach
                                                     </select>
                                                     </div>
@@ -334,7 +334,7 @@
                                                             <select class="form-control" wire:model="speciality" required>
                                                                 <option value="" @if (!$speciality) selected @endif>-- Select Speciality --</option>
                                                                 @foreach ($specialities as $s)
-                                                                    <option value="{{ $s->id }}" @if ($speciality == $s->id) selected @endif>{{ $s->specialities }}</option>
+                                                                    <option value="{{ $s->id }}" @if ($speciality == $s->id) selected @endif>{{ $s->name }}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>

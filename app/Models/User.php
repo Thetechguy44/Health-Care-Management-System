@@ -109,6 +109,6 @@ class User extends Authenticatable
 
     public function patient()
     {
-        return $this->hasmany(Patients::class);
+        return $this->hasmany(Patient::class);
     }
 }

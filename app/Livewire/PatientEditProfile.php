@@ -87,7 +87,7 @@ class PatientEditProfile extends Component
         $this->validate([
             'firstname'=>'required|max:30',
             'lastname'=>'required|max:30',
-            'othername'=>'required|max:30',
+            'othername'=>'max:30',
             'email'=>'required|email|unique:users,email,'.$this->id,
             'about'=>'nullable',
             'dob'=>'nullable',

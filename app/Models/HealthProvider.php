@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Speciality;
+use App\Models\Appointment;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class HealthProvider extends Model
 {
@@ -33,5 +35,10 @@ class HealthProvider extends Model
     public function speciality(): BelongsTo
     {
         return $this->belongsTo(Speciality::class, 'speciality_id');
+    }
+
+    public function appointments(): HasMany
+    {
+        return $this->hasmany(Appointment::class, 'healthcare_provider_id');
     }
 }

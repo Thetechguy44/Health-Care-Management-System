@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('user_type', ['admin', 'healthcare_provider', 'patient'])->default('patient');
-            $table->string('phone')->unique()->nullable();
+            $table->string('phone')->nullable();
             $table->date('dob')->nullable();
             $table->string('gender')->nullable();
             $table->string('blood_group')->nullable();
