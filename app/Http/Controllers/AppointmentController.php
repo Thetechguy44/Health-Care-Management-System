@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\HealthProvider;
+use App\Models\Patient;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AppointmentController extends Controller
 {
@@ -12,8 +16,9 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $appointments = orderBy('created_at', 'desc')->get();
-        return view('dashboards.patient.appointment.index', compact('appointment'));
+        $patient = Auth::user()->patient;
+        $appointments = Appointment::where('patient_id', $patient->id)->with('healthProvider.user')->get();
+        return view('dashboards.patient.appointment.index', compact('appointments'));
     }
 
     /**

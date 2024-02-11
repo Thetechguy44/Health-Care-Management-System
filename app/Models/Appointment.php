@@ -19,7 +19,7 @@ protected $fillable = ['patient_id', 'healthcare_provider_id', 'speciality_id', 
         return $this->belongsTo(Patient::class, 'patient_id');
     }
 
-    public function provider()
+    public function healthProvider()
     {
         return $this->belongsTo(HealthProvider::class, 'healthcare_provider_id');
     }

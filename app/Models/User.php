@@ -99,7 +99,7 @@ class User extends Authenticatable
 
     public function admin()
     {
-        return $this->hasmany(Admin::class);
+        return $this->hasOne(Admin::class);
     }
 
     public function healthProvider()
@@ -109,6 +109,6 @@ class User extends Authenticatable
 
     public function patient()
     {
-        return $this->hasmany(Patient::class);
+        return $this->hasOne(Patient::class);
     }
 }

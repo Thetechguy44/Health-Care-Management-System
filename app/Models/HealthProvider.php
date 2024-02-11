@@ -27,7 +27,7 @@ class HealthProvider extends Model
         'available_times',
     ];
 
-    public function user(): BelongsTo
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
