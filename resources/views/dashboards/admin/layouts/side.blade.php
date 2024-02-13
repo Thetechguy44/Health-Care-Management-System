@@ -4,7 +4,7 @@
         <div id="sidebar-menu" class="sidebar-menu">
             <ul>
                 <li class="menu-title">Main</li>
-                <li class="active">
+                <li class="{{ Route::is('admin.home') ? 'active' : ''}}">
                     <a href="{{route('admin.home')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                 </li>
                 <li>
@@ -19,7 +19,7 @@
                 <li>
                     <a href="schedule.html"><i class="fa fa-calendar-check-o"></i> <span>Doctor Schedule</span></a>
                 </li>
-                <li>
+                <li class="{{ Route::is('admin.specialities.index') ? 'active' : ''}}">
                     <a href="{{route('admin.specialities.index')}}"><i class="fa fa-hospital-o"></i> <span>Specialities</span></a>
                 </li>
                 <li class="submenu">

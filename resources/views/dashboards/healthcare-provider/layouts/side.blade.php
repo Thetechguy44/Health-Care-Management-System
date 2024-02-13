@@ -36,8 +36,8 @@
         <div class="menu">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active open"><a href="{{ route('healthcare_provider.home') }}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>                                               
-                <li><a href="{{route('healthcare_provider.appointments')}}"><i class="zmdi zmdi-calendar-check"></i><span>Appointments</span> </a>
+                <li class="{{ Route::is('healthcare_provider.home') ? 'active' : ''}} open"><a href="{{ route('healthcare_provider.home') }}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>                                               
+                <li class="{{ Route::is('healthcare_provider.appointments') ? 'active' : ''}} open"><a href="{{route('healthcare_provider.appointments')}}"><i class="zmdi zmdi-calendar-check"></i><span>Appointments</span> </a>
                 </li>
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
                     <ul class="ml-menu">

@@ -27,8 +27,8 @@
         <div class="menu py-5">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active open"><a href="{{route('home')}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>                                               
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
+                <li class="{{ Route::is('home') ? 'active' : ''}} open"><a href="{{route('home')}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>                                               
+                <li class="{{ Route::is('appointment.index', 'appointment.create') ? 'active' : '' }} open"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
                     <ul class="ml-menu">
                         <li><a href="{{route('appointment.index')}}">Appointments</a></li>
                         <li><a href="{{route('appointment.create')}}">Book Appointment</a></li>
