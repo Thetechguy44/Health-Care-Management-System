@@ -48,9 +48,10 @@ class AppointmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Appointment $appointment)
+    public function edit($id)
     {
-        //
+        $appointment = Appointment::find($id);
+        return view('dashboards.patient.appointment.edit-appointment', compact('appointment'));
     }
 
     /**
@@ -67,5 +68,20 @@ class AppointmentController extends Controller
     public function destroy(Appointment $appointment)
     {
         //
+    }
+
+    public function updateStatus($appointmentId)
+    {
+        $appointment = Appointment::find($appointmentId);
+        if($appointment){
+            if($appointment->status){
+                $appointment->status = 0;
+            }
+            else{
+                $appointment->status = 1;
+            }
+            $appointment->save();
+        }
+        return back();
     }
 }

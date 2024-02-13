@@ -5,6 +5,10 @@
 @include('dashboards.patient.layouts.side')
 <section class="content page-calendar">
     <div class="container-fluid">
+        <div class="block-header">
+            <h2>Appointments</h2>
+            <small class="text-muted">Welcome to HMS application</small>
+        </div>
         <div class="row">
             <div class="col-md-12 col-lg-12 col-xl-12">
                 <div class="card m-t-20">
@@ -17,7 +21,7 @@
                                 <table class="table table-striped">
                                     <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>S/N</th>
                                         <th>Healthcare Provider</th>
                                         <th>Name</th>
                                         <th>Phone no</th>
@@ -45,11 +49,22 @@
                                         <td>{{$appointment->gender}}</td>
                                         <td>{{$appointment->problem}}</td>
                                         <td>{{$appointment->location}}</td>
-                                        <td>{{$appointment->address}}</td>
-                                        <td>{{$appointment->date}}</td>
-                                        <td><span class="label label-danger">{{$appointment->status}}</span> </td>
                                         <td>
-                                            <a href="" class="btn btn-secondary">Edit</a>||<a href="" class="btn btn-primary">Delete</a>
+                                            @if($appointment->address)
+                                                {{ $appointment->address }}
+                                            @else
+                                                No Address Needed
+                                            @endif
+                                        </td>
+                                        <td>{{$appointment->date}}</td>
+                                        <td>
+                                            <a href="{{route('appointment_status',$appointment->id )}}" class="btn btn-sm btn-{{$appointment->status ? 'success' : 'danger'}}">
+                                                {{$appointment->status ? 'Complete' : 'Not Complete'}}
+                                            </a>
+                                            <small class="text-muted">Click to update</small>
+                                        </td>
+                                        <td>
+                                            <a href="{{route('appointment.edit',$appointment->id )}}" class="btn btn-sm btn-primary"><i class="material-icons">create</i></a>
                                         </td>
                                     </tr>
                                    @endforeach
