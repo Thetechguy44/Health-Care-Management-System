@@ -1,5 +1,5 @@
 @extends('dashboards.admin.layouts.app')
-@section('title', isset($title) ? $title: 'Healthcare Provider')
+@section('title', isset($title) ? $title: 'Add Healthcare Provider')
 @section('content')
 <div class="page-wrapper" style="min-height: 648px;">
     <div class="content">

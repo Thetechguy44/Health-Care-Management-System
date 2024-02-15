@@ -10,14 +10,11 @@
                 <li class="{{ Route::is('admin.health_providers.index') ? 'active' : ''}}">
                     <a href="{{route('admin.health_providers.index')}}"><i class="fa fa-user-md"></i> <span>Healthcare Providers</span></a>
                 </li>
-                <li>
-                    <a href="patients.html"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
+                <li class="{{ Route::is('admin.patients.index') ? 'active' : ''}}">
+                    <a href="{{route('admin.patients.index')}}"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
                 </li>
                 <li>
                     <a href="appointments.html"><i class="fa fa-calendar"></i> <span>Appointments</span></a>
-                </li>
-                <li>
-                    <a href="schedule.html"><i class="fa fa-calendar-check-o"></i> <span>Doctor Schedule</span></a>
                 </li>
                 <li class="{{ Route::is('admin.specialities.index') ? 'active' : ''}}">
                     <a href="{{route('admin.specialities.index')}}"><i class="fa fa-hospital-o"></i> <span>Specialities</span></a>
