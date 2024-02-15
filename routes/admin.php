@@ -18,5 +18,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','user-type:admin'])->
   Route::get('/dashboard', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('home');
   Route::resource('/profile', App\Http\Controllers\Admin\ProfileController::class);
   Route::resource('/specialities', App\Http\Controllers\Admin\SpecialityController::class);
+  Route::resource('/health_providers', App\Http\Controllers\Admin\HealthProviderController::class);
   Route::get('/upload-avatar', [App\Http\Controllers\Admin\ProfileController::class, 'updateAvatar'])->name('avatar');
 });

@@ -48,7 +48,7 @@ class RegisterHealthcareController extends Controller
             'othername' => 'nullable|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
-            'phone' => 'required|int',
+            'phone' => 'required|numeric',
             'role' => 'required',
             'gender' => 'required',
         ]);

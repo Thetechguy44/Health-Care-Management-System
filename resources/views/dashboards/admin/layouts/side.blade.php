@@ -7,8 +7,8 @@
                 <li class="{{ Route::is('admin.home') ? 'active' : ''}}">
                     <a href="{{route('admin.home')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                 </li>
-                <li>
-                    <a href="doctors.html"><i class="fa fa-user-md"></i> <span>Doctors</span></a>
+                <li class="{{ Route::is('admin.health_providers.index') ? 'active' : ''}}">
+                    <a href="{{route('admin.health_providers.index')}}"><i class="fa fa-user-md"></i> <span>Healthcare Providers</span></a>
                 </li>
                 <li>
                     <a href="patients.html"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
