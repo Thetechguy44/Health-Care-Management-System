@@ -21,4 +21,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','user-type:admin'])->
   Route::resource('/health_providers', App\Http\Controllers\Admin\HealthProviderController::class);
   Route::resource('/patients', App\Http\Controllers\Admin\PatientController::class);
   Route::get('/upload-avatar', [App\Http\Controllers\Admin\ProfileController::class, 'updateAvatar'])->name('avatar');
+  Route::resource('/appointments', App\Http\Controllers\Admin\AppointmentController::class);
+  Route::get('appointment/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'updateStatus'])->name('appointment_status');
 });

@@ -64,7 +64,7 @@
                                             <small class="text-muted">Click to update</small>
                                         </td>
                                         <td>
-                                            <a href="{{route('appointment.edit',$appointment->id )}}" class="btn btn-sm btn-primary"><i class="material-icons">create</i></a>
+                                            <a href="{{route('appointments.edit',$appointment->id )}}" class="btn btn-sm btn-primary"><i class="material-icons">create</i></a>
                                         </td>
                                     </tr>
                                    @endforeach

@@ -7,16 +7,16 @@
                 <li class="{{ Route::is('admin.home') ? 'active' : ''}}">
                     <a href="{{route('admin.home')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                 </li>
-                <li class="{{ Route::is('admin.health_providers.index') ? 'active' : ''}}">
+                <li class="{{ Route::is('admin.health_providers.index','admin.health_providers.create','admin.health_providers.show','admin.health_providers.edit') ? 'active' : ''}}">
                     <a href="{{route('admin.health_providers.index')}}"><i class="fa fa-user-md"></i> <span>Healthcare Providers</span></a>
                 </li>
-                <li class="{{ Route::is('admin.patients.index') ? 'active' : ''}}">
+                <li class="{{ Route::is('admin.patients.index','admin.patients.create','admin.patients.edit') ? 'active' : ''}}">
                     <a href="{{route('admin.patients.index')}}"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
                 </li>
-                <li>
-                    <a href="appointments.html"><i class="fa fa-calendar"></i> <span>Appointments</span></a>
+                <li class="{{ Route::is('admin.appointments.index','admin.appointments.create','admin.appointments.edit') ? 'active' : ''}}">
+                    <a href="{{route('admin.appointments.index')}}"><i class="fa fa-calendar"></i> <span>Appointments</span></a>
                 </li>
-                <li class="{{ Route::is('admin.specialities.index') ? 'active' : ''}}">
+                <li class="{{ Route::is('admin.specialities.index','admin.specialities.create','admin.specialities.edit') ? 'active' : ''}}">
                     <a href="{{route('admin.specialities.index')}}"><i class="fa fa-hospital-o"></i> <span>Specialities</span></a>
                 </li>
                 <li class="submenu">

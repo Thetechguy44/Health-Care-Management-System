@@ -23,6 +23,6 @@ Auth::routes();
 Route::middleware(['auth','user-type:patient'])->group(function(){
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('/profile', App\Http\Controllers\ProfileController::class);
-    Route::resource('/appointment', App\Http\Controllers\AppointmentController::class);
+    Route::resource('/appointments', App\Http\Controllers\AppointmentController::class);
     Route::get('status/{id}', [App\Http\Controllers\AppointmentController::class, 'updateStatus'])->name('appointment_status');
 });
