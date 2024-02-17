@@ -22,6 +22,7 @@
                                     <thead>
                                     <tr>
                                         <th>S/N</th>
+                                        <th>Appointment ID</th>
                                         <th>Patient Name</th>
                                         <th>Phone no</th>
                                         <th>Age</th>
@@ -40,6 +41,7 @@
                                     @foreach($appointments as $appointment)
                                     <tr>
                                         <td>{{$i++}}</td>
+                                        <td>APT00{{$appointment->id}}</td>
                                         <td>{{$appointment->patient->user->firstname}} {{$appointment->patient->user->lastname}}</td>
                                         <td>{{$appointment->phone}}</td>
                                         <td>{{$appointment->age}}</td>

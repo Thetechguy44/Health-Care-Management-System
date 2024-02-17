@@ -18,69 +18,69 @@
     @livewireStyles
 </head>
 <body >
-
-<!-- <livewire:admin-header-nav> -->
-@livewire('admin.admin-header-nav')
-
-@include('dashboards.admin.layouts.side')
   
-    <!-- header start -->
-    <div class="main-wrapper">
-        @yield('content')
-    </div>
-    <!-- main content end -->
-    <div class="sidebar-overlay" data-reff=""></div>
-    <script src="{{asset('admin/assets/js/jquery-3.2.1.min.js')}}"></script>
-	<script src="{{asset('admin/assets/js/popper.min.js')}}"></script>
-    <script src="{{asset('admin/assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('admin/assets/js/jquery.slimscroll.js')}}"></script>
-    <script src="{{asset('admin/assets/js/Chart.bundle.js')}}"></script>
-    <script src="{{asset('admin/assets/js/chart.js')}}"></script>
-    <script src="{{asset('admin/assets/js/app.js')}}"></script>
-    <script src="{{asset('default/users/croptool/ijaboCropTool.min.js')}}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<!-- header start -->
+<div class="main-wrapper">
+    <!-- <livewire:admin-header-nav> -->
+    @livewire('admin.admin-header-nav')
 
-    @if(session('success'))
-        <script>
-            toastr.success('{{ session('success') }}');
-        </script>
-    @endif
+    @include('dashboards.admin.layouts.side')
 
-    @if(session('error'))
-        <script>
-            toastr.error('{{ session('error') }}');
-        </script>
-    @endif
+    @yield('content')
+</div>
+<!-- main content end -->
+<div class="sidebar-overlay" data-reff=""></div>
+<script src="{{asset('admin/assets/js/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/popper.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('admin/assets/js/jquery.slimscroll.js')}}"></script>
+<script src="{{asset('admin/assets/js/Chart.bundle.js')}}"></script>
+<script src="{{asset('admin/assets/js/chart.js')}}"></script>
+<script src="{{asset('admin/assets/js/app.js')}}"></script>
+<script src="{{asset('default/users/croptool/ijaboCropTool.min.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-    @if(session('warning'))
-        <script>
-            toastr.warning('{{ session('warning') }}');
-        </script>
-    @endif
-
-    @if(session('info'))
-        <script>
-            toastr.info('{{ session('info') }}');
-        </script>
-    @endif
+@if(session('success'))
     <script>
-       $('#adminPictureFile').ijaboCropTool({
-          preview : '#adminPicture',
-          setRatio:1,
-          allowedExtensions: ['jpg', 'jpeg','png'],
-          buttonsText:['CROP','QUIT'],
-          buttonsColor:['#30bf7d','#ee5155', -15],
-          processUrl:'',
-          onSuccess:function(message, element, status){
-             alert(message);
-          },
-          onError:function(message, element, status){
-            alert(message);
-          }
-       });
+        toastr.success('{{ session('success') }}');
     </script>
+@endif
 
-    @livewireScripts
+@if(session('error'))
+    <script>
+        toastr.error('{{ session('error') }}');
+    </script>
+@endif
+
+@if(session('warning'))
+    <script>
+        toastr.warning('{{ session('warning') }}');
+    </script>
+@endif
+
+@if(session('info'))
+    <script>
+        toastr.info('{{ session('info') }}');
+    </script>
+@endif
+<script>
+    $('#adminPictureFile').ijaboCropTool({
+        preview : '#adminPicture',
+        setRatio:1,
+        allowedExtensions: ['jpg', 'jpeg','png'],
+        buttonsText:['CROP','QUIT'],
+        buttonsColor:['#30bf7d','#ee5155', -15],
+        processUrl:'',
+        onSuccess:function(message, element, status){
+            alert(message);
+        },
+        onError:function(message, element, status){
+        alert(message);
+        }
+    });
+</script>
+
+@livewireScripts
 </body>
 </html>

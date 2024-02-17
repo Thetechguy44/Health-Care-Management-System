@@ -17,6 +17,7 @@
                     <table class="table table-striped custom-table">
                         <thead>
                             <tr>
+                                <th>S/N</th>
                                 <th>Appointment ID</th>
                                 <th>Patient Name</th>
                                 <th>Age</th>
@@ -33,9 +34,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $i=1
+                            @endphp
                             @foreach ($appointments as $appointment)
                             <tr>
-                                <td>{{$appointment->id}}</td>
+                                <td>{{$i++}}</td>
+                                <td>APT00{{$appointment->id}}</td>
                                 <td>{{$appointment->patient->user->firstname}} {{$appointment->patient->user->lastname}}</td>
                                 <td>{{$appointment->age}}</td>
                                 <td>{{$appointment->phone}}</td>
