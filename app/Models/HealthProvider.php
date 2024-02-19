@@ -9,6 +9,7 @@ use App\Models\Speciality;
 use App\Models\Appointment;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Treatment;
 
 class HealthProvider extends Model
 {
@@ -40,5 +41,10 @@ class HealthProvider extends Model
     public function appointments(): HasMany
     {
         return $this->hasmany(Appointment::class, 'healthcare_provider_id');
+    }
+
+    public function treatments(): HasMany
+    {
+        return $this->hasmany(Treatment::class, 'healthcare_provider_id');
     }
 }

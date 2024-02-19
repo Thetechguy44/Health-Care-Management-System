@@ -23,4 +23,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','user-type:admin'])->
   Route::get('/upload-avatar', [App\Http\Controllers\Admin\ProfileController::class, 'updateAvatar'])->name('avatar');
   Route::resource('/appointments', App\Http\Controllers\Admin\AppointmentController::class);
   Route::get('appointment/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'updateStatus'])->name('appointment_status');
+  Route::get('/treatments', [App\Http\Controllers\Admin\TreatmentController::class, 'index'])->name('treatments.index');
+  Route::get('/add-treatments', [App\Http\Controllers\Admin\TreatmentController::class, 'create'])->name('treatments.create');
+  Route::get('/edit-treatments', [App\Http\Controllers\Admin\TreatmentController::class, 'edit'])->name('treatments.edit');
+  Route::delete('/delete-treatments', [App\Http\Controllers\Admin\TreatmentController::class, 'destroy'])->name('treatments.destroy');
 });

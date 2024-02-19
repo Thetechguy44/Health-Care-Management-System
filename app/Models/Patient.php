@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Appointment;
+use App\Models\Treatment;
 
 class Patient extends Model
 {
@@ -26,5 +28,10 @@ class Patient extends Model
     public function appointments(): HasMany
     {
         return $this->hasmany(Appointment::class, 'patient_id');
+    }
+
+    public function treatments(): HasMany
+    {
+        return $this->hasmany(Treatment::class, 'patient_id');
     }
 }
