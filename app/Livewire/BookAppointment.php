@@ -113,5 +113,6 @@ class BookAppointment extends Component
             'status' => 0,
         ]);
         session()->flash('appointment', 'Your Appointment has been booked successfully.');
+        return redirect()->route('appointments.index')->with('success', 'Your Appointment has been booked successfully.');
     }
 }

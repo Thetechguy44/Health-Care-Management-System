@@ -21,9 +21,8 @@
   
 <!-- header start -->
 <div class="main-wrapper">
-    <!-- <livewire:admin-header-nav> -->
-    @livewire('admin.admin-header-nav')
 
+    @livewire('admin.admin-header-nav')
     @include('dashboards.admin.layouts.side')
 
     @yield('content')

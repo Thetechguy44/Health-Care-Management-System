@@ -117,5 +117,6 @@ class EditAppointment extends Component
             'date' => $this->date,
         ]);
         session()->flash('appointment', 'Appointment has been updated successfully.');
+        return redirect()->route('admin.appointments.index')->with('success', 'Appointment has been updated successfully.');
     }
 }
