@@ -19,7 +19,7 @@
                 <li class="{{ Route::is('admin.specialities.index','admin.specialities.create','admin.specialities.edit') ? 'active' : ''}}">
                     <a href="{{route('admin.specialities.index')}}"><i class="fa fa-hospital-o"></i> <span>Specialities</span></a>
                 </li>
-                <li>
+                <li class="{{ Route::is('admin.treatments.index','admin.treatments.create','admin.treatments.edit') ? 'active' : ''}}">
                     <a href="{{route('admin.treatments.index')}}"><i class="fa fa-calendar-check-o"></i> <span>Treatments</span></a>
                 </li>
                 <li class="submenu">
