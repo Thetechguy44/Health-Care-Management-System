@@ -29,7 +29,6 @@ class EditTreatment extends Component
     public function mount(Treatment $treatment)
     {
         $this->treatment = $treatment;
-        $this->genderOptions = ['male', 'female', 'other'];
 
         $this->patient = $treatment->patient_id;
         $this->providerRole = $treatment->provider;

@@ -25,4 +25,7 @@ Route::middleware(['auth','user-type:patient'])->group(function(){
     Route::resource('/profile', App\Http\Controllers\ProfileController::class);
     Route::resource('/appointments', App\Http\Controllers\AppointmentController::class);
     Route::get('status/{id}', [App\Http\Controllers\AppointmentController::class, 'updateStatus'])->name('appointment_status');
+    Route::get('/treatments', [App\Http\Controllers\TreatmentController::class, 'index'])->name('treatments.index');
+    Route::get('/add-treatments', [App\Http\Controllers\TreatmentController::class, 'create'])->name('treatments.create');
+    Route::get('/edit-treatments/{id}', [App\Http\Controllers\TreatmentController::class, 'edit'])->name('treatments.edit');
 });

@@ -28,17 +28,18 @@
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="{{ Route::is('home') ? 'active' : ''}} open"><a href="{{route('home')}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>                                               
-                <li class="{{ Route::is('appointments.index', 'appointments.create') ? 'active' : '' }} open"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
+                <li class="{{ Route::is('appointments.index', 'appointments.create', 'appointments.edit') ? 'active' : '' }} open"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
                     <ul class="ml-menu">
                         <li><a href="{{route('appointments.index')}}">Appointments</a></li>
                         <li><a href="{{route('appointments.create')}}">Book Appointment</a></li>
                     </ul>
                 </li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-add"></i><span>Doctors</span> </a>
+                <li><a href="" class="toggled waves-effect waves-block"><i class="zmdi zmdi-account-add"></i><span>Healthcare Providers</span></a>
+                </li>
+                <li class="{{ Route::is('treatments.index', 'treatments.create', 'treatments.edit') ? 'active' : '' }} open"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-file-text"></i><span>Treatments</span> </a>
                     <ul class="ml-menu">
-                        <li><a href="doctors.html">All Doctors</a></li>
-                        <li><a href="add-doctor.html">Add Doctor</a></li>                       
-                        <li><a href="profile.html">Doctor Profile</a></li>
+                        <li class="{{ Route::is('treatments.index','treatments.edit') ? 'active' : '' }}"><a href="{{route('treatments.index')}}">Treatments</a></li>
+                        <li class="{{ Route::is('treatments.create') ? 'active' : '' }}"><a href="{{route('treatments.create')}}">Book Treatment</a></li>
                     </ul>
                 </li>
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-balance-wallet"></i><span>Payments</span> </a>

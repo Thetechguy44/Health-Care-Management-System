@@ -25,5 +25,6 @@ Route::prefix('healthcare_provider')->name('healthcare_provider.')->group(functi
         Route::resource('/profile', App\Http\Controllers\Healthcare\ProfileController::class);
         Route::get('appointment', [App\Http\Controllers\Healthcare\AppointmentController::class, 'viewAppointment'])->name('appointments');
         Route::get('appointment/{id}', [App\Http\Controllers\Healthcare\AppointmentController::class, 'updateStatus'])->name('appointment_status');
+        Route::get('treatments', [App\Http\Controllers\Healthcare\AppointmentController::class, 'viewTreatment'])->name('treatments');
     });
 });

@@ -39,18 +39,12 @@
                 <li class="{{ Route::is('healthcare_provider.home') ? 'active' : ''}} open"><a href="{{ route('healthcare_provider.home') }}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>                                               
                 <li class="{{ Route::is('healthcare_provider.appointments') ? 'active' : ''}} open"><a href="{{route('healthcare_provider.appointments')}}"><i class="zmdi zmdi-calendar-check"></i><span>Appointments</span> </a>
                 </li>
+                <li class="{{ Route::is('healthcare_provider.treatments') ? 'active' : ''}} open"><a href="{{route('healthcare_provider.treatments')}}"><i class="zmdi zmdi-file-text"></i><span>Treatments</span></a></li>
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
                     <ul class="ml-menu">
                         <li><a href="patients.html">All Patients</a></li>                     
                         <li><a href="patient-profile.html">Patient Profile</a></li>
                         <li><a href="patient-invoice.html">Patient Invoice</a></li>
-                    </ul>
-                </li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-balance-wallet"></i><span>Payments</span> </a>
-                    <ul class="ml-menu">
-                        <li> <a href="payments.html">Payments</a></li>
-                        <li> <a href="add-payments.html">Add Payment</a></li>
-                        <li> <a href="patient-invoice.html">Patient Invoice</a></li>
                     </ul>
                 </li>
                 <li><a href="reports.html"><i class="zmdi zmdi-file-text"></i><span>Reports</span></a></li>
