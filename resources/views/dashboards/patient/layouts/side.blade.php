@@ -24,7 +24,7 @@
         </div>
         <!-- #User Info --> 
         <!-- Menu -->
-        <div class="menu py-5">
+        <div class="menu mt-5">
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="{{ Route::is('home') ? 'active' : ''}} open"><a href="{{route('home')}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>                                               
@@ -39,7 +39,7 @@
                 <li class="{{ Route::is('treatments.index', 'treatments.create', 'treatments.edit') ? 'active' : '' }} open"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-file-text"></i><span>Treatments</span> </a>
                     <ul class="ml-menu">
                         <li class="{{ Route::is('treatments.index','treatments.edit') ? 'active' : '' }}"><a href="{{route('treatments.index')}}">Treatments</a></li>
-                        <li class="{{ Route::is('treatments.create') ? 'active' : '' }}"><a href="{{route('treatments.create')}}">Book Treatment</a></li>
+                        <li class="{{ Route::is('treatments.create') ? 'active' : '' }}"><a href="{{route('treatments.create')}}">Add Treatment</a></li>
                     </ul>
                 </li>
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-balance-wallet"></i><span>Payments</span> </a>

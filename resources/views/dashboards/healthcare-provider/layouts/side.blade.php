@@ -11,7 +11,17 @@
                 @endif 
             </div>
             <div class="admin-action-info"> <span>Welcome</span>
-                <h3>Dr. {{auth()->user()->firstname}}</h3>
+            @if(auth()->user()->healthProvider)
+                @if(auth()->user()->healthProvider->role === 'Doctor')
+                    <h3>Dr. {{ auth()->user()->firstname }}</h3>
+                @elseif(auth()->user()->healthProvider->role === 'Nurse')
+                    <h3>Nr. {{ auth()->user()->firstname }}</h3>
+                @elseif(auth()->user()->healthProvider->role === 'Community Health')
+                    <h3>Ch. {{ auth()->user()->firstname }}</h3>
+                @endif
+            @else
+                <h3>{{ auth()->user()->firstname }}</h3>
+            @endif
                 <ul>
                     <li><a href="" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
                     <li><a href="{{route('healthcare_provider.profile.index')}}" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>

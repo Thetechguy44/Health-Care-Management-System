@@ -41,7 +41,7 @@
             @yield('content')
         </div>
   
- <!-- <div class="color-bg"></div> -->
+ <div class="color-bg"></div>
  <div class="theme-bg"></div>
 <!-- Jquery Core Js --> 
 <script src="{{asset('assets/bundles/libscripts.bundle.js')}}"></script> <!-- Lib Scripts Plugin Js --> 
