@@ -28,4 +28,6 @@ Route::middleware(['auth','user-type:patient'])->group(function(){
     Route::get('/treatments', [App\Http\Controllers\TreatmentController::class, 'index'])->name('treatments.index');
     Route::get('/add-treatments', [App\Http\Controllers\TreatmentController::class, 'create'])->name('treatments.create');
     Route::get('/edit-treatments/{id}', [App\Http\Controllers\TreatmentController::class, 'edit'])->name('treatments.edit');
+    Route::get('/health_providers', [App\Http\Controllers\HealthProviderController::class, 'index'])->name('health_providers');
+    Route::get('/health_provider/profile/{id}', [App\Http\Controllers\HealthProviderController::class, 'profile'])->name('health_providers.profile');
 });

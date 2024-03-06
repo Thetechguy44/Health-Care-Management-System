@@ -34,7 +34,7 @@
                         <li><a href="{{route('appointments.create')}}">Book Appointment</a></li>
                     </ul>
                 </li>
-                <li><a href="" class="toggled waves-effect waves-block"><i class="zmdi zmdi-account-add"></i><span>Healthcare Providers</span></a>
+                <li class="{{ Route::is('health_providers', 'health_providers.profile') ? 'active' : ''}}"><a href="{{route('health_providers')}}" class="toggled waves-effect waves-block"><i class="zmdi zmdi-account-add"></i><span>Healthcare Providers</span></a>
                 </li>
                 <li class="{{ Route::is('treatments.index', 'treatments.create', 'treatments.edit') ? 'active' : '' }} open"><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-file-text"></i><span>Treatments</span> </a>
                     <ul class="ml-menu">
