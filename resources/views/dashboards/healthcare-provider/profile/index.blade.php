@@ -13,14 +13,14 @@
                             <div class="profile-image"> <img src="{{$profile->picture}}" alt="" width="200px" height="200px"> </div>
                             @if(auth()->user()->healthProvider)
                                 @if(auth()->user()->healthProvider->role === 'Doctor')
-                                    <h4 class="mb-0"><strong>Dr. </strong>{{$profile->firstname}} {{$profile->lastname}} {{$profile->othername}}</h4>
+                                    <h4 class="mb-0"><strong>Dr. </strong>{{$profile->name}}</h4>
                                 @elseif(auth()->user()->healthProvider->role === 'Nurse')
-                                    <h4 class="mb-0"><strong>Nr. </strong>{{$profile->firstname}} {{$profile->lastname}} {{$profile->othername}}</h4>
+                                    <h4 class="mb-0"><strong>Nr. </strong>{{$profile->name}}</h4>
                                 @elseif(auth()->user()->healthProvider->role === 'Community Health')
-                                    <h4 class="mb-0"><strong>Ch. </strong>{{$profile->firstname}} {{$profile->lastname}} {{$profile->othername}}</h4>
+                                    <h4 class="mb-0"><strong>Ch. </strong>{{$profile->name}}</h4>
                                 @endif
                             @else
-                                <h4 class="mb-0">{{$profile->firstname}} {{$profile->lastname}} {{$profile->othername}}</h4>
+                                <h4 class="mb-0">{{$profile->name}}</h4>
                             @endif
                     
                             @auth
@@ -39,7 +39,7 @@
                     <div class="profile-sub-header">
                         <div class="box-list">
                             <ul class="text-center">
-                                <li> <a href="" class=""><i class="zmdi zmdi-email"></i>
+                                <li> <a href="{{url('/chatify')}}" class=""><i class="zmdi zmdi-email"></i>
                                     <p>My Inbox</p>
                                     </a> 
                                 </li>
@@ -62,7 +62,7 @@
                     <div class="body">
                         <p class="text-default">{{$profile->about}}</p>
                         <blockquote>
-                         <small>By <cite title="Source Title">{{$profile->firstname}} {{$profile->lastname}} {{$profile->othername}}</cite></small> 
+                         <small>By <cite title="Source Title">{{$profile->name}}</cite></small> 
                         </blockquote>
                     </div>
                 </div>

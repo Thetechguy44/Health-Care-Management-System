@@ -12,27 +12,9 @@
                             <a href=""><img src="{{asset('admin/assets/img/logo-dark.png')}}" alt=""></a>
                         </div>
                         <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" name="firstname" class="form-control">
-                            @error('firstname')
-                                <span class="alert text-danger" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" name="lastname" class="form-control">
-                            @error('lastname')
-                                <span class="alert text-danger" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label>Other Name</label>
-                            <input type="text" name="othername" class="form-control">
-                            @error('othername')
+                            <label>Name</label>
+                            <input type="text" name="name" class="form-control" value="{{ old('name') }}">
+                            @error('name')
                                 <span class="alert text-danger" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -40,7 +22,7 @@
                         </div>
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input type="email" name="email" class="form-control">
+                            <input type="email" name="email" class="form-control" value="{{ old('email') }}">
                             @error('email')
                                 <span class="alert text-danger" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -49,7 +31,7 @@
                         </div>
                         <div class="form-group">
                             <label>Mobile Number</label>
-                            <input type="number" name="phone" class="form-control">
+                            <input type="number" name="phone" class="form-control" value="{{ old('phone') }}">
                             @error('phone')
                                 <span class="alert text-danger" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -77,17 +59,17 @@
                             <div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="gender" value="male"> Male
+                                        <input type="radio" name="gender" value="male" value="{{ old('gender') }}"> Male
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="gender" value="female"> Female
+                                        <input type="radio" name="gender" value="female" value="{{ old('gender') }}"> Female
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="gender" value="other"> Other
+                                        <input type="radio" name="gender" value="other" value="{{ old('gender') }}"> Other
                                     </label>
                                 </div>
                             </div>

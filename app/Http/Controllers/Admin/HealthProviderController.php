@@ -34,9 +34,7 @@ class HealthProviderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'firstname' => 'required|string|max:255',
-            'lastname' => 'required|string|max:255',
-            'othername' => 'nullable|string|max:255',
+            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'phone' => 'required|numeric',
@@ -45,9 +43,7 @@ class HealthProviderController extends Controller
         ]);
 
         $provider = User::create([
-            'firstname' => $request['firstname'],
-            'lastname' => $request['lastname'],
-            'othername' => $request['othername'],
+            'name' => $request['name'],
             'email' => $request['email'],
             'user_type' => 'healthcare_provider',
             'password' => Hash::make($request['password']),
@@ -87,9 +83,7 @@ class HealthProviderController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'firstname' => 'required|string|max:255',
-            'lastname' => 'required|string|max:255',
-            'othername' => 'nullable|string|max:255',
+            'name' => 'required|string|max:255',
             'email' => [
                 'required',
                 'string',
@@ -107,7 +101,7 @@ class HealthProviderController extends Controller
     
         // Update the user's information
         $provider->update([
-            'firstname' => $request['firstname'],
+            'name' => $request['name'],
             'lastname' => $request['lastname'],
             'othername' => $request['othername'],
             'email' => $request['email'],

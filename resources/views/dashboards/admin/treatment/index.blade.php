@@ -40,12 +40,12 @@
                             @foreach ($treatments as $treatment)
                             <tr>
                                 <td>{{$i++}}</td>
-                                <td>{{$treatment->patient->user->firstname}} {{$treatment->patient->user->lastname}}</td>
+                                <td>{{$treatment->patient->user->name}}</td>
                                 <td>{{$treatment->problem}}</td>
                                 <td>{{$treatment->diagnose}}</td>
                                 <td>{{$treatment->vaccination}}</td>
                                 <td>{{$treatment->provider}}</td>
-                                <td>{{$treatment->healthProvider->user->firstname}} {{$treatment->healthProvider->user->lastname}}</td>
+                                <td>{{$treatment->healthProvider->user->name}}</td>
                                 <td>
                                     @if($treatment->speciality)    
                                     {{$treatment->speciality->name}}

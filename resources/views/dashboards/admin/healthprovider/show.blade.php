@@ -25,7 +25,7 @@
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="profile-info-left">
-                                        <h3 class="user-name m-t-0 mb-0">{{$provider->user->firstname}} {{$provider->user->lastname}} {{$provider->user->othername}}</h3>
+                                        <h3 class="user-name m-t-0 mb-0">{{$provider->user->name}}</h3>
                                         <small class="text-muted">{{$provider->role}}</small>
                                         @if ($provider->speciality)
                                         <div class="staff-id">{{$provider->speciality->name}}</div>

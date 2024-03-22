@@ -16,11 +16,11 @@
                                 <div class="profile-image"> <img src="{{asset('default/users/img/default-avatar.png')}}" alt="" width="200px" height="200px"> </div>
                             @endif
                                 @if ($provider->role === 'Doctor')
-                                    <h4 class="mb-0"><strong>Dr. </strong>{{$provider->user->firstname}} {{$provider->user->lastname}} {{$provider->user->othername}}</h4>
+                                    <h4 class="mb-0"><strong>Dr. </strong>{{$provider->user->name}}</h4>
                                 @elseif($provider->role === 'Nurse')
-                                    <h4 class="mb-0"><strong>Nr. </strong>{{$provider->user->firstname}} {{$provider->user->lastname}} {{$provider->user->othername}}</h4>
+                                    <h4 class="mb-0"><strong>Nr. </strong>{{$provider->user->name}}</h4>
                                 @elseif($provider->role === 'Community Health')
-                                    <h4 class="mb-0"><strong>Ch. </strong>{{$provider->user->firstname}} {{$provider->user->lastname}} {{$provider->user->othername}}</h4>
+                                    <h4 class="mb-0"><strong>Ch. </strong>{{$provider->user->name}}</h4>
                                 @endif
                                 <span class="text-muted col-white">{{ $provider->role }}</span>
                                 @if($provider->speciality)
@@ -47,7 +47,7 @@
                     <div class="body">
                         <p class="text-default">{{$provider->user->about}}</p>
                         <blockquote>
-                         <small>By <cite title="Source Title">{{$provider->user->firstname}} {{$provider->user->lastname}} {{$provider->user->othername}}</cite></small> 
+                         <small>By <cite title="Source Title">{{$provider->user->name}}</cite></small> 
                         </blockquote>
                     </div>
                 </div>

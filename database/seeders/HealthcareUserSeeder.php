@@ -17,8 +17,7 @@ class HealthcareUserSeeder extends Seeder
     {
         $users = [
             [
-                'firstname' => 'Doctor',
-                'lastname' => 'User',
+                'name' => 'Doctor User',
                 'email' => 'doctor@example.com',
                 'password' => Hash::make(12345678),
                 'user_type' => 'healthcare_provider',
@@ -27,8 +26,7 @@ class HealthcareUserSeeder extends Seeder
                 'role' => 'Doctor', // Health provider role
             ],
             [
-                'firstname' => 'Nurse',
-                'lastname' => 'User',
+                'name' => 'Nurse User',
                 'email' => 'nurse@example.com',
                 'password' => Hash::make(12345678),
                 'user_type' => 'healthcare_provider',
@@ -37,8 +35,7 @@ class HealthcareUserSeeder extends Seeder
                 'role' => 'Nurse', // Health provider role
             ],
             [
-                'firstname' => 'Community',
-                'lastname' => 'Worker',
+                'name' => 'Community Worker',
                 'email' => 'cworker@example.com',
                 'password' => Hash::make(12345678),
                 'user_type' => 'healthcare_provider',
@@ -52,8 +49,7 @@ class HealthcareUserSeeder extends Seeder
         foreach ($users as $userData) {
             // Create a user record
             $user = User::create([
-                'firstname' => $userData['firstname'],
-                'lastname' => $userData['lastname'],
+                'name' => $userData['name'],
                 'email' => $userData['email'],
                 'password' => $userData['password'],
                 'user_type' => $userData['user_type'],

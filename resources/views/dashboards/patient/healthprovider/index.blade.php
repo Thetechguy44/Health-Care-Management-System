@@ -25,11 +25,11 @@
 
                             <div class="">
                                 @if ($provider->role === 'Doctor')
-                                <h4 class="m-b-5 m-t-20">Dr. {{$provider->user->firstname}} {{$provider->user->lastname}}</h4>
+                                <h4 class="m-b-5 m-t-20">Dr. {{$provider->user->name}}</h4>
                                 @elseif($provider->role === 'Nurse')
-                                <h4 class="m-b-5 m-t-20">Nr. {{$provider->user->firstname}} {{$provider->user->lastname}}</h4>
+                                <h4 class="m-b-5 m-t-20">Nr. {{$provider->user->name}}</h4>
                                 @elseif($provider->role === 'Community Health')
-                                <h4 class="m-b-5 m-t-20">Ch. {{$provider->user->firstname}} {{$provider->user->lastname}}</h4>
+                                <h4 class="m-b-5 m-t-20">Ch. {{$provider->user->name}}</h4>
                                 @endif    
                                 <p class="text-muted">{{$provider->role}}<span></span></p>
                             </div>

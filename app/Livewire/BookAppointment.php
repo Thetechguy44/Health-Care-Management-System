@@ -13,8 +13,7 @@ use Illuminate\Validation\Rule;
 
 class BookAppointment extends Component
 {
-    public $patientFName;
-    public $patientLName;
+    public $patientName;
     public $providerRole;
     public $selectedSpeciality;
     public $selectedProvider;
@@ -31,8 +30,7 @@ class BookAppointment extends Component
     public function mount()
     {
         $patient = Auth::user();
-        $this->patientFName = $patient->firstname;
-        $this->patientLName = $patient->lastname;
+        $this->patientName = $patient->name;
         $this->gender = $patient->gender;
         $this->address = $patient->address;
         $this->genderOptions = ['male', 'female', 'other'];
@@ -72,8 +70,7 @@ class BookAppointment extends Component
     public function submitAppointment()
     {
         $validatedData = $this->validate([
-        'patientFName'=>'required|string|max:255',
-        'patientLName'=>'required|string|max:255',
+        'patientName'=>'required|string|max:255',
         'providerRole'=>'required|string|in:Doctor,Nurse,Community Health',
         'selectedSpeciality'=>'required_if:providerRole,Doctor',
         'selectedDoctor'=>'required_if:providerRole,Doctor',

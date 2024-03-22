@@ -42,7 +42,7 @@
                                             @else
                                             <img width="28" height="28" src="{{asset('default/users/img/default-avatar.png')}}" class="rounded-circle m-r-5" alt="">
                                             @endif
-                                            {{$patient->user->firstname}} {{$patient->user->lastname}}</td>
+                                            {{$patient->user->name}}</td>
                                             <td>{{$patient->user->dob}}</td>
                                             <td>{{$patient->user->address}} {{$patient->user->city}} {{$patient->user->state}}</td>
                                             <td>{{$patient->user->phone}}</td>

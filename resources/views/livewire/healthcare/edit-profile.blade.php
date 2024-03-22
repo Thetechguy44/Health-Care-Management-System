@@ -78,33 +78,9 @@
                                     <div class="col-lg-6 col-md-12">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="form-control" placeholder="First Name" wire:model="firstname">
+                                                <input type="text" class="form-control" placeholder="Full Name" wire:model="name">
                                             </div>
-                                            @error('firstname')
-                                                    <span class="alert text-danger" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-12">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" class="form-control" placeholder="Last Name" wire:model="lastname">
-                                            </div>
-                                            @error('lastname')
-                                                    <span class="alert text-danger" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-12">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" class="form-control" placeholder="Other Name" wire:model="othername">
-                                            </div>
-                                            @error('othername')
+                                            @error('name')
                                                     <span class="alert text-danger" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

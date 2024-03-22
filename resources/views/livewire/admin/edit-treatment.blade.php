@@ -14,7 +14,7 @@
                             <select class="form-control select select2-hidden-accessible" wire:model="patient">
                                 <option>Select</option>
                                 @foreach($patients as $patient)
-                                <option value="{{$patient->id}}">{{$patient->user->firstname}} {{$patient->user->lastname}}</option>
+                                <option value="{{$patient->id}}">{{$patient->user->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -64,7 +64,7 @@
                             <select class="form-control select select2-hidden-accessible" wire:model="selectedDoctor">
                                 <option value="">-- Select Doctor --</option>
                                 @foreach ($doctors as $provider)
-                                <option value="{{ $provider->id }}">{{ $provider->user->firstname }} {{ $provider->user->lastname }}</option>
+                                <option value="{{ $provider->id }}">{{ $provider->user->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -82,7 +82,7 @@
                             <select class="form-control select select2-hidden-accessible" wire:model="selectedProvider">
                                 <option value="">-- Select  {{ ucfirst($providerRole) }} --</option>
                                 @foreach ($healthProviders as $provider)
-                                <option value="{{ $provider->id }}">{{ $provider->user->firstname }} {{ $provider->user->lastname }}</option>
+                                <option value="{{ $provider->id }}">{{ $provider->user->name }}</option>
                                 @endforeach
                             </select>
                         </div>

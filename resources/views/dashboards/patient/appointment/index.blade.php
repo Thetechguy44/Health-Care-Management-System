@@ -45,7 +45,7 @@
                                         <td>{{$i++}}</td>
                                         <td>APT00{{$appointment->id}}</td>
                                         <td>{{$appointment->provider}}</td>
-                                        <td>{{$appointment->healthProvider->user->firstname}} {{$appointment->healthProvider->user->lastname}}</td>
+                                        <td>{{$appointment->healthProvider->user->name}}</td>
                                         <td>{{$appointment->phone}}</td>
                                         <td>{{$appointment->age}}</td>
                                         <td>{{$appointment->gender}}</td>

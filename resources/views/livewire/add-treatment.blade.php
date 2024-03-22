@@ -10,14 +10,7 @@
                 <div class="col">
                     <div class="form-group">
                         <div class="form-line">
-                            <input type="text" class="form-control" placeholder="Name" wire:model="patientFName" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input type="text" class="form-control" placeholder="Name" wire:model="patientLName" disabled>
+                            <input type="text" class="form-control" placeholder="Name" wire:model="patientName" disabled>
                         </div>
                     </div>
                 </div>
@@ -58,7 +51,7 @@
                         <select class="form-control show-tick" wire:model="selectedDoctor">
                             <option value="">-- Select Doctor --</option>
                             @foreach ($doctors as $provider)
-                            <option value="{{ $provider->id }}">{{ $provider->user->firstname }} {{ $provider->user->lastname }}</option>
+                            <option value="{{ $provider->id }}">{{ $provider->user->name }}</option>
                             @endforeach
                         </select>
                         @error('selectedDoctor')
@@ -75,7 +68,7 @@
                         <select class="form-control show-tick" wire:model="selectedProvider">
                             <option value="">-- Select  {{ ucfirst($providerRole) }} --</option>
                             @foreach ($healthProviders as $provider)
-                            <option value="{{ $provider->id }}">{{ $provider->user->firstname }} {{ $provider->user->lastname }}</option>
+                            <option value="{{ $provider->id }}">{{ $provider->user->name }}</option>
                             @endforeach
                         </select>
                         @error('selectedProvider')

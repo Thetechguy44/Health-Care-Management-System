@@ -17,7 +17,7 @@ class PatientEditProfile extends Component
     public $tab = null;
     public $tabname = 'my_info';
     protected $queryString = ['tab'];
-    public $id, $avatar, $firstname, $lastname, $othername, $email, $about, $dob, $selectedGender, $genderOptions, $address, $city, $blood_group, $occupation, $lga, $state, $phone;
+    public $id, $avatar, $name, $lastname, $othername, $email, $about, $dob, $selectedGender, $genderOptions, $address, $city, $blood_group, $occupation, $lga, $state, $phone;
     public $current_password, $new_password, $new_password_confirmation;
 
     public function selectTab($tab)
@@ -31,9 +31,7 @@ class PatientEditProfile extends Component
 
         $profile = Auth::user();
         $this->id = $profile->id;
-        $this->firstname = $profile->firstname;
-        $this->lastname = $profile->lastname;
-        $this->othername = $profile->othername;
+        $this->name = $profile->name;
         $this->email = $profile->email;
         $this->about = $profile->about;
         $this->avatar = $profile->avatar;
@@ -64,14 +62,14 @@ class PatientEditProfile extends Component
 
         if($this->avatar){
             // Delete the old avatar image if it exists
-            $destination = 'storage/avatars/' . $user->avatar;
+            $destination = 'storage/users-avatar/' . $user->avatar;
             if (File::exists($destination)) {
                 File::delete($destination);
             }
 
             // Store the new avatar image
             $filename = time() . '.' . $this->avatar->getClientOriginalExtension();
-            $this->avatar->storeAs('avatars', $filename, 'public');
+            $this->avatar->storeAs('users-avatar', $filename, 'public');
         }
 
             // Update the user's avatar
@@ -85,9 +83,7 @@ class PatientEditProfile extends Component
     public function updateHealthproviderBasicInfo()
     {
         $this->validate([
-            'firstname'=>'required|max:30',
-            'lastname'=>'required|max:30',
-            'othername'=>'max:30',
+            'name'=>'required|max:30',
             'email'=>'required|email|unique:users,email,'.$this->id,
             'about'=>'nullable',
             'dob'=>'nullable',
@@ -102,9 +98,7 @@ class PatientEditProfile extends Component
         ]);
 
         User::find(Auth::user()->id)->update([
-            'firstname'=>$this->firstname,
-            'lastname'=>$this->lastname,
-            'othername'=>$this->othername,
+            'name'=>$this->name,
             'email'=>$this->email,
             'about'=>$this->about,
             'dob'=>$this->dob,

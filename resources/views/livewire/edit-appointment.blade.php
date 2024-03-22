@@ -14,13 +14,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input type="text" class="form-control" placeholder="Name" wire:model="patientLName" disabled>
-                        </div>
-                    </div>
-                </div>
                 <div class="col ">
                     <div class="form-group drop-custum">
                         <select class="form-control show-tick" wire:model="providerRole" wire:click="$refresh" required>
@@ -58,7 +51,7 @@
                         <select class="form-control show-tick" wire:model="selectedDoctor" required>
                             <option value="">-- Select Doctor --</option>
                             @foreach ($doctors as $provider)
-                            <option value="{{ $provider->id }}">{{ $provider->user->firstname }} {{ $provider->user->lastname }}</option>
+                            <option value="{{ $provider->id }}">{{ $provider->user->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -75,7 +68,7 @@
                         <select class="form-control show-tick" wire:model="selectedProvider" required>
                             <option value="">-- Select  {{ ucfirst($providerRole) }} --</option>
                             @foreach ($healthProviders as $provider)
-                            <option value="{{ $provider->id }}">{{ $provider->user->firstname }} {{ $provider->user->lastname }}</option>
+                            <option value="{{ $provider->id }}">{{ $provider->user->name }}</option>
                             @endforeach
                         </select>
                     </div>

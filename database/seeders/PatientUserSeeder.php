@@ -17,8 +17,7 @@ class PatientUserSeeder extends Seeder
     {
         // Create a user record
         $user = User::create([
-            'firstname' => 'Patient',
-            'lastname' => 'User',
+            'name' => 'Patient User',
             'email' => 'patient@example.com',
             'password' => Hash::make(12345678),
             'user_type' => 'patient',

@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->name('admin.')->middleware(['auth','user-type:admin'])->group(function(){
   Route::get('/dashboard', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('home');
-  Route::resource('/profile', App\Http\Controllers\Admin\ProfileController::class);
+  Route::get('/profile', [App\Http\Controllers\Admin\AdminController::class, 'ViewProfile'])->name('profile');
+  Route::get('/profile/edit/{id}', [App\Http\Controllers\Admin\AdminController::class, 'editProfile'])->name('profile.edit');
   Route::resource('/specialities', App\Http\Controllers\Admin\SpecialityController::class);
   Route::resource('/health_providers', App\Http\Controllers\Admin\HealthProviderController::class);
   Route::resource('/patients', App\Http\Controllers\Admin\PatientController::class);

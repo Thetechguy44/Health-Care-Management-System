@@ -11,10 +11,13 @@
                 @endif 
             </div>
             <div class="admin-action-info"> <span>Welcome</span>
-                <h3>{{auth()->user()->firstname}}</h3>
+                @php
+                    $firstName = Str::before(auth()->user()->name, ' ');
+                @endphp
+                <h3>{{$firstName}}</h3>
                 <ul>
-                    <li><a href="" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
-                    <li><a href="{{ route('profile.index') }}" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>
+                    <li><a href="{{ url('/chatify') }}" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
+                    <li><a href="{{ route('profile') }}" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>
                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="sign out" ><i class="zmdi zmdi-sign-in"></i></a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
@@ -75,30 +78,6 @@
                     <li data-theme="black"><div class="black"></div><span>Black</span> </li>
                     <li data-theme="blush"><div class="blush"></div><span>Blush</span> </li>
                 </ul>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="chat">
-                <div class="demo-settings">
-                    <div class="search">
-                        <div class="input-group">
-                            <div class="form-line">
-                                <input type="text" class="form-control" placeholder="Search..." required autofocus>
-                            </div>
-                        </div>
-                    </div>
-                    <h6>Recent</h6>
-                    <ul>
-                        <li class="online">
-                            <div class="media">
-                                <a href="javascript:void(0);"><img class="media-object " src="assets/images/xs/avatar1.jpg" alt=""></a>
-                                <div class="media-body">
-                                    <span class="name">Claire Sassu</span>
-                                    <span class="message">Can you share the</span>
-                                    <span class="badge badge-outline status"></span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </aside>

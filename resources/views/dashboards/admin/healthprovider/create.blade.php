@@ -16,32 +16,10 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label>First Name <span class="text-danger">*</span></label>
-                                <input class="form-control" name="firstname" type="text">
+                                <label>Name <span class="text-danger">*</span></label>
+                                <input class="form-control" name="name" type="text">
                             </div>
-                            @error('firstname')
-                                <span class="alert text-danger" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label>Last Name <span class="text-danger">*</span></label>
-                                <input class="form-control" name="lastname" type="text">
-                            </div>
-                            @error('lastname')
-                                <span class="alert text-danger" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label>Other Name</label>
-                                <input class="form-control" name="othername" type="text">
-                            </div>
-                            @error('othername')
+                            @error('name')
                                 <span class="alert text-danger" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

@@ -17,8 +17,7 @@ class AdminUserSeeder extends Seeder
     {
         // Create a user record
         $user = User::create([
-            'firstname' => 'Admin',
-            'lastname' => 'User',
+            'name' => 'Admin User',
             'email' => 'admin@example.com',
             'password' => Hash::make('password'),
             'user_type' => 'admin',

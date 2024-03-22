@@ -47,7 +47,7 @@
                                         <td>{{$treatment->diagnose}}</td>
                                         <td>{{$treatment->vaccination}}</td>
                                         <td>{{$treatment->provider}}</td>
-                                        <td>{{$treatment->healthProvider->user->firstname}} {{$treatment->healthProvider->user->lastname}}</td>
+                                        <td>{{$treatment->healthProvider->user->name}}</td>
                                         <td>
                                             @if($treatment->speciality)    
                                             {{$treatment->speciality->name}}

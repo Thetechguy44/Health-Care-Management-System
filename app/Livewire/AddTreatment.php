@@ -13,8 +13,7 @@ use Illuminate\Validation\Rule;
 
 class AddTreatment extends Component
 {
-    public $patientFName;
-    public $patientLName;
+    public $patientName;
     public $providerRole;
     public $selectedSpeciality;
     public $selectedProvider;
@@ -31,8 +30,7 @@ class AddTreatment extends Component
     public function mount()
     {
         $patient = Auth::user();
-        $this->patientFName = $patient->firstname;
-        $this->patientLName = $patient->lastname;
+        $this->patientName = $patient->name;
     }
 
     public function render()
@@ -68,8 +66,7 @@ class AddTreatment extends Component
     public function submitTreatment()
     {
         $validatedData = $this->validate([
-        'patientFName'=>'required',
-        'patientLName'=>'required',
+        'patientName'=>'required',
         'providerRole'=>'required|string|in:Doctor,Nurse,Community Health',
         'selectedSpeciality'=>'required_if:providerRole,Doctor',
         'selectedDoctor'=>'required_if:providerRole,Doctor',

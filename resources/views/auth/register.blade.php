@@ -11,30 +11,8 @@
                 <div class="input-group icon before_span">
                     <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
                     <div class="form-line">
-                        <input type="text" id="firstname" class="form-control @error('firstname') is-invalid @enderror" name="firstname" placeholder="First name" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
-                        @error('firstname')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                </div>
-                <div class="input-group icon before_span">
-                    <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
-                    <div class="form-line">
-                        <input type="text" id="lastname" class="form-control @error('lastname') is-invalid @enderror" name="lastname" placeholder="Last name" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
-                        @error('lastname')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                </div>
-                <div class="input-group icon before_span">
-                    <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
-                    <div class="form-line">
-                        <input type="text" id="othername" class="form-control @error('othername') is-invalid @enderror" name="othername" placeholder="Other name" value="{{ old('othername') }}" autocomplete="othername" autofocus>
-                        @error('othername')
+                        <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Full name" value="{{ old('name') }}" required autocomplete="firstname" autofocus>
+                        @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

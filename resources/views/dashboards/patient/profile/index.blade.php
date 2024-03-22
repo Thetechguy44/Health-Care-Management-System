@@ -19,12 +19,8 @@
                         <h2>About Patient</h2>
                     </div>
                     <div class="body">
-                        <strong>First Name</strong>
-                        <p>{{$profile->firstname}}</p>
-                        <strong>Last Name</strong>
-                        <p>{{$profile->lastname}}</p>
-                        <strong>Other Name</strong>
-                        <p>{{$profile->othername}}</p>
+                        <strong>Name</strong>
+                        <p>{{$profile->name}}</p>
                         <strong>Occupation</strong>
                         <p>{{$profile->occupation}}</p>
                         <strong>Email ID</strong>

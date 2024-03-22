@@ -63,7 +63,13 @@
                 {{-- header buttons --}}
                 <nav class="m-header-right">
                     <a href="#" class="add-to-favorite"><i class="fas fa-star"></i></a>
-                    <a href="/"><i class="fas fa-home"></i></a>
+                    @if(auth()->user()->user_type === "admin")
+                    <a href="/admin/dashboard"><i class="fas fa-home"></i></a>
+                    @elseif(auth()->user()->user_type === "healthcare_provider")
+                    <a href="/healthcare_provider/dashboard"><i class="fas fa-home"></i></a>
+                    @elseif(auth()->user()->user_type === "patient")
+                    <a href="/dashboard"><i class="fas fa-home"></i></a>
+                    @endif
                     <a href="#" class="show-infoSide"><i class="fas fa-info-circle"></i></a>
                 </nav>
             </nav>

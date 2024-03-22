@@ -56,31 +56,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group form-focus focused">
-                            <label class="focus-label">First Name</label>
-                            <input type="text" class="form-control floating" wire:model="firstname">
-                            @error('firstname')
-                                <span class="alert text-danger" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group form-focus focused">
-                            <label class="focus-label">Last Name</label>
-                            <input type="text" class="form-control floating" wire:model="lastname">
-                            @error('lastname')
-                                <span class="alert text-danger" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group form-focus focused">
-                            <label class="focus-label">Other Name</label>
-                            <input type="text" class="form-control floating" wire:model="othername">
-                            @error('othername')
+                            <label class="focus-label">Name</label>
+                            <input type="text" class="form-control floating" wire:model="name">
+                            @error('name')
                                 <span class="alert text-danger" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

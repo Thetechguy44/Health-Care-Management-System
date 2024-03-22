@@ -41,12 +41,12 @@
                             <tr>
                                 <td>{{$i++}}</td>
                                 <td>APT00{{$appointment->id}}</td>
-                                <td>{{$appointment->patient->user->firstname}} {{$appointment->patient->user->lastname}}</td>
+                                <td>{{$appointment->patient->user->name}}</td>
                                 <td>{{$appointment->age}}</td>
                                 <td>{{$appointment->phone}}</td>
                                 <td>{{$appointment->gender}}</td>
                                 <td>{{$appointment->provider}}</td>
-                                <td>{{$appointment->healthProvider->user->firstname}} {{$appointment->healthProvider->user->lastname}}</td>
+                                <td>{{$appointment->healthProvider->user->name}}</td>
                                 <td>
                                     @if($appointment->speciality)    
                                     {{$appointment->speciality->name}}

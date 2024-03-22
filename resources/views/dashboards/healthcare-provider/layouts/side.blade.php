@@ -11,20 +11,23 @@
                 @endif 
             </div>
             <div class="admin-action-info"> <span>Welcome</span>
-            @if(auth()->user()->healthProvider)
-                @if(auth()->user()->healthProvider->role === 'Doctor')
-                    <h3>Dr. {{ auth()->user()->firstname }}</h3>
-                @elseif(auth()->user()->healthProvider->role === 'Nurse')
-                    <h3>Nr. {{ auth()->user()->firstname }}</h3>
-                @elseif(auth()->user()->healthProvider->role === 'Community Health')
-                    <h3>Ch. {{ auth()->user()->firstname }}</h3>
+                @php
+                    $firstName = Str::before(auth()->user()->name, ' ');
+                @endphp
+                @if(auth()->user()->healthProvider)
+                    @if(auth()->user()->healthProvider->role === 'Doctor')
+                        <h3>Dr. {{$firstName }}</h3>
+                    @elseif(auth()->user()->healthProvider->role === 'Nurse')
+                        <h3>Nr. {{$firstName }}</h3>
+                    @elseif(auth()->user()->healthProvider->role === 'Community Health')
+                        <h3>Ch. {{$firstName }}</h3>
+                    @endif
+                @else
+                    <h3>{{$firstName }}</h3>
                 @endif
-            @else
-                <h3>{{ auth()->user()->firstname }}</h3>
-            @endif
                 <ul>
-                    <li><a href="" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
-                    <li><a href="{{route('healthcare_provider.profile.index')}}" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>
+                    <li><a href="{{ url('/chatify') }}" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
+                    <li><a href="{{route('healthcare_provider.profile')}}" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>
                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" title="sign out" ><i class="zmdi zmdi-sign-in"></i></a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
@@ -50,13 +53,6 @@
                 <li class="{{ Route::is('healthcare_provider.appointments') ? 'active' : ''}} open"><a href="{{route('healthcare_provider.appointments')}}"><i class="zmdi zmdi-calendar-check"></i><span>Appointments</span> </a>
                 </li>
                 <li class="{{ Route::is('healthcare_provider.treatments') ? 'active' : ''}} open"><a href="{{route('healthcare_provider.treatments')}}"><i class="zmdi zmdi-file-text"></i><span>Treatments</span></a></li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-account-o"></i><span>Patients</span> </a>
-                    <ul class="ml-menu">
-                        <li><a href="patients.html">All Patients</a></li>                     
-                        <li><a href="patient-profile.html">Patient Profile</a></li>
-                        <li><a href="patient-invoice.html">Patient Invoice</a></li>
-                    </ul>
-                </li>
                 <li><a href="reports.html"><i class="zmdi zmdi-file-text"></i><span>Reports</span></a></li>
             </ul>
         </div>
@@ -83,42 +79,6 @@
                     <li data-theme="black"><div class="black"></div><span>Black</span> </li>
                     <li data-theme="blush"><div class="blush"></div><span>Blush</span> </li>
                 </ul>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="chat">
-                <div class="demo-settings">
-                    <div class="search">
-                        <div class="input-group">
-                            <div class="form-line">
-                                <input type="text" class="form-control" placeholder="Search..." required autofocus>
-                            </div>
-                        </div>
-                    </div>
-                    <h6>Recent</h6>
-                    <ul>
-                        <li class="online">
-                            <div class="media">
-                                <a href="javascript:void(0);"><img class="media-object " src="assets/images/xs/avatar1.jpg" alt=""></a>
-                                <div class="media-body">
-                                    <span class="name">Claire Sassu</span>
-                                    <span class="message">Can you share the</span>
-                                    <span class="badge badge-outline status"></span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <h6>Contacts</h6>
-                    <ul class="contacts_list">
-                        <li class="offline">
-                            <div class="media">
-                                <a href="javascript:void(0);"><img class="media-object " src="assets/images/xs/avatar4.jpg" alt=""></a>
-                                <div class="media-body">
-                                    <span class="name">Hossein Shams</span>
-                                    <span class="badge badge-outline status"></span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="settings">
                 <div class="demo-settings">

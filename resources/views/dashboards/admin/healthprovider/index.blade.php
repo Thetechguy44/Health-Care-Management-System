@@ -33,7 +33,7 @@
                             </form>
                         </div>
                     </div>
-                    <h4 class="doctor-name text-ellipsis"><a href="{{route('admin.health_providers.show',$provider->id)}}">{{$provider->user->firstname}} {{$provider->user->lastname}}</a></h4>
+                    <h4 class="doctor-name text-ellipsis"><a href="{{route('admin.health_providers.show',$provider->id)}}">{{$provider->user->name}}</a></h4>
                     <h6 class="doctor-name text-ellipsis">{{$provider->user->email}}</h6>
                     <br>
                     <div class="doc-prof">{{$provider->role}}</div>
