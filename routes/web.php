@@ -13,9 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::name('website.')->group(function(){ 
+    Route::get('/', [App\Http\Controllers\FrontendController::class, 'home'])->name('home');
+    Route::get('/about', [App\Http\Controllers\FrontendController::class, 'about'])->name('about');
+    Route::get('/services', [App\Http\Controllers\FrontendController::class, 'services'])->name('services');
+    Route::get('/departments', [App\Http\Controllers\FrontendController::class, 'departments'])->name('departments');
+    Route::get('/contact', [App\Http\Controllers\FrontendController::class, 'contact'])->name('contact');
+ });
 
 
 Auth::routes();
