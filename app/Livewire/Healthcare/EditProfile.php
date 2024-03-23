@@ -15,7 +15,7 @@ class EditProfile extends Component
 {
     use WithFileUploads;
     public $tab = null;
-    public $tabname = 'my_info';
+    public $tabname = 'update_profile';
     protected $queryString = ['tab'];
     public $selectedSpeciality;
     

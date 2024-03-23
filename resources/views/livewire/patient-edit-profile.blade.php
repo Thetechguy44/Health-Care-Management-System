@@ -3,28 +3,11 @@
             <div class="body"> 
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item"><a wire:click.prevent='selectTab("my_info")' class="nav-link {{ $tab == 'my_info' ? 'active' : '' }}" data-toggle="tab" href="#my_info">My Info</a></li>
                     <li class="nav-item"><a wire:click.prevent='selectTab("update_profile")' class="nav-link {{ $tab == 'update_profile' ? 'active' : '' }}" data-toggle="tab" href="#update_profile">Update Profile</a></li>
                 </ul>
                 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane {{ $tab == 'my_info' ? 'active in' : '' }}" id="my_info">                               
-                        <div class="wrap-reset">
-                            <div class="mypost-list">
-                                <div class="post-box">
-                                    <p>{{$about}}</p>
-                                </div>
-                                <hr>
-                                <div class="post-box">
-                                    <h4>General Report</h4>                                        
-                                    <div class="body p-l-0 p-r-0">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div role="tabpanel" class="tab-pane {{ $tab == 'update_profile' ? 'active in' : '' }}" id="update_profile">
                         <div class="body">
                             <div class="card">
@@ -40,7 +23,7 @@
                                             <div class="col-lg-6 col-md-12">
                                                 <div class="profile-image"> 
                                                 @if( auth()->user()->avatar != null )
-                                                    <img class="avatar" src="{{asset('storage/avatars/'.auth()->user()->avatar)}}" alt="" width="100" height="100">
+                                                    <img class="avatar" src="{{asset('storage/users-avatar/'.auth()->user()->avatar)}}" alt="" width="100" height="100">
                                                 @else
                                                     <img class="avatar" src="{{asset('default/users/img/default-avatar.png')}}" alt="" width="100" height="100">
                                                 @endif 

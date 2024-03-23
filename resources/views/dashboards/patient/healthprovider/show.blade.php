@@ -11,7 +11,7 @@
                     <div class="profile-header">
                         <div class="profile_info">
                             @if($provider->user->avatar)
-                                <div class="profile-image"> <img src="{{asset('storage/avatar/'.$provider->user->avatar)}}" alt="" width="200px" height="200px"> </div>
+                                <div class="profile-image"> <img src="{{asset('storage/users-avatar/'.$provider->user->avatar)}}" alt="" width="200px" height="200px"> </div>
                             @else
                                 <div class="profile-image"> <img src="{{asset('default/users/img/default-avatar.png')}}" alt="" width="200px" height="200px"> </div>
                             @endif

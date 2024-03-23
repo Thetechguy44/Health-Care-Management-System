@@ -5,7 +5,7 @@
         <div class="user-info">
             <div class="admin-image">
                 @if( auth()->user()->avatar != null )
-                    <img src="{{asset('storage/avatars/'.auth()->user()->avatar)}}" alt="">
+                    <img src="{{asset('storage/users-avatar/'.auth()->user()->avatar)}}" alt="">
                 @else
                     <img src="{{asset('default/users/img/default-avatar.png')}}" alt="">
                 @endif 

@@ -3,29 +3,12 @@
     <div class="body"> 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs tab-nav-right" role="tablist">
-            <li class="nav-item"><a wire:click.prevent='selectTab("my_info")' class="nav-link {{ $tab == 'my_info' ? 'active' : '' }}" data-toggle="tab" href="#my_info">My Info</a></li>
             <li class="nav-item"><a wire:click.prevent='selectTab("update_profile")' class="nav-link {{ $tab == 'update_profile' ? 'active' : '' }}" data-toggle="tab" href="#update_profile">Update Profile</a></li>
             <li class="nav-item"><a wire:click.prevent='selectTab("change_password")' class="nav-link {{ $tab == 'change_password' ? 'active' : '' }}" data-toggle="tab" href="#change_password">Change Password</a></li>
         </ul>
         
         <!-- Tab panes -->
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane {{ $tab == 'my_info' ? 'active in' : '' }}" id="my_info">
-                <div class="wrap-reset">
-                    <div class="mypost-list">
-                        <div class="post-box">
-                            <span class="text-muted text-small"><i class="zmdi zmdi-alarm"></i> 3 minutes ago</span>
-                            <div class="post-img"><img src="" class="img-fluid" alt=""></div>
-                            <div>
-                                <h5>Lorem Ipsum is simply dummy text of the printing</h5>
-                                <p class="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                                <p> <a href="javascript:void(0);" class="btn btn-raised btn-info btn-sm"><i class="zmdi zmdi-favorite-outline"></i> Like (5) </a> <a href="javascript:void(0);" class="btn btn-raised bg-soundcloud btn-sm"><i class="zmdi zmdi-long-arrow-return"></i> Reply</a> </p>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-            </div>
             <div role="tabpanel" class="tab-pane {{ $tab == 'update_profile' ? 'active in' : '' }}" id="update_profile">
                 <div class="body">
                     <div class="card">
@@ -41,7 +24,7 @@
                                     <div class="col-lg-6 col-md-12">
                                         <div class="profile-image"> 
                                         @if( auth()->user()->avatar != null )
-                                            <img class="avatar" src="{{asset('storage/avatars/'.auth()->user()->avatar)}}" alt="" width="100" height="100">
+                                            <img class="avatar" src="{{asset('storage/users-avatar/'.auth()->user()->avatar)}}" alt="" width="100" height="100">
                                         @else
                                             <img class="avatar" src="{{asset('default/users/img/default-avatar.png')}}" alt="" width="100" height="100">
                                         @endif 

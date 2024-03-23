@@ -91,7 +91,7 @@ class User extends Authenticatable
 
     public function getPictureAttribute(){
         if( auth()->user()->avatar != null ){
-            return asset('storage/avatars/'.auth()->user()->avatar);
+            return asset('storage/users-avatar/'.auth()->user()->avatar);
         }else{
             return asset('default/users/img/default-avatar.png');
         }

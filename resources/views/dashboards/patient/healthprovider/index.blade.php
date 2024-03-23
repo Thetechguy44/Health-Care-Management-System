@@ -17,7 +17,7 @@
                         <div class="member-card verified">                            
                             <div class="thumb-xl member-thumb">
                             @if($provider->user->avatar)
-                                <img src="{{asset('storage/avatar/'.$provider->user->avatar)}}" class="img-thumbnail rounded-circle" alt="profile-image" width="100px" height="100px">
+                                <img src="{{asset('storage/users-avatar/'.$provider->user->avatar)}}" class="img-thumbnail rounded-circle" alt="profile-image" width="100px" height="100px">
                             @else
                                 <img src="{{asset('default/users/img/default-avatar.png')}}" class="img-thumbnail rounded-circle" alt="profile-image" width="100px" height="100px">
                             @endif                              

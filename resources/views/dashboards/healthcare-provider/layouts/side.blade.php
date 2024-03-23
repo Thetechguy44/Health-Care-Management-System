@@ -5,7 +5,7 @@
         <div class="user-info">
             <div class="admin-image">
                 @if( auth()->user()->avatar != null )
-                    <img src="{{asset('storage/avatars/'.auth()->user()->avatar)}}" alt="">
+                    <img src="{{asset('storage/users-avatar/'.auth()->user()->avatar)}}" alt="">
                 @else
                     <img src="{{asset('default/users/img/default-avatar.png')}}" alt="">
                 @endif 
@@ -63,8 +63,6 @@
     <aside id="rightsidebar" class="right-sidebar">
         <ul class="nav nav-tabs tab-nav-right" role="tablist">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#skins">Skins</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#chat">Chat</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings">Setting</a></li>
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane in active in active" id="skins">
@@ -79,43 +77,6 @@
                     <li data-theme="black"><div class="black"></div><span>Black</span> </li>
                     <li data-theme="blush"><div class="blush"></div><span>Blush</span> </li>
                 </ul>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="settings">
-                <div class="demo-settings">
-                    <p>System settings</p>
-                    <ul class="setting-list">
-                        <li>
-                        	<span>Notifications</span>
-                            <div class="switch">
-                                <label>
-                                    <input type="checkbox" checked>
-                                    <span class="lever"></span>
-                            	</label>
-                            </div>
-                        </li>
-                    </ul>
-                    <p>Account settings</p>
-                    <ul class="setting-list">
-                        <li>
-                        	<span>Offline</span>
-                            <div class="switch">
-                                <label>
-                                    <input type="checkbox">
-                                    <span class="lever"></span>
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                        	<span>Location Permission</span>
-                            <div class="switch">
-                                <label>
-                                    <input type="checkbox" checked>
-                                    <span class="lever"></span>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </aside>

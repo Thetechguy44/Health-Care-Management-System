@@ -95,24 +95,6 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <!-- <div class="card-box mb-0">
-                                        <h3 class="card-title">Experience</h3>
-                                        <div class="experience-box">
-                                            <ul class="experience-list">
-                                                <li>
-                                                    <div class="experience-user">
-                                                        <div class="before-circle"></div>
-                                                    </div>
-                                                    <div class="experience-content">
-                                                        <div class="timeline-content">
-                                                            <a href="#/" class="name">Consultant Gynecologist</a>
-                                                            <span class="time">Jan 2014 - Present (4 years 8 months)</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div> -->
                                 </div>
                             </div>
 						</div>

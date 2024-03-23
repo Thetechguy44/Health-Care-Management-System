@@ -18,7 +18,7 @@
                         <div class="profile-img-wrap">
                             <div class="profile-img">
                             @if( auth()->user()->avatar != null )
-                                <img class="avatar" src="{{asset('storage/avatars/'.auth()->user()->avatar)}}" alt="" id="adminPicture">
+                                <img class="avatar" src="{{asset('storage/users-avatar/'.auth()->user()->avatar)}}" alt="" id="adminPicture">
                             @else
                                 <img class="avatar" src="{{asset('default/users/img/default-avatar.png')}}" alt="" id="adminPicture">
                             @endif
