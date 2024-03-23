@@ -45,13 +45,6 @@
                         <li class="{{ Route::is('treatments.create') ? 'active' : '' }}"><a href="{{route('treatments.create')}}">Add Treatment</a></li>
                     </ul>
                 </li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-balance-wallet"></i><span>Payments</span> </a>
-                    <ul class="ml-menu">
-                        <li> <a href="payments.html">Payments</a></li>
-                        <li> <a href="add-payments.html">Add Payment</a></li>
-                        <li> <a href="patient-invoice.html">Patient Invoice</a></li>
-                    </ul>
-                </li>
                 <li><a href="reports.html"><i class="zmdi zmdi-file-text"></i><span>Reports</span></a></li>
             </ul>
         </div>
@@ -62,8 +55,6 @@
     <aside id="rightsidebar" class="right-sidebar">
         <ul class="nav nav-tabs tab-nav-right" role="tablist">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#skins">Skins</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#chat">Chat</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings">Setting</a></li>
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane in active in active" id="skins">

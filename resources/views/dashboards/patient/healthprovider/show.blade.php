@@ -26,8 +26,8 @@
                                 @if($provider->speciality)
                                 (<span class="text-muted col-white">{{ $provider->speciality->name }}</span>) <br>
                                 @endif
-                                <a href="javascript:void(0);" class="btn btn-raised btn-info btn-sm">Message</a>
-                            <p class="social-icon">
+                                <a href="{{ url('chatify', $provider->user->id) }}" class="btn btn-raised btn-info btn-sm">Message</a>
+                            <p class="social-icon py-2">
                                 <a title="Twitter" href="{{$provider->user->twitter_url}}" target="blank"><i class="zmdi zmdi-twitter"></i></a>
                                 <a title="Facebook" href="{{$provider->user->facebook_url}}" target="blank"><i class="zmdi zmdi-facebook"></i></a>
                                 <a title="Instagram" href="{{$provider->user->instagram_url}}" target="blank"><i class="zmdi zmdi-instagram"></i></a>
@@ -38,52 +38,58 @@
                 </section>
             </div>
         </div>
-        <div class="row clearfix">
+        <div class="row clearfix py-3">
             <div class="col-lg-4 col-md-12">
                 <div class="card">
                     <div class="header">
                         <h2>About Health Provider</h2>
                     </div>
                     <div class="body">
-                        <p class="text-default">{{$provider->user->about}}</p>
-                        <blockquote>
-                         <small>By <cite title="Source Title">{{$provider->user->name}}</cite></small> 
-                        </blockquote>
+                        <strong>Name</strong>
+                        <p>{{$provider->user->name}}</p>
+                        <strong>Phone</strong>
+                        <p>{{$provider->user->phone}}</p>
+                        <strong>Email ID</strong>
+                        <p>{{$provider->user->email}}</p>
+                        <strong>Birthday</strong>
+                        <p>{{$provider->user->dob}}</p>
+                        <strong>Gender</strong>
+                        <p>{{$provider->user->gender}}</p>
+                        <hr>
+                        <strong>State</strong>
+                        <address>{{$provider->user->state}}</address>
+                        <strong>City</strong>
+                        <address>{{$provider->user->city}}</address>
+                        <strong>Address</strong>
+                        <address>{{$provider->user->address}}</address>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8 col-md-12">
+            <div class="col-lg-8 col-md-12 col-sm-12">
                 <div class="card">
-                    <ul class="personal-info">
-                        <li>
-                            <span class="title">Phone:</span>
-                            <span class="text"><a href="#">{{$provider->user->phone}}</a></span>
-                        </li>
-                        <li>
-                            <span class="title">Email:</span>
-                            <span class="text"><a href="#">{{$provider->user->email}}</a></span>
-                        </li>
-                        <li>
-                            <span class="title">Birthday:</span>
-                            <span class="text">{{$provider->user->dob}}</span>
-                        </li>
-                        <li>
-                            <span class="title">State:</span>
-                            <span class="text">{{$provider->user->state}}</span>
-                        </li>
-                        <li>
-                            <span class="title">City:</span>
-                            <span class="text">{{$provider->user->city}}</span>
-                        </li>
-                        <li>
-                            <span class="title">Address:</span>
-                            <span class="text">{{$provider->user->address}}</span>
-                        </li>
-                        <li>
-                            <span class="title">Gender:</span>
-                            <span class="text">{{$provider->user->gender}}</span>
-                        </li>
-                    </ul>
+                    <div class="body"> 
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane in active" >                               
+                                <div class="wrap-reset">
+                                    <div class="mypost-list">
+                                        <h4>About</h4> 
+                                        <div class="post-box">
+                                            <p>{{$provider->user->about}}</p>
+                                            <p>Always available on <b>{{$provider->available_days}}</b> from <b>{{$provider->available_times}}</b></p>
+                                        </div>
+                                        <hr>
+                                        <h4>Education</h4>
+                                        <ul class="dis">
+                                            <li>Attended {{$provider->user->school_attended}}.</li>
+                                            <li>Studied {{$provider->user->subject}}.</li>
+                                            <li>Qualification {{$provider->user->qualification}}.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
