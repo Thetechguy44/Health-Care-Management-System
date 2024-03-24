@@ -15,7 +15,7 @@
                         <div class="profile-img-wrap">
                             <div class="profile-img">
                             @if($provider->user->avatar)
-                                <img class="avatar" src="{{asset('storage/avatar/'.$provider->user->avatar)}}" alt="avatar">
+                                <img class="avatar" src="{{asset('storage/users-avatar/'.$provider->user->avatar)}}" alt="avatar">
                             @else
                             <img class="avatar" src="{{asset('default/users/img/default-avatar.png')}}">
                             @endif
@@ -32,7 +32,7 @@
                                         @else
                                             <p> </p>
                                         @endif
-                                        <div class="staff-msg"><a href="" class="btn btn-primary">Send Message</a></div>
+                                        <div class="staff-msg"><a href="{{ url('/chatify',$provider->user->id) }}" class="btn btn-primary">Send Message</a></div>
                                     </div>
                                 </div>
                                 <div class="col-md-7">

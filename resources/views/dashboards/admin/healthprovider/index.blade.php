@@ -17,7 +17,7 @@
                 <div class="profile-widget">
                     <div class="doctor-img">
                         @if($provider->user->avatar)
-                        <a href="{{route('admin.health_providers.show',$provider->id)}}" class="avatar"><img alt="" src="{{asset('storage/avatar/'.$provider->user->avatar)}}"></a>
+                        <a href="{{route('admin.health_providers.show',$provider->id)}}" class="avatar"><img alt="" src="{{asset('storage/users-avatar/'.$provider->user->avatar)}}"></a>
                         @else
                         <a href="{{route('admin.health_providers.show',$provider->id)}}" class="avatar"><img class="avatar" alt="" src="{{asset('default/users/img/default-avatar.png')}}"></a>
                         @endif
