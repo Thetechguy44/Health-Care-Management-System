@@ -1,8 +1,6 @@
 @extends('dashboards.healthcare-provider.layouts.app')
 @section('title', isset($title) ? $title: 'Treatments')
 @section('content')
-@include('dashboards.healthcare-provider.layouts.nav')
-@include('dashboards.healthcare-provider.layouts.side')
 <section class="content page-calendar">
     <div class="container-fluid">
         <div class="block-header">
