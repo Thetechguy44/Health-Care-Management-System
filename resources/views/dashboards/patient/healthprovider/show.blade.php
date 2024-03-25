@@ -1,8 +1,6 @@
 @extends('dashboards.patient.layouts.app')
 @section('title', isset($title) ? $title: 'Health Provider Profile')
 @section('content')
-@include('dashboards.patient.layouts.nav')
-@include('dashboards.patient.layouts.side')
 <section class="content profile-page">
     <div class="container-fluid">
         <div class="row clearfix">
@@ -25,6 +23,8 @@
                                 <span class="text-muted col-white">{{ $provider->role }}</span>
                                 @if($provider->speciality)
                                 (<span class="text-muted col-white">{{ $provider->speciality->name }}</span>) <br>
+                                @else
+                                <br>
                                 @endif
                                 <a href="{{ url('chatify', $provider->user->id) }}" class="btn btn-raised btn-info btn-sm">Message</a>
                             <p class="social-icon py-2">

@@ -36,6 +36,8 @@
 
         <!-- Overlay For Sidebars -->
         <div class="overlay"></div>
+        @include('dashboards.patient.layouts.nav')
+        @include('dashboards.patient.layouts.side')
 
         <div>
             @yield('content')

@@ -14,7 +14,7 @@ class TreatmentController extends Controller
 {
     public function index()
     {
-        $treatments = Treatment::with('patient.user', 'healthProvider.user', 'speciality')->get();
+        $treatments = Treatment::with('patient.user', 'healthProvider.user', 'speciality')->latest()->paginate(5);
         return view('dashboards.admin.treatment.index', compact('treatments'));
     }
 

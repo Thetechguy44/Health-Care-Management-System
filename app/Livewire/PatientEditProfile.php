@@ -15,7 +15,7 @@ class PatientEditProfile extends Component
 {
     use WithFileUploads;
     public $tab = null;
-    public $tabname = 'my_info';
+    public $tabname = 'update_profile';
     protected $queryString = ['tab'];
     public $id, $avatar, $name, $lastname, $othername, $email, $about, $dob, $selectedGender, $genderOptions, $address, $city, $blood_group, $occupation, $lga, $state, $phone;
     public $current_password, $new_password, $new_password_confirmation;
