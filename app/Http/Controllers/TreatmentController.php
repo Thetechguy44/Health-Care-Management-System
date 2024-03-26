@@ -15,7 +15,7 @@ class TreatmentController extends Controller
     public function index()
     {
         $patient = Auth::user()->patient;
-        $treatments = Treatment::where('patient_id', $patient->id)->with('healthProvider.user')->get();
+        $treatments = Treatment::where('patient_id', $patient->id)->with('healthProvider.user')->latest()->paginate(5);
         return view('dashboards.patient.treatment.index', compact('treatments'));
     }
 

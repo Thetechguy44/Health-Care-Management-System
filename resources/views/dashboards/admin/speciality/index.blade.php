@@ -47,6 +47,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    {{$specialities->links()}}
                 </div>
             </div>
         </div>

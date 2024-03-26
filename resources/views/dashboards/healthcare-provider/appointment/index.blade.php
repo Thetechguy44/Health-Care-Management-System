@@ -33,37 +33,38 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @php
-                                        $i=1
-                                    @endphp
+                                        @php
+                                            $i=1
+                                        @endphp
                                     @foreach($appointments as $appointment)
-                                    <tr>
-                                        <td>{{$i++}}</td>
-                                        <td>APT00{{$appointment->id}}</td>
-                                        <td>{{$appointment->patient->user->name}}</td>
-                                        <td>{{$appointment->phone}}</td>
-                                        <td>{{$appointment->age}}</td>
-                                        <td>{{$appointment->gender}}</td>
-                                        <td>{{$appointment->problem}}</td>
-                                        <td>{{$appointment->location}}</td>
-                                        <td>
-                                            @if($appointment->address)
-                                                {{ $appointment->address }}
-                                            @else
-                                                No Address Needed
-                                            @endif
-                                        </td>
-                                        <td>{{$appointment->date}}</td>
-                                        <td>
-                                            <a href="{{route('healthcare_provider.appointment_status',$appointment->id )}}" class="btn btn-sm btn-{{$appointment->status ? 'success' : 'danger'}}">
-                                                {{$appointment->status ? 'Complete' : 'Not Complete'}}
-                                            </a><br>
-                                            <small class="text-muted">Click to update</small>
-                                        </td>
-                                    </tr>
-                                   @endforeach
+                                        <tr>
+                                            <td>{{$i++}}</td>
+                                            <td>APT00{{$appointment->id}}</td>
+                                            <td>{{$appointment->patient->user->name}}</td>
+                                            <td>{{$appointment->phone}}</td>
+                                            <td>{{$appointment->age}}</td>
+                                            <td>{{$appointment->gender}}</td>
+                                            <td>{{$appointment->problem}}</td>
+                                            <td>{{$appointment->location}}</td>
+                                            <td>
+                                                @if($appointment->address)
+                                                    {{ $appointment->address }}
+                                                @else
+                                                    No Address Needed
+                                                @endif
+                                            </td>
+                                            <td>{{$appointment->date}}</td>
+                                            <td>
+                                                <a href="{{route('healthcare_provider.appointment_status',$appointment->id )}}" class="btn btn-sm btn-{{$appointment->status ? 'success' : 'danger'}}">
+                                                    {{$appointment->status ? 'Complete' : 'Not Complete'}}
+                                                </a><br>
+                                                <small class="text-muted">Click to update</small>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
+                                {{$appointments->links()}}
                             </div>
                         </div>
                     </div>

@@ -14,9 +14,8 @@ class AppointmentController extends Controller
     public function viewAppointment()
     {
         $provider = Auth::user()->healthProvider;
-        $appointments = Appointment::where('healthcare_provider_id', $provider->id)->latest()
-            ->with('patient.user')
-            ->get();
+        $appointments = Appointment::where('healthcare_provider_id', $provider->id)->with('patient.user')
+         ->latest()->paginate(5);
         return view('dashboards.healthcare-provider.appointment.index', compact('appointments'));
     }
 
@@ -38,9 +37,8 @@ class AppointmentController extends Controller
     public function viewTreatment()
     {
         $provider = Auth::user()->healthProvider;
-        $treatments = Treatment::where('healthcare_provider_id', $provider->id)->latest()
-            ->with('patient.user')
-            ->get();
+        $treatments = Treatment::where('healthcare_provider_id', $provider->id)->with('patient.user')
+         ->latest()->paginate(5);
         return view('dashboards.healthcare-provider.treatment.index', compact('treatments'));
     }
 }

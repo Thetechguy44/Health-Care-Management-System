@@ -17,7 +17,7 @@ class AppointmentController extends Controller
     public function index()
     {
         $patient = Auth::user()->patient;
-        $appointments = Appointment::where('patient_id', $patient->id)->with('healthProvider.user')->get();
+        $appointments = Appointment::where('patient_id', $patient->id)->with('healthProvider.user')->latest()->paginate(5);
         return view('dashboards.patient.appointment.index', compact('appointments'));
     }
 

@@ -75,6 +75,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {{$treatments->links()}}
                 </div>
             </div>
         </div>

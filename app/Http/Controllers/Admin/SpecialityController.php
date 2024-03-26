@@ -13,7 +13,7 @@ class SpecialityController extends Controller
      */
     public function index()
     {
-        $specialities = Speciality::all();
+        $specialities = Speciality::latest()->paginate(5);
         return view('dashboards.admin.speciality.index', compact('specialities'));
     }
 
