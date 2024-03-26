@@ -90,7 +90,7 @@ class AddTreatment extends Component
             $providerId = $this->selectedProvider;
         }
 
-        $patientID = Auth::user()->patient->first()->id;
+        $patientID = Auth::user()->patient->id;
 
         Treatment::create([
             'patient_id' => $patientID,

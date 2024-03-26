@@ -38,7 +38,7 @@
                                             <td>{{$i++}}</td>
                                             <td class="sorting_1">
                                             @if($patient->user->avatar)
-                                                <img width="28" height="28" src="{{asset('storage/avatar/'.$provider->user->avatar)}}" class="rounded-circle m-r-5" alt="">
+                                                <img width="28" height="28" src="{{asset('storage/users-avatar/'.$patient->user->avatar)}}" class="rounded-circle m-r-5" alt="">
                                             @else
                                             <img width="28" height="28" src="{{asset('default/users/img/default-avatar.png')}}" class="rounded-circle m-r-5" alt="">
                                             @endif

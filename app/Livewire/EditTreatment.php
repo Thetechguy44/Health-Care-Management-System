@@ -106,7 +106,7 @@ class EditTreatment extends Component
             $providerId = $this->selectedProvider;
         }
 
-        $patientID = Auth::user()->patient->first()->id;
+        $patientID = Auth::user()->patient->id;
 
         $this->treatment->update([
             'patient_id' => $patientID,

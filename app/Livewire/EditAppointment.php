@@ -107,7 +107,7 @@ class EditAppointment extends Component
             $providerId = $this->selectedProvider;
         }
 
-        $patientID = Auth::user()->patient->first()->id;
+        $patientID = Auth::user()->patient->id;
 
         $this->appointment->update([
             'patient_id' => $patientID,

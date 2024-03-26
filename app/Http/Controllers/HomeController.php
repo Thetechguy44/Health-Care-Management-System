@@ -27,11 +27,9 @@ class HomeController extends Controller
         $appointments = Appointment::where('patient_id', $patient->id)->with('healthProvider.user')->latest()->paginate(5);
     
         $totalAppointmentCount = Appointment::where('patient_id', $patient->id)
-            ->distinct('patient_id')
             ->count();
     
         $totalTreatmentCount = Treatment::where('patient_id', $patient->id)
-            ->distinct('patient_id')
             ->count();
 
         return view('dashboards.patient.home', [

@@ -11,7 +11,7 @@
                 <div class="input-group icon before_span">
                     <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
                     <div class="form-line">
-                        <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Full name" value="{{ old('name') }}" required autocomplete="firstname" autofocus>
+                        <input type="text" id="name" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Full name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                         @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

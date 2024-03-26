@@ -45,6 +45,7 @@
                         <li class="{{ Route::is('treatments.create') ? 'active' : '' }}"><a href="{{route('treatments.create')}}">Add Treatment</a></li>
                     </ul>
                 </li>
+                <li><a href="{{ url('/chatify') }}" class=" waves-effect waves-block"><i class="zmdi zmdi-delicious"></i><span>Chat</span></a></li>
                 <li><a href="reports.html"><i class="zmdi zmdi-file-text"></i><span>Reports</span></a></li>
             </ul>
         </div>

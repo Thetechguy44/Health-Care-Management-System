@@ -23,11 +23,9 @@ class HomeController extends Controller
         $healthProvider = auth()->user()->healthProvider;
     
         $totalAppointmentCount = Appointment::where('healthcare_provider_id', $healthProvider->id)
-            ->distinct('patient_id')
             ->count();
     
         $totalTreatmentCount = Treatment::where('healthcare_provider_id', $healthProvider->id)
-            ->distinct('patient_id')
             ->count();
 
         $treated = Treatment::where('healthcare_provider_id', $healthProvider->id)
@@ -38,13 +36,14 @@ class HomeController extends Controller
             ->with('patient.user')
             ->latest()->paginate(5);
         
-        $currentDate = now()->toDateString();$currentDate = now()->toDateString();
+            $currentDate = now();
+
         $dailyTreatmentsCount = Treatment::where('healthcare_provider_id', $healthProvider->id)
-            ->whereDate('date', $currentDate)
-            ->count();
+                ->whereDate('created_at', $currentDate->toDateString())
+                ->count();
 
         $dailyAppointmentsCount = Appointment::where('healthcare_provider_id', $healthProvider->id)
-            ->whereDate('date', $currentDate)
+            ->whereDate('created_at', $currentDate->toDateString())
             ->count();
     
         $appointPatients = $appointed->pluck('patient')->unique();
