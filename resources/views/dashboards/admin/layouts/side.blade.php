@@ -45,8 +45,8 @@
                         <li><a href="edit-blog.html">Edit Blog</a></li>
                     </ul>
                 </li> -->
-                <li>
-                    <a href=""><i class="fa fa-cog"></i> <span>Settings</span></a>
+                <li class="{{ Route::is('admin.settings') ? 'active' : ''}}">
+                    <a href="{{ route('admin.settings') }}"><i class="fa fa-cog"></i> <span>Settings</span></a>
                 </li>
             </ul>
         </div>

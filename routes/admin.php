@@ -28,4 +28,5 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','user-type:admin'])->
   Route::get('/add-treatments', [App\Http\Controllers\Admin\TreatmentController::class, 'create'])->name('treatments.create');
   Route::get('/edit-treatments/{id}', [App\Http\Controllers\Admin\TreatmentController::class, 'edit'])->name('treatments.edit');
   Route::delete('/delete-treatments/{id}', [App\Http\Controllers\Admin\TreatmentController::class, 'destroy'])->name('treatments.destroy');
+  Route::get('/settings', [App\Http\Controllers\Admin\SettingsController::class, 'index'])->name('settings');
 });
