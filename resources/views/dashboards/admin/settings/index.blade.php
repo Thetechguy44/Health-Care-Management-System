@@ -18,34 +18,28 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="form-group">
+                                <label>About Us<span class="text-danger">*</span></label>
+                                <textarea class="form-control" rows="10" rows="12" name="about_us"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
                                 <label>Address</label>
                                 <input class="form-control " value="3864 Quiet Valley Lane, Sherman Oaks, CA, 91403" type="text">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-3">
                             <div class="form-group">
-                                <label>Country</label>
-                                <select class="form-control select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                    <option>USA</option>
-                                    <option>United Kingdom</option>
-                                </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-hflc-container"><span class="select2-selection__rendered" id="select2-hflc-container" title="USA">USA</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                <label>State</label>
+                                <input class="form-control" value="Sherman Oaks" type="text">
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-3">
                             <div class="form-group">
                                 <label>City</label>
                                 <input class="form-control" value="Sherman Oaks" type="text">
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3">
-                            <div class="form-group">
-                                <label>State/Province</label>
-                                <select class="form-control select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                    <option>California</option>
-                                    <option>Alaska</option>
-                                    <option>Alabama</option>
-                                </select>
-                                <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-get5-container"><span class="select2-selection__rendered" id="select2-get5-container" title="California">California</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-3">
@@ -84,7 +78,25 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Facebook Url</label>
+                                <input class="form-control" value="https://www.example.com" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Instagram Url</label>
+                                <input class="form-control" value="https://www.example.com" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>Twitter Url</label>
+                                <input class="form-control" value="https://www.example.com" type="text">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Website Url</label>
                                 <input class="form-control" value="https://www.example.com" type="text">
