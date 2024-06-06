@@ -11,4 +11,5 @@ class ServicesController extends Controller
     {
         return view('dashboards.admin.settings.services');
     }
+
 }

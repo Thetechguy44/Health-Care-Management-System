@@ -21,7 +21,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','user-type:admin'])->
   Route::resource('/specialities', App\Http\Controllers\Admin\SpecialityController::class);
   Route::resource('/health_providers', App\Http\Controllers\Admin\HealthProviderController::class);
   Route::resource('/patients', App\Http\Controllers\Admin\PatientController::class);
-  Route::get('/upload-avatar', [App\Http\Controllers\Admin\ProfileController::class, 'updateAvatar'])->name('avatar');
   Route::resource('/appointments', App\Http\Controllers\Admin\AppointmentController::class);
   Route::get('appointment/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'updateStatus'])->name('appointment_status');
   Route::get('/treatments', [App\Http\Controllers\Admin\TreatmentController::class, 'index'])->name('treatments.index');
@@ -29,5 +28,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','user-type:admin'])->
   Route::get('/edit-treatments/{id}', [App\Http\Controllers\Admin\TreatmentController::class, 'edit'])->name('treatments.edit');
   Route::delete('/delete-treatments/{id}', [App\Http\Controllers\Admin\TreatmentController::class, 'destroy'])->name('treatments.destroy');
   Route::get('/settings', [App\Http\Controllers\Admin\SettingsController::class, 'index'])->name('settings');
+  Route::put('/settings/update', [App\Http\Controllers\Admin\SettingsController::class, 'update'])->name('settings.update');
   Route::get('/services', [App\Http\Controllers\Admin\ServicesController::class, 'index'])->name('services');
 });
