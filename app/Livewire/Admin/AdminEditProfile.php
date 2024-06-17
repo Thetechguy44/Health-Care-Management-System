@@ -48,6 +48,8 @@ class AdminEditProfile extends Component
 
     public function updateAvatar()
     {
+
+        logger('avatar');
         $this->validate([
             'avatar' => 'required|image|max:2048|mimes:png,jpeg,jpg',
         ]);

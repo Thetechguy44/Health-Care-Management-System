@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Admin;
 use App\Models\Setting;
+use App\Models\Services;
 use Auth;
 
 class SettingsController extends Controller
@@ -61,6 +62,11 @@ class SettingsController extends Controller
         } else {
             return redirect()->back()->with('error', 'Setting not found.');
         }
+    }
+
+    public function services()
+    {
+        return view('dashboards.admin.settings.services');
     }
     
 }

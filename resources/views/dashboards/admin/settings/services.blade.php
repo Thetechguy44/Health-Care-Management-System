@@ -5,7 +5,9 @@
     <div class="content">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-                <form>
+                <form action="{{ route('admin.services.update') }}" method="Post" enctype="multipart/form-data">
+                    @csrf
+                    @method('put')
                     <h3 class="page-title">Services Settings</h3>
                     <div class="form-group row">
                         <label class="col-lg-3 col-form-label">Image</label>

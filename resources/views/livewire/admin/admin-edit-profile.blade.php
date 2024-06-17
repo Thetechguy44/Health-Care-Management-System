@@ -5,7 +5,8 @@
                 <h4 class="page-title">Edit Profile</h4>
             </div>
         </div>
-        <form wire:submit.prevent='updateAvatar()'>
+        <form wire:submit.prevent="updateAvatar()">
+            @csrf
             <div class="card-box">
                 <h3 class="card-title">Profile Picture</h3>
                 @if (session()->has('avatar'))
