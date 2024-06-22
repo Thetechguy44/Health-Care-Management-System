@@ -21,22 +21,22 @@ class SettingsController extends Controller
     //updating the settings 
     public function update(Request $request)
     {
-        $request->validate([
-            'company_name' => 'required',
-            'email' => 'required',
-            'phone' => 'required|numeric|min:11',
-            'about_us' => 'required',
-            'address' => 'required',
-            'country' => 'required',
-            'city' => 'required',
-            'state' => 'required',
-            'postal_code' => 'required',
-            'footer' => 'nullable',
-            'facebook_url' => 'nullable|url',
-            'instagram_url' => 'nullable|url',
-            'twitter_url' => 'nullable|url',
-            'linkedin_url' => 'nullable|url',
-        ]);
+        // $request->validate([
+        //     'company_name' => 'required|string|max:255',
+        //     'email' => 'required|email|max:255',
+        //     'phone' => 'required|numeric|digits_between:10,15',
+        //     'about_us' => 'required|string',
+        //     'address' => 'required|string|max:255',
+        //     'country' => 'required|string|max:255',
+        //     'city' => 'required|string|max:255',
+        //     'state' => 'required|string|max:255',
+        //     'postal_code' => 'required|string|max:20',
+        //     'footer' => 'nullable|string|max:255',
+        //     'facebook_url' => 'nullable|url|max:255',
+        //     'instagram_url' => 'nullable|url|max:255',
+        //     'twitter_url' => 'nullable|url|max:255',
+        //     'linkedin_url' => 'nullable|url|max:255',
+        // ]);        
     
         $setting = Setting::first();
     

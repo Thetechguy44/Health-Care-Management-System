@@ -22,21 +22,12 @@
                 <li>
                     <a href="email-settings.html"><i class="fa fa-envelope-o"></i> <span>Email Settings</span></a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="invoice-settings.html"><i class="fa fa-pencil-square-o"></i> <span>Invoice Settings</span></a>
-                </li>
-                <li>
-                    <a href="salary-settings.html"><i class="fa fa-money"></i> <span>Salary Settings</span></a>
-                </li>
-                <li>
+                </li> -->
+                <!-- <li>
                     <a href="notifications-settings.html"><i class="fa fa-globe"></i> <span>Notifications</span></a>
-                </li>
-                <li>
-                    <a href="change-password.html"><i class="fa fa-lock"></i> <span>Change Password</span></a>
-                </li>
-                <li>
-                    <a href="leave-type.html"><i class="fa fa-cogs"></i> <span>Leave Type</span></a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
