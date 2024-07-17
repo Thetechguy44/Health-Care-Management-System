@@ -17,7 +17,7 @@
                     <a href="theme-settings.html"><i class="fa fa-picture-o"></i> <span>Theme Settings</span></a>
                 </li>
                 <li>
-                    <a href="roles-permissions.html"><i class="fa fa-key"></i> <span>Roles & Permissions</span></a>
+                    <a href="{{ route('admin.admins.index') }}"><i class="fa fa-key"></i> <span>Roles & Permissions</span></a>
                 </li>
                 <li>
                     <a href="email-settings.html"><i class="fa fa-envelope-o"></i> <span>Email Settings</span></a>

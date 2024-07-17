@@ -22,6 +22,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth','user-type:admin'])->
   Route::resource('/health_providers', App\Http\Controllers\Admin\HealthProviderController::class);
   Route::resource('/patients', App\Http\Controllers\Admin\PatientController::class);
   Route::resource('/appointments', App\Http\Controllers\Admin\AppointmentController::class);
+  Route::resource('/admins', App\Http\Controllers\Admin\AddAdminController::class);
   Route::get('appointment/{id}', [App\Http\Controllers\Admin\AppointmentController::class, 'updateStatus'])->name('appointment_status');
   Route::get('/treatments', [App\Http\Controllers\Admin\TreatmentController::class, 'index'])->name('treatments.index');
   Route::get('/add-treatments', [App\Http\Controllers\Admin\TreatmentController::class, 'create'])->name('treatments.create');
