@@ -10,11 +10,12 @@
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <a href="add-role.html" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add Roles</a>
+                <a href="{{route('admin.roles.create')}}" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add Roles</a>
                 <div class="roles-menu">
                     <ul>
-                        <li class="active">
-                            <a href="javascript:void(0);">Administrator</a>
+                        @foreach($roles as $role)
+                        <li class="">
+                            <a href="javascript:void(0);">{{$role->name}}</a>
                             <span class="role-action">
                                 <a href="edit-role.html">
                                     <span class="action-circle large">
@@ -28,6 +29,7 @@
                                 </a>
                             </span>
                         </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

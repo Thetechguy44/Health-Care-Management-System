@@ -15,7 +15,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return view('dashboards.admin.settings.role.index');
+        return view('dashboards.admin.settings.role.index', ['roles' => Role::paginate(10)]);
     }
 
     /**
@@ -23,7 +23,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboards.admin.settings.role.create', ['permissions' => Permission::all()]);
     }
 
     /**
@@ -31,7 +31,10 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $role = Role::create($request->except('permissions'));
+        $role->syncPermissions($request->input('permissions'));
+    
+        return redirect()->route('admin.roles.index')->with('success','Role created successfully');
     }
 
     /**
