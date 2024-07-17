@@ -17,16 +17,20 @@
                         <li class="">
                             <a href="javascript:void(0);">{{$role->name}}</a>
                             <span class="role-action">
-                                <a href="edit-role.html">
-                                    <span class="action-circle large">
-                                        <i class="material-icons">edit</i>
-                                    </span>
-                                </a>
-                                <a href="#" data-toggle="modal" data-target="#delete_role">
-                                    <span class="action-circle large delete-btn">
-                                        <i class="material-icons">delete</i>
-                                    </span>
-                                </a>
+                                <form action="{{route('admin.roles.destroy',$role->id)}}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <a href="{{route('admin.roles.edit',$role->id)}}">
+                                        <span class="action-circle large">
+                                            <i class="material-icons">edit</i>
+                                        </span>
+                                    </a>
+                                    <button type="submit" data-toggle="modal" data-target="#delete_role">
+                                        <span class="action-circle large delete-btn">
+                                            <i class="material-icons">delete</i>
+                                        </span>
+                                    </button>
+                                </form>
                             </span>
                         </li>
                         @endforeach

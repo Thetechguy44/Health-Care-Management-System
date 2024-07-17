@@ -50,7 +50,13 @@ class RoleController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $role = Role::find($id);
+        $permissions = Permission::get();
+        $rolePermissions = DB::table("role_has_permissions")->where("role_has_permissions.role_id",$id)
+            ->pluck('role_has_permissions.permission_id','role_has_permissions.permission_id')
+            ->all();
+    
+        return view('dashboards.admin.settings.role.edit',compact('role','permissions','rolePermissions'));
     }
 
     /**
@@ -58,7 +64,13 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $role = Role::findorFail($id);
+
+        $role->update($request->except('permissions'));
+        $role->syncPermissions($request->input('permissions'));
+    
+        return redirect()->route('admin.roles.index')
+                        ->with('success','Role updated successfully');
     }
 
     /**
@@ -66,6 +78,7 @@ class RoleController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Role::destroy($id);
+        return redirect()->route('admin.roles.index')->with('success', 'Role deleted successfully');
     }
 }

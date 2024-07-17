@@ -1,21 +1,21 @@
 @extends('dashboards.admin.settings.layouts.app')
-@section('title', isset($title) ? $title: 'Add Role')
+@section('title', isset($title) ? $title: 'Edit Role')
 @section('content')
 <div class="page-wrapper" style="min-height: 617px;">
     <div class="content">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-                <h4 class="page-title">Add Role</h4>
+                <h4 class="page-title">Edit Role</h4>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
-                <form Method="Post" action="{{ route('admin.roles.store') }}">
-                    @method('post')
+                <form Method="Post" action="{{ route('admin.roles.update', $role->id) }}">
+                    @method('put')
                     @csrf
                     <div class="form-group">
                         <label>Role Name <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" name="name">
+                        <input class="form-control" type="text" name="name" value="{{ $role->name }}">
                     </div>
                     <!-- <div class="form-group">
                         <label class="display-block">Status</label>
@@ -42,7 +42,7 @@
                                         <li class="list-group-item">
                                             {{$permission->name}}
                                             <div class="material-switch float-right">
-                                                <input id="{{$permission->name}}" type="checkbox" name="permissions[]" value="{{$permission->name}}">
+                                                <input id="{{$permission->name}}" type="checkbox" name="permissions[]" value="{{$permission->name}}" @isset($role) @if(in_array($permission->id, $rolePermissions) ? true : false) checked @endif @endisset>
                                                 <label for="{{$permission->name}}" class="badge-success"></label>
                                             </div>
                                         </li>
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="m-t-20 text-center">
-                        <button class="btn btn-primary submit-btn" type="submit">Create Role</button>
+                        <button class="btn btn-primary submit-btn" type="submit">Update Role</button>
                     </div>
                 </form>
             </div>
