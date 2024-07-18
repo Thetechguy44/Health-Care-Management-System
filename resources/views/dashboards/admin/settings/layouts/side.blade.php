@@ -16,7 +16,7 @@
                 <li>
                     <a href="theme-settings.html"><i class="fa fa-picture-o"></i> <span>Theme Settings</span></a>
                 </li>
-                <li>
+                <li class="{{ Route::is('admin.roles.index') ? 'active' : ''}}">
                     <a href="{{ route('admin.roles.index') }}"><i class="fa fa-key"></i> <span>Roles & Permissions</span></a>
                 </li>
                 <li>

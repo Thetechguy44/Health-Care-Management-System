@@ -15,7 +15,7 @@ class AddAdminController extends Controller
      */
     public function index()
     {
-        return view('dashboards.admin.settings.users.index');
+        return view('dashboards.admin.admins.index');
     }
 
     /**

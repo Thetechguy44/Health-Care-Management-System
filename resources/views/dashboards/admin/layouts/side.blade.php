@@ -22,14 +22,8 @@
                 <li class="{{ Route::is('admin.treatments.index','admin.treatments.create','admin.treatments.edit') ? 'active' : ''}}">
                     <a href="{{route('admin.treatments.index')}}"><i class="fa fa-calendar-check-o"></i> <span>Treatments</span></a>
                 </li>
-                <li class="submenu">
-                    <a href="#"><i class="fa fa-user"></i> <span> Employees </span> <span class="menu-arrow"></span></a>
-                    <ul style="display: none;">
-                        <li><a href="employees.html">Employees List</a></li>
-                        <li><a href="leaves.html">Leaves</a></li>
-                        <li><a href="holidays.html">Holidays</a></li>
-                        <li><a href="attendance.html">Attendance</a></li>
-                    </ul>
+                <li class="{{ Route::is('admin.admins.index','admin.admins.create','admin.admins.edit') ? 'active' : ''}}">
+                    <a href="{{route('admin.admins.index')}}"><i class="fa fa-user"></i> <span> Admins </span></a>
                 </li>
                 <li>
                     <a href="{{ url('/chatify') }}"><i class="fa fa-comments"></i> <span>Chat</span> 
