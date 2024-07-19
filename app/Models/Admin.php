@@ -11,11 +11,13 @@ class Admin extends Model
 {
     use HasFactory, HasRoles;
 
+    protected $guard_name = 'admin'; // Specify the guard name
+    
     public $fillable = [
         'user_id',
     ];
 
-    public function user(): BelongsTo
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

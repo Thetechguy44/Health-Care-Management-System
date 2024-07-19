@@ -31,11 +31,15 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $role = Role::create($request->except('permissions'));
+        $role = Role::create([
+            'name' => $request->input('name'),
+            'guard_name' => 'admin' // specify the guard name here
+        ]);
         $role->syncPermissions($request->input('permissions'));
-    
-        return redirect()->route('admin.roles.index')->with('success','Role created successfully');
+        
+        return redirect()->route('admin.roles.index')->with('success', 'Role created successfully');
     }
+
 
     /**
      * Display the specified resource.
@@ -64,14 +68,20 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $role = Role::findorFail($id);
-
-        $role->update($request->except('permissions'));
+        // Fetch the role with the admin guard
+        $role = Role::where('id', $id)->where('guard_name', 'admin')->firstOrFail();
+    
+        // Update the role attributes, ensuring guard_name is 'admin'
+        $role->update($request->except(['permissions', 'guard_name']));
+        $role->guard_name = 'admin';
+        $role->save();
+    
+        // Synchronize the permissions
         $role->syncPermissions($request->input('permissions'));
     
         return redirect()->route('admin.roles.index')
-                        ->with('success','Role updated successfully');
-    }
+                        ->with('success', 'Role updated successfully');
+    }    
 
     /**
      * Remove the specified resource from storage.
