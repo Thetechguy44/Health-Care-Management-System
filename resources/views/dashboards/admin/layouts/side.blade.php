@@ -7,6 +7,9 @@
                 <li class="{{ Route::is('admin.home') ? 'active' : ''}}">
                     <a href="{{route('admin.home')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                 </li>
+                <li class="{{ Route::is('admin.admins.index','admin.admins.create','admin.admins.edit') ? 'active' : ''}}">
+                    <a href="{{route('admin.admins.index')}}"><i class="fa fa-user"></i> <span> Admins </span></a>
+                </li>
                 <li class="{{ Route::is('admin.health_providers.index','admin.health_providers.create','admin.health_providers.show','admin.health_providers.edit') ? 'active' : ''}}">
                     <a href="{{route('admin.health_providers.index')}}"><i class="fa fa-user-md"></i> <span>Healthcare Providers</span></a>
                 </li>
@@ -21,9 +24,6 @@
                 </li>
                 <li class="{{ Route::is('admin.treatments.index','admin.treatments.create','admin.treatments.edit') ? 'active' : ''}}">
                     <a href="{{route('admin.treatments.index')}}"><i class="fa fa-calendar-check-o"></i> <span>Treatments</span></a>
-                </li>
-                <li class="{{ Route::is('admin.admins.index','admin.admins.create','admin.admins.edit') ? 'active' : ''}}">
-                    <a href="{{route('admin.admins.index')}}"><i class="fa fa-user"></i> <span> Admins </span></a>
                 </li>
                 <li>
                     <a href="{{ url('/chatify') }}"><i class="fa fa-comments"></i> <span>Chat</span> 
