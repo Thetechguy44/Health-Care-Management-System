@@ -22,10 +22,10 @@ class PermissionTableSeeder extends Seeder
             'patient-create',
             'patient-edit',
             'patient-delete',
-            'healthprovider-list',
-            'healthprovider-create',
-            'healthprovider-edit',
-            'healthprovider-delete',
+            'provider-list',
+            'provider-create',
+            'provider-edit',
+            'provider-delete',
             'appointment-list',
             'appointment-create',
             'appointment-edit',
@@ -48,7 +48,10 @@ class PermissionTableSeeder extends Seeder
          ];
          
          foreach ($permissions as $permission) {
-              Permission::create(['name' => $permission]);
-         }
+            Permission::firstOrCreate([
+                'name' => $permission,
+                'guard_name' => 'admin' // specify the guard name here
+            ]);
+        }
     }
 }
