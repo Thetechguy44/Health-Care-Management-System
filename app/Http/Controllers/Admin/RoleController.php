@@ -10,6 +10,13 @@ use DB;
 
 class RoleController extends Controller
 {
+    function __construct()
+    {
+         $this->middleware('permission:role-list|role-create|role-edit|role-delete', ['only' => ['index','store']]);
+         $this->middleware('permission:role-create', ['only' => ['create','store']]);
+         $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:role-delete', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -31,15 +38,11 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $role = Role::create([
-            'name' => $request->input('name'),
-            'guard_name' => 'admin' // specify the guard name here
-        ]);
+        $role = Role::create($request->except('permissions'));
         $role->syncPermissions($request->input('permissions'));
-        
-        return redirect()->route('admin.roles.index')->with('success', 'Role created successfully');
+    
+        return redirect()->route('admin.roles.index')->with('success','Role created successfully');
     }
-
 
     /**
      * Display the specified resource.
@@ -68,20 +71,14 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // Fetch the role with the admin guard
-        $role = Role::where('id', $id)->where('guard_name', 'admin')->firstOrFail();
-    
-        // Update the role attributes, ensuring guard_name is 'admin'
-        $role->update($request->except(['permissions', 'guard_name']));
-        $role->guard_name = 'admin';
-        $role->save();
-    
-        // Synchronize the permissions
+        $role = Role::findorFail($id);
+
+        $role->update($request->except('permissions'));
         $role->syncPermissions($request->input('permissions'));
     
         return redirect()->route('admin.roles.index')
-                        ->with('success', 'Role updated successfully');
-    }    
+                        ->with('success','Role updated successfully');
+    }
 
     /**
      * Remove the specified resource from storage.

@@ -12,11 +12,12 @@ use Auth;
 use App\Models\Admin;
 use App\Models\HealthProvider;
 use App\Models\Patient;
+use Spatie\Permission\Traits\HasRoles;
 
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.

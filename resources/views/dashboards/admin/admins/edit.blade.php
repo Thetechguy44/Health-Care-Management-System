@@ -55,7 +55,7 @@
                                     @foreach($roles as $role)
                                     <option value="{{ $role->name }}" 
                                         @isset($admin) 
-                                            @if($admin->roles->pluck('name')->contains($role->name)) 
+                                            @if($admin->user->roles->pluck('name')->contains($role->name)) 
                                                 selected 
                                             @endif 
                                         @endisset>

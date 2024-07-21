@@ -12,6 +12,14 @@ use App\Models\Appointment;
 
 class AppointmentController extends Controller
 {
+    function __construct()
+    {
+         $this->middleware('permission:appointment-list|appointment-create|appointment-edit|appointment-delete', ['only' => ['index','store']]);
+         $this->middleware('permission:appointment-create', ['only' => ['create','store']]);
+         $this->middleware('permission:appointment-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:appointment-delete', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      */

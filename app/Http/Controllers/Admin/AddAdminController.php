@@ -13,12 +13,20 @@ use Illuminate\Validation\Rule;
 
 class AddAdminController extends Controller
 {
+    function __construct()
+    {
+         $this->middleware('permission:admin-list|admin-create|admin-edit|admin-delete', ['only' => ['index','store']]);
+         $this->middleware('permission:admin-create', ['only' => ['create','store']]);
+         $this->middleware('permission:admin-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:admin-delete', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $admins = Admin::with(['user', 'roles'])->get();
+        $admins = Admin::with('user.roles')->get();
         return view('dashboards.admin.admins.index', [
             'admins' => Admin::paginate(10)
         ]);
@@ -55,23 +63,15 @@ class AddAdminController extends Controller
         ]);
     
         // Create the admin entry with the user ID
-        $admin = Admin::create([
+        Admin::create([
             'user_id' => $user->id,
         ]);
     
-        // Fetch role by name and guard
-        $role = Role::where('name', $request->input('roles'))->where('guard_name', 'admin')->first();
-    
-        if ($role) {
-            // Assign the role to the admin with the correct guard
-            $admin->assignRole($role);
-        } else {
-            return redirect()->back()->with('error', 'Role not found or guard mismatch.');
-        }
+        // Assign the role to the admin
+        $user->assignRole($request->input('roles'));
     
         return redirect()->route('admin.admins.index')->with('success', 'New Admin added successfully');
     }
-    
     
 
     /**
@@ -89,7 +89,7 @@ class AddAdminController extends Controller
     {
         return view('dashboards.admin.admins.edit', [
             'roles' => Role::all(),
-            'admin' => Admin::with(['user','roles'])->find($id)
+            'admin' => Admin::with('user.roles')->find($id)
         ]);
     }
 
@@ -110,34 +110,24 @@ class AddAdminController extends Controller
         //     'phone' => 'required|numeric',
         //     'role' => 'required',
         // ]);
-
+    
         // Retrieve the admin
         $admin = Admin::findOrFail($id);
-
+    
         // Update the user
         $user = $admin->user;
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->phone = $request->input('phone');
         $user->save();
+    
+        DB::table('model_has_roles')->where('model_id',$id)->delete();
 
-        // Remove existing roles
-        DB::table('model_has_roles')->where('model_id', $id)->delete();
-
-        
-        // Fetch role by name and guard
-        $role = Role::where('name', $request->input('roles'))->where('guard_name', 'admin')->first();
-
-        if ($role) {
-            // Assign the role to the admin with the correct guard
-            $admin->assignRole($role);
-        } else {
-            return redirect()->back()->with('error', 'Role not found or guard mismatch.');
-        }
-
+        // Update the role
+        $user->syncRoles($request->input('roles'));
+    
         return redirect()->route('admin.admins.index')->with('success', 'Admin updated successfully');
     }
-
     
     /**
      * Remove the specified resource from storage.

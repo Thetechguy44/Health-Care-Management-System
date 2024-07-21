@@ -8,6 +8,14 @@ use App\Models\Speciality;
 
 class SpecialityController extends Controller
 {
+    function __construct()
+    {
+         $this->middleware('permission:speciality-list|speciality-create|speciality-edit|speciality-delete', ['only' => ['index','store']]);
+         $this->middleware('permission:speciality-create', ['only' => ['create','store']]);
+         $this->middleware('permission:speciality-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:speciality-delete', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      */

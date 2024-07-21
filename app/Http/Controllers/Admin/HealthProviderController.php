@@ -11,6 +11,14 @@ use Illuminate\Validation\Rule;
 
 class HealthProviderController extends Controller
 {
+    function __construct()
+    {
+         $this->middleware('permission:provider-list|provider-create|provider-edit|provider-delete', ['only' => ['index','store']]);
+         $this->middleware('permission:provider-create', ['only' => ['create','store']]);
+         $this->middleware('permission:provider-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:provider-delete', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      */

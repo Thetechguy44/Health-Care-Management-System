@@ -12,6 +12,14 @@ use Illuminate\Support\Facades\Validator;
 
 class PatientController extends Controller
 {
+    function __construct()
+    {
+         $this->middleware('permission:patient-list|patient-create|patient-edit|patient-delete', ['only' => ['index','store']]);
+         $this->middleware('permission:patient-create', ['only' => ['create','store']]);
+         $this->middleware('permission:patient-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:patient-delete', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      */

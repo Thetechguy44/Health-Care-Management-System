@@ -38,7 +38,7 @@
                                 <td>{{$admin->user->email}}</td>
                                 <td>{{$admin->user->phone}}</td>
                                 <td>
-                                @foreach($admin->roles as $role)
+                                @foreach($admin->user->roles as $role)
                                      <span class="custom-badge status-green">{{ $role->name }}@if(!$loop->last), @endif</span>
                                 @endforeach
                                 </td>

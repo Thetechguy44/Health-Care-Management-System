@@ -12,6 +12,14 @@ use App\Models\Treatment;
 
 class TreatmentController extends Controller
 {
+    function __construct()
+    {
+         $this->middleware('permission:treatment-list|treatment-create|treatment-edit|treatment-delete', ['only' => ['index','store']]);
+         $this->middleware('permission:treatment-create', ['only' => ['create','store']]);
+         $this->middleware('permission:treatment-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:treatment-delete', ['only' => ['destroy']]);
+    }
+
     public function index()
     {
         $treatments = Treatment::with('patient.user', 'healthProvider.user', 'speciality')->latest()->paginate(5);

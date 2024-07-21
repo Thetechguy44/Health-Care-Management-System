@@ -50,7 +50,6 @@ class PermissionTableSeeder extends Seeder
          foreach ($permissions as $permission) {
             Permission::firstOrCreate([
                 'name' => $permission,
-                'guard_name' => 'admin' // specify the guard name here
             ]);
         }
     }

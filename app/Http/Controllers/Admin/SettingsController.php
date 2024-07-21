@@ -12,6 +12,13 @@ use Auth;
 
 class SettingsController extends Controller
 {
+    function __construct()
+    {
+         $this->middleware('permission:setting-view', ['only' => ['index','update']]);
+         $this->middleware('permission:service-view', ['only' => ['services','update']]);
+         $this->middleware('permission:theme-view', ['only' => ['theme','update']]);
+    }
+
     public function index()
     {
         $settings = Setting::first();
