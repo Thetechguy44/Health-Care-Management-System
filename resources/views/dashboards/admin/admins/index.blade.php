@@ -7,9 +7,11 @@
             <div class="col-sm-4 col-3">
                 <h4 class="page-title">Admins</h4>
             </div>
+            @can('admin-create')
             <div class="col-sm-8 col-9 text-right m-b-20">
                 <a href="{{route('admin.admins.create')}}" class="btn btn-primary float-right btn-rounded"><i class="fa fa-plus"></i> Add Admin</a>
             </div>
+            @endcan
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -22,7 +24,9 @@
                                 <th>Email</th>
                                 <th>Mobile</th>
                                 <th>Role</th>
+                                @canany(['admin-edit','admin-delete'])
                                 <th class="text-right">Action</th>
+                                @endcanany
                             </tr>
                         </thead>
                         <tbody>
@@ -46,11 +50,16 @@
                                     <div class="dropdown dropdown-action">
                                         <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                         <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(22px, 27px, 0px);" x-out-of-boundaries="">
+                                            @can('admin-edit')
                                             <a class="dropdown-item" href="{{route('admin.admins.edit',$admin->id)}}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                            @endcan
+                                            @can('admin-delete')
                                             <form action="{{route('admin.admins.destroy',$admin->user->id)}}" method="post">
-                                            @csrf
-                                            @method('Delete')
-                                            <button class="dropdown-item" type="submit" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</button>
+                                                @csrf
+                                                @method('Delete')
+                                                <button class="dropdown-item" type="submit" data-toggle="modal" data-target="#delete_employee"><i class="fa fa-trash-o m-r-5"></i> Delete</button>
+                                            </form>
+                                            @endcan
                                         </div>
                                     </div>
                                 </td>
