@@ -7,9 +7,11 @@
             <div class="col-sm-4 col-3">
                 <h4 class="page-title">Patients</h4>
             </div>
+            @can('patient-create')
             <div class="col-sm-8 col-9 text-right m-b-20">
                 <a href="{{route('admin.patients.create')}}" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Patient</a>
             </div>
+            @endcan
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -26,7 +28,9 @@
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending" style="width: 334.266px;">Address</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Phone: activate to sort column ascending" style="width: 81.4844px;">Phone</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="width: 191.453px;">Email</th>
+                                            @canany(['patient-edit','patient-delete'])
                                             <th class="text-right sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending" style="width: 49.8906px;">Action</th>
+                                            @endcanany
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -48,17 +52,23 @@
                                             <td>{{$patient->user->phone}}</td>
                                             <td>{{$patient->user->email}}</td>
                                             <td class="text-right">
+                                                @canany(['patient-edit','patient-delete'])
                                                 <div class="dropdown dropdown-action">
                                                     <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                                     <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="{{route('admin.patients.edit',$patient->id)}}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                    <form action="{{route('admin.patients.destroy',$patient->user->id)}}" method="post">
-                                                        @csrf
-                                                        @method('Delete')
-                                                        <button class="dropdown-item" type="submit" data-toggle="modal" data-target="#delete_patient"><i class="fa fa-trash-o m-r-5"></i> Delete</button>
-                                                    </form>    
+                                                        @can('patient-edit')
+                                                        <a class="dropdown-item" href="{{route('admin.patients.edit',$patient->id)}}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                                        @endcan
+                                                        @can('patient-delete')
+                                                        <form action="{{route('admin.patients.destroy',$patient->user->id)}}" method="post">
+                                                            @csrf
+                                                            @method('Delete')
+                                                            <button class="dropdown-item" type="submit" data-toggle="modal" data-target="#delete_patient"><i class="fa fa-trash-o m-r-5"></i> Delete</button>
+                                                        </form>
+                                                        @endcan    
                                                     </div>
                                                 </div>
+                                                @endcanany
                                             </td>
                                         </tr>
                                         @endforeach
