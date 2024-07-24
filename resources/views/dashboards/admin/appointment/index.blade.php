@@ -7,9 +7,11 @@
             <div class="col-sm-4 col-3">
                 <h4 class="page-title">Appointments</h4>
             </div>
+            @can('appointment-create')
             <div class="col-sm-8 col-9 text-right m-b-20">
                 <a href="{{route('admin.appointments.create')}}" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Appointment</a>
             </div>
+            @endcan
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -30,7 +32,9 @@
                                 <th>Address</th>
                                 <th>Appointment Date & Time</th>
                                 <th>Status</th>
+                                @canany(['appointment-edit', 'appointment-delete'])
                                 <th class="text-right">Action</th>
+                                @endcanany
                             </tr>
                         </thead>
                         <tbody>
@@ -62,17 +66,23 @@
                                     <small class="text-muted">Click to update</small>
                                 </td>
                                 <td class="text-right">
+                                @canany(['appointment-edit', 'appointment-delete'])
                                     <div class="dropdown dropdown-action">
                                         <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                         <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(22px, 27px, 0px);" x-out-of-boundaries="">
+                                            @can('appointment-edit')
                                             <a class="dropdown-item" href="{{route('admin.appointments.edit',$appointment->id)}}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                                            @endcan
+                                            @can('appointment-delete')
                                             <form action="{{route('admin.appointments.destroy',$appointment->id )}}" method="Post">
                                                 @csrf
                                                 @method('Delete')
                                                 <button class="dropdown-item" type="submit" data-toggle="modal" data-target="#delete_appointment"><i class="fa fa-trash-o m-r-5"></i> Delete</button>
                                             </form>
+                                            @endcan
                                         </div>
                                     </div>
+                                @endcanany
                                 </td>
                             </tr>
                             @endforeach
