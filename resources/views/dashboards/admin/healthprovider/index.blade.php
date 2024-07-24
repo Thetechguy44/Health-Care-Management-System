@@ -7,9 +7,11 @@
             <div class="col-sm-4 col-3">
                 <h4 class="page-title">Doctors</h4>
             </div>
+            @can('treatment-list')
             <div class="col-sm-8 col-9 text-right m-b-20">
                 <a href="{{route('admin.health_providers.create')}}" class="btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Healthcare Provider</a>
             </div>
+            @endcan
         </div>
         <div class="row doctor-grid">
             @foreach($providers as $provider)
@@ -22,17 +24,23 @@
                         <a href="{{route('admin.health_providers.show',$provider->id)}}" class="avatar"><img class="avatar" alt="" src="{{asset('default/users/img/default-avatar.png')}}"></a>
                         @endif
                     </div>
+                    @canany('treatment-edit','treatment-delete')
                     <div class="dropdown profile-action">
                         <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
+                            @can('treatment-edit')
                             <a class="dropdown-item" href="{{route('admin.health_providers.edit',$provider->id)}}"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+                            @endcan
+                            @can('treatment-delete')
                             <form action="{{route('admin.health_providers.destroy',$provider->user->id)}}" method="post">
                                 @csrf
                                 @method('Delete')
                                 <button class="dropdown-item" data-toggle="modal" data-target="#delete_doctor"><i class="fa fa-trash-o m-r-5"></i> Delete</button>
                             </form>
+                            @endcan
                         </div>
                     </div>
+                    @endcanany
                     <h4 class="doctor-name text-ellipsis"><a href="{{route('admin.health_providers.show',$provider->id)}}">{{$provider->user->name}}</a></h4>
                     <h6 class="doctor-name text-ellipsis">{{$provider->user->email}}</h6>
                     <br>
