@@ -7,8 +7,13 @@
             <div class="col-sm-4 col-3">
                 <h4 class="page-title">Admins</h4>
             </div>
+            @can('role-create')
+            <div class="col-sm-6 col-3 text-right m-b-20">
+                <a href="{{route('admin.roles.create')}}" class="btn btn-primary float-right btn-rounded"><i class="fa fa-plus"></i> Add Role</a>
+            </div>
+            @endcan
             @can('admin-create')
-            <div class="col-sm-8 col-9 text-right m-b-20">
+            <div class="col-sm-2 col-6 text-right m-b-20">
                 <a href="{{route('admin.admins.create')}}" class="btn btn-primary float-right btn-rounded"><i class="fa fa-plus"></i> Add Admin</a>
             </div>
             @endcan
