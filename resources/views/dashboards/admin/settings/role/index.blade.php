@@ -4,15 +4,22 @@
 <div class="page-wrapper" style="min-height: 617px;">
     <div class="content">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-6">
                 <h4 class="page-title">Roles &amp; Permissions</h4>
+            </div>
+            <div class="col-sm-2">
+                @can('admin-create')
+                <a href="{{route('admin.admins.create')}}" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add Admin</a>
+                @endcan
+            </div>
+            <div class="col-sm-2">
+                @can('role-create')
+                <a href="{{route('admin.roles.create')}}" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add Roles</a>
+                @endcan
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                @can('role-create')
-                <a href="{{route('admin.roles.create')}}" class="btn btn-primary btn-block"><i class="fa fa-plus"></i> Add Roles</a>
-                @endcan
                 <div class="roles-menu">
                     <ul>
                         @foreach($roles as $role)
