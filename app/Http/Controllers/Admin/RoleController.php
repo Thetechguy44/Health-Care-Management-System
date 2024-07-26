@@ -22,8 +22,18 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return view('dashboards.admin.settings.role.index', ['roles' => Role::paginate(10)]);
-    }
+        $user = auth()->user();
+        $roles = Role::paginate(10);
+        
+        if (!$user->hasAnyRole(['Administrator', 'Admin'])) {
+            // Exclude the 'Administrator' and 'Admin' roles if the user is not an administrator
+            $roles = $roles->filter(function ($role) {
+                return !in_array($role->name, ['Administrator', 'Admin']);
+            });
+        }
+        
+        return view('dashboards.admin.settings.role.index', ['roles' => $roles]);
+    }    
 
     /**
      * Show the form for creating a new resource.
