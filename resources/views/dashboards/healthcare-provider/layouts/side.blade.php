@@ -54,7 +54,7 @@
                 </li>
                 <li class="{{ Route::is('healthcare_provider.treatments') ? 'active' : ''}} open"><a href="{{route('healthcare_provider.treatments')}}"><i class="zmdi zmdi-file-text"></i><span>Treatments</span></a></li>
                 <li><a href="{{ url('/chatify') }}" class=" waves-effect waves-block"><i class="zmdi zmdi-delicious"></i><span>Chat</span></a></li>
-                <li><a href="reports.html"><i class="zmdi zmdi-file-text"></i><span>Reports</span></a></li>
+                <!-- <li><a href="reports.html"><i class="zmdi zmdi-file-text"></i><span>Reports</span></a></li> -->
             </ul>
         </div>
         <!-- #Menu -->

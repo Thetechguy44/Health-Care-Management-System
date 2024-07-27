@@ -17,7 +17,7 @@
 </head>
 
 <body class="theme-cyan authentication">
-            @yield('content')
+    @yield('content')
 </div>
 <div class="theme-bg"></div>
 
