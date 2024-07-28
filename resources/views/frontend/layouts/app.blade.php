@@ -82,7 +82,7 @@
 												<ul>													
                                                     <li><a href="{{ route('login') }}">Login</a></li>
 													<li><a href="{{ route('register') }}">Register</a></li>
-													<li><a href="team.html">Team</a></li>
+													<li><a href="{{ route('healthcare_provider.register') }}">Register as Health Provider</a></li>
 													<li><a href="{{ url('/contact') }}">Contact Us</a></li>
 												</ul>
 											</li>
@@ -182,28 +182,24 @@
                                 </div>
                                 <div class="footer-link">
                                     <div class="f-contact">
-                                    <ul>
-                                    <li>
-                                        <i class="icon dripicons-phone"></i>
-                                        <span>1800-121-3637<br>+91 555 234-8765</span>
-                                    </li>
-                                    <li>
-                                        <i class="icon dripicons-mail"></i>
-                                         <span><a href="mailto:info@example.com">info@example.com</a><br><a href="mailto:sale@example.com">sale@example.com</a></span>
-                                    </li>
-                                    <li>
-                                      <i class="fal fa-map-marker-alt"></i>
-                                         <span>380 St Kilda Road, Melbourne<br>VIC 3004, Australia</span>
-                                    </li>
-                                </ul>
-                                    
+                                        <ul>
+                                            <li>
+                                                <i class="icon dripicons-phone"></i>
+                                                <span>1800-121-3637<br>+91 555 234-8765</span>
+                                            </li>
+                                            <li>
+                                                <i class="icon dripicons-mail"></i>
+                                                <span><a href="mailto:info@example.com">info@example.com</a><br><a href="mailto:sale@example.com">sale@example.com</a></span>
+                                            </li>
+                                            <li>
+                                            <i class="fal fa-map-marker-alt"></i>
+                                                <span>380 St Kilda Road, Melbourne<br>VIC 3004, Australia</span>
+                                            </li>
+                                        </ul>
                                     </div>
-                                   
-                                    
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -212,7 +208,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="copyright-text text-center">
-                                <p>&copy; 2020 Mecare  All design Zcube.</p>
+                                <p>&copy; 2020 Mecare  All design Gana.</p>
                             </div>
                         </div>
                     </div>
