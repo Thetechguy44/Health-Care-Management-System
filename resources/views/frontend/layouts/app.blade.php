@@ -29,27 +29,30 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-3 d-none d-lg-block">
-                        </div>                       
+                        </div>
+                        @foreach($contents as $content)                       
                         <div class="col-lg-4 col-md-8 d-none  d-md-block">
                             <div class="header-cta">
                                 <ul>                                   
                                     <li>
                                         <i class="icon dripicons-mail"></i>
-                                        <span>info@example.com</span>
+                                        <span>{{$content->email}} </span>
                                     </li>
                                      <li>
                                         <i class="icon dripicons-phone"></i>
-                                        <span>+234 12 3456897</span>
+                                        <span>{{$content->phone}}</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
+                        @endforeach
                          <div class="col-lg-5 col-md-3 d-none d-lg-block">
                              <div class="header-social text-right">
                             <span>
-                                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>                               
+                                <a href="{{$content->facebook_url}}" title="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="{{$content->twitter_url}}" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="{{$content->linkedin_url}}" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>                               
+                                <a href="{{$content->instagram_url}}" title="Instagram"><i class="fab fa-instagram"></i></a>                               
                                </span>                    
                                <!--  /social media icon redux -->                               
                         </div>
@@ -149,11 +152,9 @@
                                 <div class="footer-link">
                                     <ul>                                        
                                         <li><a href="#"><i class="fas fa-chevron-right"></i> Partners</a></li>
-										<li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> Career</a></li>
+										<li><a href="{{ url('/about') }}"><i class="fas fa-chevron-right"></i> About Us</a></li>
                                         <li><a href="#"><i class="fas fa-chevron-right"></i> Reviews</a></li>
                                         <li><a href="#"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> Help</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -165,12 +166,10 @@
                                 </div>
                                 <div class="footer-link">
                                     <ul>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> Services</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> Project</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> Our Team</a></li>
-                                        <li><a href="#"><i class="fas fa-chevron-right"></i> Latest Blog</a></li>
+                                        <li><a href="{{ url('/') }}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                                        <li><a href="{{ url('/about') }}"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                                        <li><a href="{{ url('/services') }}"><i class="fas fa-chevron-right"></i> Services</a></li>
+                                        <li><a href="{{ route('healthcare_provider.register') }}"><i class="fas fa-chevron-right"></i> Register as a Healthcare Provider</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -180,24 +179,26 @@
                                 <div class="f-widget-title">
                                     <h5>Contact Us</h5>
                                 </div>
+                                @foreach($contents as $content)
                                 <div class="footer-link">
                                     <div class="f-contact">
                                         <ul>
                                             <li>
                                                 <i class="icon dripicons-phone"></i>
-                                                <span>1800-121-3637<br>+91 555 234-8765</span>
+                                                <span>{{$content->phone}}<br> </span>
                                             </li>
                                             <li>
                                                 <i class="icon dripicons-mail"></i>
-                                                <span><a href="mailto:info@example.com">info@example.com</a><br><a href="mailto:sale@example.com">sale@example.com</a></span>
+                                                <span><a href="mailto:{{$content->phone}}">{{$content->email}}</a><br><a href="mailto:sale@example.com"> </a></span>
                                             </li>
                                             <li>
                                             <i class="fal fa-map-marker-alt"></i>
-                                                <span>380 St Kilda Road, Melbourne<br>VIC 3004, Australia</span>
+                                                <span>{{$content->address}}, {{$content->city}}<br>{{$content->state}} {{$content->postal_code}}, {{$content->country}}</span>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
