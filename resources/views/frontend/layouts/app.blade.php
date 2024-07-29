@@ -124,25 +124,24 @@
             <div class="footer-top pb-30" style="background-color: #ECF1FA;">
                 <div class="container">
                     <div class="row justify-content-between">
-                        
+                        @foreach($contents as $content)
                         <div class="col-xl-3 col-lg-3 col-sm-6">
                             <div class="footer-widget mb-30">
                                 <div class="flog mb-35">
                                     <a href="#"><img src="{{asset('frontend/img/logo/logo.png')}}" alt="logo"></a>
                                 </div>
                                 <div class="footer-text mb-20">
-                                    <p>Sed ut perspiciatis unde om is nerror sit voluptatem accustium dolorem tium totam rem aperam eaque ipsa quae ab illose
-                                    inntore veritatis</p>
+                                    <p>{{$content->footer}}</p>
                                 </div>
                                 <div class="footer-social">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                    <a href="{{$content->facebook_url}}"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="{{$content->twitter_url}}"><i class="fab fa-twitter"></i></a>
+                                    <a href="{{$content->instagram_url}}"><i class="fab fa-instagram"></i></a>
+                                    <a href="{{$content->linkedin_url}}"><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                             </div>
                         </div>
-                        
+                        @endforeach
                         
 						<div class="col-xl-2 col-lg-2 col-sm-6">
                             <div class="footer-widget mb-30">
@@ -267,5 +266,5 @@
                 toastr.info('{{ session('info') }}');
             </script>
         @endif
-        </body>
+    </body>
 </html>
