@@ -16,7 +16,12 @@ class FrontendController extends Controller
 {
     public function home()
     {
-        return view('frontend.index');
+        $settings = Setting::all();
+        $providers = HealthProvider::all();
+        return view('frontend.index',[
+            'settings'=> $settings,
+            'providers'=> $providers,
+        ]);
     }
 
     public function about()
