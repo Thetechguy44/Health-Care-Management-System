@@ -11,6 +11,7 @@ use App\Models\HealthProvider;
 use App\Models\Speciality;
 use App\Models\Appointment;
 use App\Models\Treatment;
+use App\Models\Setting;
 
 class FrontendController extends Controller
 {

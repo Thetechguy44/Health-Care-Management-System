@@ -11,7 +11,9 @@
                             <div class="col-lg-6">
                                 <div class="slider-content s-slider-content text-left">
                                     <h2 data-animation="fadeInUp" data-delay=".4s">Get Better Care For Your <span>Health</span></h2>
-                                    <p data-animation="fadeInUp" data-delay=".6s">Quisque leo augue, lobortis ac tellus nec, posuere ultricies nulla. Praesent massa odio, pellentesque in consectetur quis, volutpat sit amet erat.</p>
+                                    @foreach($settings as $setting)
+                                    <p data-animation="fadeInUp" data-delay=".6s">{{$setting->about_us}}</p>
+                                    @endforeach
                                     <div class="slider-btn mt-25">                                          
                                         <a href="{{ route('register') }}" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Sign Up Now <i class="fas fa-chevron-right"></i></a>					
                                     </div>
