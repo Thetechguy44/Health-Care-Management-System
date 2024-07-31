@@ -467,7 +467,7 @@
         </section>
         <!-- team-area-end -->
         <!-- newslater-area -->
-        <section class="newslater-area pb-50" style="background-image: url(frontend/img/an-bg/an-bg06.png);background-position: center bottom; background-repeat: no-repeat;" >
+        <!-- <section class="newslater-area pb-50" style="background-image: url(frontend/img/an-bg/an-bg06.png);background-position: center bottom; background-repeat: no-repeat;" >
             <div class="container">
                 <div class="row align-items-end">
                     <div class="col-xl-4 col-lg-4 col-lg-4">
@@ -481,8 +481,7 @@
                             <div class="form-group">
                                 <input class="form-control" id="email2" name="email" type="email" placeholder="Email Address..." value="" required=""> 
                                 <button type="submit" class="btn btn-custom" id="send2">Subscribe <i class="fas fa-chevron-right"></i></button>
-                            </div>
-                            <!-- /Form-email -->	
+                            </div>	
                         </form>
                     </div>
                     <div class="col-xl-4 col-lg-4">
@@ -491,7 +490,7 @@
                 </div>
                 
             </div>
-        </section>
+        </section> -->
         <!-- newslater-aread-end -->
         <!-- testimonial-area -->
         <section id="testimonios" class="testimonial-area testimonial-p pt-50 pb-85 fix" style="background-image: url(frontend/img/an-bg/an-bg07.png);background-position: center; background-repeat: no-repeat;background-size: contain;" >
