@@ -5,27 +5,26 @@
         <!-- slider-area -->
         <section id="home" class="slider-area fix p-relative">
             <div class="slider-active2">
-            <div class="single-slider slider-bg d-flex align-items-center" style="background-image:url(frontend/img/an-bg/header-bg.png)">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                                <div class="slider-content s-slider-content text-left">
-                                    <h2 data-animation="fadeInUp" data-delay=".4s">Get Better Care For Your <span>Health</span></h2>
-                                    @foreach($settings as $setting)
-                                    <p data-animation="fadeInUp" data-delay=".6s">{{$setting->about_us}}</p>
-                                    @endforeach
-                                    <div class="slider-btn mt-25">                                          
-                                        <a href="{{ route('register') }}" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Sign Up Now <i class="fas fa-chevron-right"></i></a>					
+                <div class="single-slider slider-bg d-flex align-items-center" style="background-image:url(frontend/img/an-bg/header-bg.png)">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <div class="slider-content s-slider-content text-left">
+                                        <h2 data-animation="fadeInUp" data-delay=".4s">Get Better Care For Your <span>Health</span></h2>
+                                        @foreach($settings as $setting)
+                                        <p data-animation="fadeInUp" data-delay=".6s">{{$setting->about_us}}</p>
+                                        @endforeach
+                                        <div class="slider-btn mt-25">                                          
+                                            <a href="{{ route('register') }}" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Sign Up Now <i class="fas fa-chevron-right"></i></a>					
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <img src="frontend/img/bg/header-img.png" alt="header-img" class="header-img"/>
+                                <div class="col-lg-6">
+                                    <img src="frontend/img/bg/header-img.png" alt="header-img" class="header-img"/>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            
                 </div>                    
         </section>
         <!-- slider-area-end -->
@@ -499,14 +498,14 @@
             <div class="container">
                     <div class="row justify-content-center">
                     
-                    <div class="col-lg-8"> 
-                    <div class="section-title center-align mb-60 text-center">
-                            <span>TESTIMONIAL</span>
-                            <h2>What Our Client’s Say’s</h2>
-                            <p>Fusce pharetra odio in urna laoreet laoreet. Aliquam erat volutpat. Phasellus nec ligula arcu. Aliquam eu urna pulvinar, iaculis ipsum in, porta massa.</p>
+                        <div class="col-lg-8"> 
+                            <div class="section-title center-align mb-60 text-center">
+                                <span>TESTIMONIAL</span>
+                                <h2>What Our Client’s Say’s</h2>
+                                <p>Fusce pharetra odio in urna laoreet laoreet. Aliquam erat volutpat. Phasellus nec ligula arcu. Aliquam eu urna pulvinar, iaculis ipsum in, porta massa.</p>
+                            </div>
                         </div>
-                        </div>
-                        </div>
+                    </div>
                 
                 <div class="row justify-content-center">
                     
@@ -579,9 +578,9 @@
                                     </div>
                                 </div>
                                 <p>Nullam metus mi, sollicitudin eu elit non, laoreet consectetur urna. Nullam quis aliquet elit. Cras augue tortor, lacinia et fermentum eget, suscipit id ligula. Donec id mollis sem, nec tincidunt neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-                                    </div>
-                                
                             </div>
+                                
+                        </div>
                         
                             
                         </div>
