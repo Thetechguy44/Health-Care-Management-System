@@ -64,45 +64,15 @@
                             
                         </div>
                     </div>
-                    
-                </div>
-                
+                </div> 
             </div>
         </section>
         <!-- services-area-end -->
-            <!-- newslater-area -->
-        <section class="newslater-area pb-50" style="background-image: url(frontend/img/an-bg/an-bg06.png);background-position: center bottom; background-repeat: no-repeat;">
-            <div class="container">
-                <div class="row align-items-end">
-                    <div class="col-xl-4 col-lg-4 col-lg-4">
-                        <div class="section-title mb-100">
-                            <span>NEWSLETTER</span>          
-                            <h2>Subscribe To Our Newsletter</h2>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4">
-                        <form name="ajax-form" id="contact-form4" action="#" method="post" class="contact-form newslater pb-130">
-                            <div class="form-group">
-                                <input class="form-control" id="email2" name="email" type="email" placeholder="Email Address..." value="" required=""> 
-                                <button type="submit" class="btn btn-custom" id="send2">Subscribe <i class="fas fa-chevron-right"></i></button>
-                            </div>
-                            <!-- /Form-email -->	
-                        </form>
-                    </div>
-                    <div class="col-xl-4 col-lg-4">
-                        <img src="frontend/img/bg/news-illustration.png">
-                    </div>
-                </div>
-                
-            </div>
-        </section>
-        <!-- newslater-aread-end -->
+
             <!-- faq-area -->
         <section class="faq-area pt-50 pb-50 fix" style="background-image: url(frontend/img/shape/header-sape6.html); background-position: right center; background-size: auto;background-repeat: no-repeat;">
             <div class="container">
                 <div class="row align-items-end">                        
-                    
-                    
                         <div class="col-lg-6">                            
                             <div class="contact-img">
                             <img src="frontend/img/bg/touch-illustration.png" alt="touch-illustration">
@@ -160,14 +130,10 @@
                                             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                                         </div>
                                     </div>
-                                </div>
-                                
-                                
+                                </div>  
                             </div>
                         </div>
                     </div>
-                    
-                    
                 </div>
             </div>
         </section>

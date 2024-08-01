@@ -42,27 +42,26 @@
                             <p>Nulla lacinia sapien a diam ullamcorper, sed congue leo vulputate. Phasellus et ante ultrices, sagittis purus vitae, sagittis quam. Quisque urna lectus, auctor quis tristique tincidunt, semper vel lectus. Mauris eget eleifend massa. Praesent ex felis, laoreet nec tellus in, laoreet commodo ipsum.</p>
                             
                             <ul>
-                                    <li>
-                                        <div class="icon"><i class="fas fa-chevron-right"></i></div> 
-                                        <div class="text">Pellentesque placerat, nisi congue vehicula efficitur.
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon"><i class="fas fa-chevron-right"></i></div> 
-                                        <div class="text">Pellentesque placerat, nisi congue vehicula efficitur.
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon"><i class="fas fa-chevron-right"></i></div> 
-                                        <div class="text">Phasellus mattis vitae magna in suscipit. Nam tristique posuere sem, mattis molestie est bibendum.
-                                        </div>
-                                    </li>
-                                <div></div>
+                                <li>
+                                    <div class="icon"><i class="fas fa-chevron-right"></i></div> 
+                                    <div class="text">Pellentesque placerat, nisi congue vehicula efficitur.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon"><i class="fas fa-chevron-right"></i></div> 
+                                    <div class="text">Pellentesque placerat, nisi congue vehicula efficitur.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon"><i class="fas fa-chevron-right"></i></div> 
+                                    <div class="text">Phasellus mattis vitae magna in suscipit. Nam tristique posuere sem, mattis molestie est bibendum.
+                                    </div>
+                                </li>
                             </ul>
                             
                             <div class="slider-btn mt-30">                                          
-                                        <a href="#" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Read More <i class="fas fa-chevron-right"></i></a>					
-                                    </div>
+                                <a href="#" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Read More <i class="fas fa-chevron-right"></i></a>					
+                            </div>
                         </div>
                     </div>
                     
@@ -115,46 +114,19 @@
             </div>
         </div>
         <!-- counter-area-end -->	
-            <!-- newslater-area -->
-        <section class="newslater-area pb-50" style="background-image: url(frontend/img/an-bg/an-bg06.png);background-position: center bottom; background-repeat: no-repeat;">
-            <div class="container">
-                <div class="row align-items-end">
-                    <div class="col-xl-4 col-lg-4 col-lg-4">
-                        <div class="section-title mb-100">
-                            <span>NEWSLETTER</span>          
-                            <h2>Subscribe To Our Newsletter</h2>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4">
-                        <form name="ajax-form" id="contact-form4" action="#" method="post" class="contact-form newslater pb-130">
-                            <div class="form-group">
-                                <input class="form-control" id="email2" name="email" type="email" placeholder="Email Address..." value="" required=""> 
-                                <button type="submit" class="btn btn-custom" id="send2">Subscribe <i class="fas fa-chevron-right"></i></button>
-                            </div>
-                            <!-- /Form-email -->	
-                        </form>
-                    </div>
-                    <div class="col-xl-4 col-lg-4">
-                        <img src="frontend/img/bg/news-illustration.png">
-                    </div>
-                </div>
-                
-            </div>
-        </section>
-        <!-- newslater-aread-end -->
         <!-- testimonial-area -->
         <section id="testimonios" class="testimonial-area testimonial-p pt-50 pb-85 fix" style="background-image: url(frontend/img/an-bg/an-bg07.png);background-position: center; background-repeat: no-repeat;background-size: contain;">
             <div class="container">
                     <div class="row justify-content-center">
                     
-                    <div class="col-lg-8"> 
-                    <div class="section-title center-align mb-60 text-center">
-                            <span>TESTIMONIAL</span>
-                            <h2>What Our Client’s Say’s</h2>
-                            <p>Fusce pharetra odio in urna laoreet laoreet. Aliquam erat volutpat. Phasellus nec ligula arcu. Aliquam eu urna pulvinar, iaculis ipsum in, porta massa.</p>
+                        <div class="col-lg-8"> 
+                            <div class="section-title center-align mb-60 text-center">
+                                <span>TESTIMONIAL</span>
+                                <h2>What Our Client’s Say’s</h2>
+                                <p>Fusce pharetra odio in urna laoreet laoreet. Aliquam erat volutpat. Phasellus nec ligula arcu. Aliquam eu urna pulvinar, iaculis ipsum in, porta massa.</p>
+                            </div>
                         </div>
-                        </div>
-                        </div>
+                    </div>
                 
                 <div class="row justify-content-center">
                     
