@@ -151,30 +151,28 @@
                             <p>Nulla lacinia sapien a diam ullamcorper, sed congue leo vulputate. Phasellus et ante ultrices, sagittis purus vitae, sagittis quam. Quisque urna lectus, auctor quis tristique tincidunt, semper vel lectus. Mauris eget eleifend massa. Praesent ex felis, laoreet nec tellus in, laoreet commodo ipsum.</p>
                             
                             <ul>
-                                    <li>
-                                        <div class="icon"><i class="fas fa-chevron-right"></i></div> 
-                                        <div class="text">Pellentesque placerat, nisi congue vehicula efficitur.
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon"><i class="fas fa-chevron-right"></i></div> 
-                                        <div class="text">Pellentesque placerat, nisi congue vehicula efficitur.
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon"><i class="fas fa-chevron-right"></i></div> 
-                                        <div class="text">Phasellus mattis vitae magna in suscipit. Nam tristique posuere sem, mattis molestie est bibendum.
-                                        </div>
-                                    </li>
-                                <div></div>
+                                <li>
+                                    <div class="icon"><i class="fas fa-chevron-right"></i></div> 
+                                    <div class="text">Pellentesque placerat, nisi congue vehicula efficitur.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon"><i class="fas fa-chevron-right"></i></div> 
+                                    <div class="text">Pellentesque placerat, nisi congue vehicula efficitur.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon"><i class="fas fa-chevron-right"></i></div> 
+                                    <div class="text">Phasellus mattis vitae magna in suscipit. Nam tristique posuere sem, mattis molestie est bibendum.
+                                    </div>
+                                </li>
                             </ul>
                             
                             <div class="slider-btn mt-30">                                          
-                                        <a href="#" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Read More <i class="fas fa-chevron-right"></i></a>					
-                                    </div>
+                                <a href="#" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Read More <i class="fas fa-chevron-right"></i></a>					
+                            </div>
                         </div>
-                    </div>
-                    
+                    </div>   
                 </div>
             </div>
         </section>
