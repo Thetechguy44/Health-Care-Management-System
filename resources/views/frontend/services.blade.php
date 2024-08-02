@@ -78,12 +78,11 @@
                             <img src="frontend/img/bg/touch-illustration.png" alt="touch-illustration">
                         </div>
                     </div>
-                    
                         <div class="col-lg-6">
-                        <div class="section-title left-align mb-50">                               
-                            <h2>Frequently Asked Questions</h2>
-                            <p>Duis non aliquet tellus, in mollis leo. Phasellus quis posuere dui. Nulla mauris purus, mattis eget sagittis at, accumsan sed leo.</p>
-                        </div>
+                            <div class="section-title left-align mb-50">                               
+                                <h2>Frequently Asked Questions</h2>
+                                <p>Duis non aliquet tellus, in mollis leo. Phasellus quis posuere dui. Nulla mauris purus, mattis eget sagittis at, accumsan sed leo.</p>
+                            </div>
                         <div class="faq-wrap">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">

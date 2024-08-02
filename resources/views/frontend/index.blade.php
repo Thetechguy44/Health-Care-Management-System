@@ -234,31 +234,31 @@
                             <span>OUR DEPARTMENTS</span>
                             <h2>We Take Care Of Your Life Healthy Health</h2>
                         </div>
-                        <ul>
-                                    <li>
-                                        <div class="icon">
-                                            <div><img src="frontend/img/icon/de-icon01.png" alt="de-icon"></div></div> 
+                            <ul>
+                                <li>
+                                    <div class="icon">
+                                        <div><img src="frontend/img/icon/de-icon01.png" alt="de-icon"></div></div> 
+                                    <a href="departments-detail.html" class="text">
+                                        <h3>Pedlatric</h3>
+                                        Fusce eget condimentum lectus, sed commodo dui. Suspendisse non vehicula ant aecenas placerat finibus metus, at finibus neque.
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <div><img src="frontend/img/icon/de-icon02.png" alt="de-icon"></div></div> 
                                         <a href="departments-detail.html" class="text">
-                                            <h3>Pedlatric</h3>
-                                            Fusce eget condimentum lectus, sed commodo dui. Suspendisse non vehicula ant aecenas placerat finibus metus, at finibus neque.
-                                        </a>
-                                    </li>
-                                    <li>
+                                        <h3>Dental</h3>
+                                        Fusce eget condimentum lectus, sed commodo dui. Suspendisse non vehicula ant aecenas placerat finibus metus, at finibus neque.
+                                    </a>
+                                </li>
+                                <li>
                                         <div class="icon">
-                                            <div><img src="frontend/img/icon/de-icon02.png" alt="de-icon"></div></div> 
-                                            <a href="departments-detail.html" class="text">
-                                            <h3>Dental</h3>
-                                            Fusce eget condimentum lectus, sed commodo dui. Suspendisse non vehicula ant aecenas placerat finibus metus, at finibus neque.
-                                        </a>
-                                    </li>
-                                    <li>
-                                            <div class="icon">
-                                            <div><img src="frontend/img/icon/de-icon03.png" alt="de-icon"></div></div> 
-                                        <a href="departments-detail.html" class="text">
-                                            <h3>Physicians</h3>
-                                            Fusce eget condimentum lectus, sed commodo dui. Suspendisse non vehicula ant aecenas placerat finibus metus, at finibus neque.
-                                        </a>
-                                    </li>                   
+                                        <div><img src="frontend/img/icon/de-icon03.png" alt="de-icon"></div></div> 
+                                    <a href="departments-detail.html" class="text">
+                                        <h3>Physicians</h3>
+                                        Fusce eget condimentum lectus, sed commodo dui. Suspendisse non vehicula ant aecenas placerat finibus metus, at finibus neque.
+                                    </a>
+                                </li>                   
                             </ul>
                                             
                     </div>
