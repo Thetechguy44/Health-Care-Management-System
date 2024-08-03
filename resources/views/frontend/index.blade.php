@@ -32,40 +32,38 @@
         <section id="booking" class="booking-area p-relative">
             <div class="container">
                 <form action="#" class="contact-form" >
-                        <div class="row">
-                            <div class="col-lg-12"> 
-                                <ul>
-                                    <li> 
-                                        <div class="contact-field p-relative c-name">  
-                                            <input type="text" placeholder="Enter Name">
-                                        </div>      
-                                    </li>
-                                    <li>
-                                        <div class="contact-field p-relative c-email">    
-                                            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                                <option selected>Select Doctor...</option>
-                                                <option value="1">One</option>
-                                            </select>
-                                        </div> 
-                                    </li>
-                                    <li>
-                                        <div class="contact-field p-relative c-subject mb-20">                     
-                                            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                                <option selected>Select Department...</option>
-                                                <option value="1">One</option>
-                                            </select>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="slider-btn">                                          
-                                        <a href="#" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Submit Now <i class="fas fa-chevron-right"></i></a>
-                                    </div>     
-                                    </li>
-                                </ul>
-                            </div>
-                        
+                    <div class="row">
+                        <div class="col-lg-12"> 
+                            <ul>
+                                <li> 
+                                    <div class="contact-field p-relative c-name">  
+                                        <input type="text" placeholder="Enter Name">
+                                    </div>      
+                                </li>
+                                <li>
+                                    <div class="contact-field p-relative c-email">    
+                                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                            <option selected>Select Doctor...</option>
+                                            <option value="1">One</option>
+                                        </select>
+                                    </div> 
+                                </li>
+                                <li>
+                                    <div class="contact-field p-relative c-subject mb-20">                     
+                                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                            <option selected>Select Department...</option>
+                                            <option value="1">One</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="slider-btn">                                          
+                                    <a href="#" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Submit Now <i class="fas fa-chevron-right"></i></a>
+                                </div>     
+                                </li>
+                            </ul>
                         </div>
-                    
+                    </div>
                 </form>
             </div>
         </section>
@@ -117,13 +115,9 @@
                                 <h5><a href="services-detail.html">24hr Health Program</a></h5>       
                                 <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.</p>
                             </div>
-                            
                         </div>
-                    </div>
-                    
-                    
-                </div>
-                
+                    </div>  
+                </div> 
             </div>
         </section>
         <!-- services-area-end -->
