@@ -49,12 +49,29 @@
                                     </div> 
                                 </li>
                                 <li>
+                                    <div class="contact-field p-relative c-email">    
+                                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                            <option selected>Select Provider...</option>
+                                            <option value="1">One</option>
+                                        </select>
+                                    </div> 
+                                </li>
+
+                                <li>
                                     <div class="contact-field p-relative c-subject mb-20">                     
                                         <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                                             <option selected>Select Department...</option>
                                             <option value="1">One</option>
                                         </select>
                                     </div>
+                                </li>
+                                <li>
+                                    <div class="contact-field p-relative c-email">    
+                                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                            <option selected>Select Doctor...</option>
+                                            <option value="1">One</option>
+                                        </select>
+                                    </div> 
                                 </li>
                                 <li>
                                     <div class="slider-btn">                                          
@@ -240,8 +257,9 @@
                                     </a>
                                 </li>
                                 <li>
-                                        <div class="icon">
-                                        <div><img src="frontend/img/icon/de-icon03.png" alt="de-icon"></div></div> 
+                                    <div class="icon">
+                                        <div><img src="frontend/img/icon/de-icon03.png" alt="de-icon"></div>
+                                    </div> 
                                     <a href="departments-detail.html" class="text">
                                         <h3>Physicians</h3>
                                         Fusce eget condimentum lectus, sed commodo dui. Suspendisse non vehicula ant aecenas placerat finibus metus, at finibus neque.
