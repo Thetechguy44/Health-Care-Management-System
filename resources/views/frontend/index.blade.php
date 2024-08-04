@@ -60,7 +60,7 @@
                                 <li>
                                     <div class="contact-field p-relative c-subject mb-20">                     
                                         <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                            <option selected>Select Department...</option>
+                                            <option selected>Select Speciality...</option>
                                             <option value="1">One</option>
                                         </select>
                                     </div>
@@ -72,6 +72,29 @@
                                             <option value="1">One</option>
                                         </select>
                                     </div> 
+                                </li>
+                                <li>
+                                    <div class="contact-field p-relative c-email">    
+                                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                            <option selected>Select Gender...</option>
+                                            <option value="1">One</option>
+                                        </select>
+                                    </div> 
+                                </li>
+                                <li> 
+                                    <div class="contact-field p-relative c-name">  
+                                        <input type="text" placeholder="Time">
+                                    </div>      
+                                </li>
+                                <li> 
+                                    <div class="contact-field p-relative c-name">  
+                                        <input type="text" placeholder="Enter Name">
+                                    </div>      
+                                </li>
+                                <li> 
+                                    <div class="contact-field p-relative c-name">  
+                                        <input type="text" placeholder="Enter Name">
+                                    </div>      
                                 </li>
                                 <li>
                                     <div class="slider-btn">                                          
