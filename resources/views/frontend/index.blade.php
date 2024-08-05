@@ -41,65 +41,25 @@
                                     </div>      
                                 </li>
                                 <li>
-                                    <div class="contact-field p-relative c-email">    
-                                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                            <option selected>Select Doctor...</option>
-                                            <option value="1">One</option>
-                                        </select>
-                                    </div> 
-                                </li>
-                                <li>
-                                    <div class="contact-field p-relative c-email">    
-                                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                            <option selected>Select Provider...</option>
-                                            <option value="1">One</option>
-                                        </select>
-                                    </div> 
-                                </li>
-
-                                <li>
+                                    <li>
+                                        <div class="contact-field p-relative c-email">    
+                                            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                                <option selected>Select Doctor...</option>
+                                                <option value="1">One</option>
+                                            </select>
+                                        </div> 
+                                    </li>
                                     <div class="contact-field p-relative c-subject mb-20">                     
                                         <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                            <option selected>Select Speciality...</option>
+                                            <option selected>Select Department...</option>
                                             <option value="1">One</option>
                                         </select>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="contact-field p-relative c-email">    
-                                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                            <option selected>Select Doctor...</option>
-                                            <option value="1">One</option>
-                                        </select>
-                                    </div> 
-                                </li>
-                                <li>
-                                    <div class="contact-field p-relative c-email">    
-                                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                            <option selected>Select Gender...</option>
-                                            <option value="1">One</option>
-                                        </select>
-                                    </div> 
-                                </li>
-                                <li> 
-                                    <div class="contact-field p-relative c-name">  
-                                        <input type="text" placeholder="Time">
-                                    </div>      
-                                </li>
-                                <li> 
-                                    <div class="contact-field p-relative c-name">  
-                                        <input type="text" placeholder="Enter Name">
-                                    </div>      
-                                </li>
-                                <li> 
-                                    <div class="contact-field p-relative c-name">  
-                                        <input type="text" placeholder="Enter Name">
-                                    </div>      
-                                </li>
-                                <li>
                                     <div class="slider-btn">                                          
                                     <a href="#" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Submit Now <i class="fas fa-chevron-right"></i></a>
-                                </div>     
+                                     </div>     
                                 </li>
                             </ul>
                         </div>
