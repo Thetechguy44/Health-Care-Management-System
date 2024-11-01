@@ -48,7 +48,7 @@ class HealthcareUserSeeder extends Seeder
 
         foreach ($users as $userData) {
             // Create a user record
-            $user = User::create([
+            $user = User::firstOrCreate([
                 'name' => $userData['name'],
                 'email' => $userData['email'],
                 'password' => $userData['password'],
@@ -58,7 +58,7 @@ class HealthcareUserSeeder extends Seeder
             ]);
 
             // Create a health provider record associated with the user
-            HealthProvider::create([
+            HealthProvider::firstOrCreate([
                 'user_id' => $user->id,
                 'role' => $userData['role'],
             ]);

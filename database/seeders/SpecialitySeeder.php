@@ -30,7 +30,7 @@ class SpecialitySeeder extends Seeder
 
         foreach ($specialties as $specialtyData) {
             // Create a specialty record
-            Speciality::create([
+            Speciality::firstOrCreate([
                 'name' => $specialtyData['name'],
             ]);
         }

@@ -16,7 +16,7 @@ class AdminUserSeeder extends Seeder
     public function run(): void
     {
         // Create a user record
-        $user = User::create([
+        $user = User::firstOrCreate([
             'name' => 'Admin User',
             'email' => 'admin@example.com',
             'password' => Hash::make('password'),
@@ -26,7 +26,7 @@ class AdminUserSeeder extends Seeder
         ]);
 
         // Create an admin record associated with the user
-        Admin::create([
+        Admin::firstOrCreate([
             'user_id' => $user->id,
         ]);
     }

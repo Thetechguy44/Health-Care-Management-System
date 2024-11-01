@@ -26,7 +26,7 @@ class PatientUserSeeder extends Seeder
         ]);
 
         // Create an admin record associated with the user
-        Patient::create([
+        Patient::firstOrCreate([
             'user_id' => $user->id,
         ]);
     }
