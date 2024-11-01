@@ -49,11 +49,13 @@
                          <div class="col-lg-5 col-md-3 d-none d-lg-block">
                              <div class="header-social text-right">
                             <span>
+                                @foreach($contents as $content)  
                                 <a href="{{$content->facebook_url}}" title="Facebook"><i class="fab fa-facebook"></i></a>
                                 <a href="{{$content->twitter_url}}" title="Twitter"><i class="fab fa-twitter"></i></a>
                                 <a href="{{$content->linkedin_url}}" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>                               
                                 <a href="{{$content->instagram_url}}" title="Instagram"><i class="fab fa-instagram"></i></a>                               
-                               </span>                    
+                                @endforeach
+                            </span>                    
                                <!--  /social media icon redux -->                               
                         </div>
                         </div>
